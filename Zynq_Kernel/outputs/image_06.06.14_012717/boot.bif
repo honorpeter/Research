@@ -1,0 +1,7 @@
+ image : {
+[bootloader]fsbl.elf
+u-boot.elf
+[load=0x2a00000]devicetree.dtb
+[load=0x2000000]uramdisk.image.gz
+[load=0x3000000]
+} 

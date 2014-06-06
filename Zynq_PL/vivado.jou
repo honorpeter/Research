@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2014.1 (64-bit)
+# SW Build 881834 on Fri Apr  4 13:56:21 MDT 2014
+# IP Build 877625 on Fri Mar 28 16:29:15 MDT 2014
+# Start of session at: Tue Jun  3 08:44:02 2014
+# Process ID: 326
+# Log file: /home/jared/Research/Zynq_PL/vivado.log
+# Journal file: /home/jared/Research/Zynq_PL/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project project_1 /home/jared/Research/Zynq_PL/project_1 -part xc7z020clg484-1
+set_property board_part xilinx.com:zc702:part0:1.0 [current_project]
+create_bd_design "design_1"
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.4 processing_system7_0
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:processing_system7 -config {make_external "FIXED_IO, DDR" apply_board_preset "1" Master "Disable" Slave "Disable" }  [get_bd_cells processing_system7_0]

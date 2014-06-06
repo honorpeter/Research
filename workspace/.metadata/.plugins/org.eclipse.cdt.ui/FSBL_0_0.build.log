@@ -1,0 +1,204 @@
+00:09:42 **** Build of configuration Debug for project FSBL_0_0 ****
+make all 
+Building file: ../src/ddr_init.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/ddr_init.d" -MT"src/ddr_init.d" -o "src/ddr_init.o" "../src/ddr_init.c"
+Finished building: ../src/ddr_init.c
+ 
+Building file: ../src/fsbl_handoff.S
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/fsbl_handoff.d" -MT"src/fsbl_handoff.d" -o "src/fsbl_handoff.o" "../src/fsbl_handoff.S"
+Finished building: ../src/fsbl_handoff.S
+ 
+Building file: ../src/fsbl_hooks.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/fsbl_hooks.d" -MT"src/fsbl_hooks.d" -o "src/fsbl_hooks.o" "../src/fsbl_hooks.c"
+Finished building: ../src/fsbl_hooks.c
+ 
+Building file: ../src/image_mover.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/image_mover.d" -MT"src/image_mover.d" -o "src/image_mover.o" "../src/image_mover.c"
+Finished building: ../src/image_mover.c
+ 
+Building file: ../src/main.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building file: ../src/md5.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/md5.d" -MT"src/md5.d" -o "src/md5.o" "../src/md5.c"
+Finished building: ../src/md5.c
+ 
+Building file: ../src/nand.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/nand.d" -MT"src/nand.d" -o "src/nand.o" "../src/nand.c"
+Finished building: ../src/nand.c
+ 
+Building file: ../src/nor.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/nor.d" -MT"src/nor.d" -o "src/nor.o" "../src/nor.c"
+Finished building: ../src/nor.c
+ 
+Building file: ../src/pcap.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/pcap.d" -MT"src/pcap.d" -o "src/pcap.o" "../src/pcap.c"
+Finished building: ../src/pcap.c
+ 
+Building file: /opt/Xilinx/SDK/2014.1/data/embeddedsw/lib/hwplatform_templates/ZC702_hw_platform/ps7_init.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/ps7_init.d" -MT"src/ps7_init.d" -o "src/ps7_init.o" "/opt/Xilinx/SDK/2014.1/data/embeddedsw/lib/hwplatform_templates/ZC702_hw_platform/ps7_init.c"
+Finished building: /opt/Xilinx/SDK/2014.1/data/embeddedsw/lib/hwplatform_templates/ZC702_hw_platform/ps7_init.c
+ 
+Building file: ../src/qspi.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/qspi.d" -MT"src/qspi.d" -o "src/qspi.o" "../src/qspi.c"
+Finished building: ../src/qspi.c
+ 
+Building file: ../src/rsa.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/rsa.d" -MT"src/rsa.d" -o "src/rsa.o" "../src/rsa.c"
+Finished building: ../src/rsa.c
+ 
+Building file: ../src/sd.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/sd.d" -MT"src/sd.d" -o "src/sd.o" "../src/sd.c"
+Finished building: ../src/sd.c
+ 
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xilffs_v2_0/src/diskio.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xilffs_v2_0/src/diskio.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xilffs_v2_0/src/diskio.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xilffs_v2_0/src/diskio.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xilffs_v2_0/src/diskio.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xilffs_v2_0/src/diskio.c
+ 
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xilffs_v2_0/src/ff.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xilffs_v2_0/src/ff.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xilffs_v2_0/src/ff.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xilffs_v2_0/src/ff.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xilffs_v2_0/src/ff.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xilffs_v2_0/src/ff.c
+ 
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps.c
+ 
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps_g.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps_g.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps_g.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps_g.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps_g.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps_g.c
+ 
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps_intr.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps_intr.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps_intr.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps_intr.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps_intr.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps_intr.c
+ 
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps_selftest.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps_selftest.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps_selftest.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps_selftest.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps_selftest.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps_selftest.c
+ 
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps_sinit.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps_sinit.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps_sinit.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps_sinit.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps_sinit.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/xadcps_v2_0/src/xadcps_sinit.c
+ 
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps.c
+ 
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_endpoint.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_endpoint.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_endpoint.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_endpoint.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_endpoint.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_endpoint.c
+ 
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_g.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_g.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_g.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_g.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_g.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_g.c
+ 
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_hw.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_hw.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_hw.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_hw.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_hw.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_hw.c
+ 
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_intr.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_intr.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_intr.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_intr.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_intr.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_intr.c
+ 
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_sinit.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_sinit.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_sinit.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_sinit.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_sinit.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/usbps_v2_0/src/xusbps_sinit.c
+ 
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps.c
+In file included from ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/standalone_v4_0/src/profile/_profile_clean.c:21:0:
+../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/standalone_v4_0/src/profile/_profile_timer_hw.h:75:21: fatal error: xintc_l.h: No such file or directory
+ #include "xintc_l.h"
+                     ^
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps.c
+ 
+compilation terminated.
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_g.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_g.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_g.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_g.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_g.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_g.c
+ 
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_hw.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_hw.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_hw.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_hw.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_hw.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_hw.c
+ 
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_intr.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_intr.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_intr.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_intr.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_intr.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_intr.c
+ 
+make: *** [FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/standalone_v4_0/src/profile/_profile_clean.o] Error 1
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_options.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_options.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_options.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_options.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_options.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_options.c
+ 
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_selftest.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_selftest.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_selftest.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_selftest.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_selftest.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_selftest.c
+ 
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_sinit.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_sinit.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_sinit.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_sinit.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_sinit.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/uartps_v2_0/src/xuartps_sinit.c
+ 
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps.c
+ 
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps_g.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps_g.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps_g.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps_g.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps_g.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps_g.c
+ 
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps_options.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps_options.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps_options.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps_options.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps_options.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps_options.c
+ 
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps_selftest.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps_selftest.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps_selftest.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps_selftest.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps_selftest.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps_selftest.c
+ 
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps_sinit.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps_sinit.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps_sinit.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps_sinit.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps_sinit.c"
+Finished building: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/ttcps_v2_0/src/xttcps_sinit.c
+ 
+Building file: ../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/standalone_v4_0/src/profile/_profile_clean.c
+Invoking: ARM gcc compiler
+arm-xilinx-eabi-gcc -Wall -O0 -g3 -I"/home/jared/Research/workspace/ZC702_hw_platform" -c -fmessage-length=0 -I/home/jared/Research/Zynq_Kernel/FSBL/FSBL_0_0_bsp/ps7_cortexa9_0/include -MMD -MP -MF"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/standalone_v4_0/src/profile/_profile_clean.d" -MT"FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/standalone_v4_0/src/profile/_profile_clean.d" -o "FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/standalone_v4_0/src/profile/_profile_clean.o" "../FSBL_0_0_bsp/ps7_cortexa9_0/libsrc/standalone_v4_0/src/profile/_profile_clean.c"
+
+00:09:46 Build Finished (took 4s.779ms)
+

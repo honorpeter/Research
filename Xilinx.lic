@@ -1,0 +1,25 @@
+# ----- REMOVE LINES ABOVE HERE --------------------------
+#
+# This license is valid from Tue Jun 03 20:47:06 UTC 2014.
+#
+# This is license NODELOCKED to HOSTID=b8ac6f6454dc;
+# there is no need to run lmgrd for this license.
+#
+#
+# This is a permanent license generated on Tue Jun 03 20:47:06 UTC 2014
+INCREMENT ISE_WebPACK xilinxd 2015.06 permanent uncounted \
+36398CC2DF77 \
+VENDOR_STRING=jaredbold,ISE_WebPACK,software,permanent,_210893315_0_0_640 \
+HOSTID=b8ac6f6454dc ISSUER="Xilinx Inc" START=03-Jun-2014 \
+TS_OK
+#
+#
+# ----------------------------------------------------------------------
+#  The following PACKAGE definition is a REQUIRED part of this license:
+#
+PACKAGE ISE_WebPACK xilinxd 2015.06 FE16E2F2E6C1 COMPONENTS="XC7Z010 \
+PlanAhead SDK XC7Z030 xps_tdp XC7Z020 WebPACK" OPTIONS=SUITE
+#
+# ------------------------------------------------------------------------------
+#
+# ----- REMOVE LINES BELOW HERE --------------------------
