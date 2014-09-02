@@ -40,6 +40,7 @@ release: all
 debug: CFLAGS += -O0 -ggdb -DDEBUG
 debug: all
 
+
 $(TARGET): $(OBJS)
 	@echo 'Buildig target: $@'
 	@echo 'Invoking $(CC) Linker'
