@@ -1,0 +1,53 @@
+# Project: Image
+# Author:  Jared Bold
+
+CC=gcc
+CFLAGS=-c -Wall 
+
+TARGET=$(OUTPUT_DIR)/image
+
+SRC_DIR=./src
+INCLUDE_DIR=./include
+BUILD_DIR=./build
+OUTPUT_DIR=./output
+
+SRCS=$(SRC_DIR)/main.c $(SRC_DIR)/image.c
+OBJS=$(BUILD_DIR)/main.o $(BUILD_DIR)/image.o
+DEPS=$(BUILD_DIR)/main.d $(BUILD_DIR)/image.d
+INCLUDES=-I$(INCLUDE_DIR)
+LDIRS=
+LIBS=-ltiff
+
+.PHONY: all
+.PHONY: test
+.PHONY: clean
+.PHONY: debug
+
+all:$(TARGET)
+
+release: CFLAGS += -O3
+release: all
+
+debug: CFLAGE += -O0 -ggdb
+debug: all
+
+$(TARGET): $(OBJS)
+	@echo 'Buildig target: $@'
+	@echo 'Invoking $(CC) Linker'
+	mkdir -p output
+	$(CC) $(LDIRS) -o $(TARGET) $(OBJS) $(LIBS)
+	@echo 'Finished building target: $@'
+	@echo ' '
+
+$(OBJS): $(SRCS)
+	@echo 'Building file: $<'
+	@echo 'Invoking $(CC)'
+	mkdir -p $(BUILD_DIR)
+	$(CC) $(CFLAGS) $(INCLUDES) -c -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o $@ "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
+clean:
+	rm -rf output
+	rm -rf build
+
