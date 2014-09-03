@@ -4,8 +4,8 @@
 \contentsline {section}{\numberline {3.1}Hardware}{6}
 \contentsline {section}{\numberline {3.2}Operating System}{6}
 \contentsline {section}{\numberline {3.3}Bilinear Interpolation}{6}
-\contentsline {chapter}{\numberline {4}Design}{7}
-\contentsline {section}{\numberline {4.1}Common Design Components}{7}
-\contentsline {subsection}{\numberline {4.1.1}Tagged Image File Format}{7}
-\contentsline {chapter}{\numberline {5}Results}{9}
-\contentsline {chapter}{\numberline {6}Conclusion}{10}
+\contentsline {chapter}{\numberline {4}Design}{9}
+\contentsline {section}{\numberline {4.1}Common Design Components}{9}
+\contentsline {subsection}{\numberline {4.1.1}Tagged Image File Format}{9}
+\contentsline {chapter}{\numberline {5}Results}{11}
+\contentsline {chapter}{\numberline {6}Conclusion}{12}
