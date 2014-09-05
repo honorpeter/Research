@@ -7,8 +7,8 @@ CFLAGS=-c -Wall
 CC_ZYNQ=arm-xilinx-linux-gnueabi-gcc
 
 # ARM locations
-INCLUDE_ZYNQ=/home/jared/Research/workspace/libtiff/tiff-4.0.3-build/include
-LDIRS_ZYNQ=/home/jared/Research/workspace/libtiff/tiff-4.0.3-build/lib
+INCLUDE_ZYNQ=/home/jared/Research/libs/arm-linux/libtiff/tiff-4.0.3-build/include
+LDIRS_ZYNQ=/home/jared/Research/libs/arm-linux/libtiff/tiff-4.0.3-build/lib
 
 # Directory Structure
 SRC_DIR=src
@@ -54,14 +54,14 @@ debug: all
 zynq_release: CC=$(CC_ZYNQ)
 zynq_release: INCLUDES += $(addprefix -I, $(INCLUDE_ZYNQ))
 #zynq_release: LDIRS += $(addprefix -L, $(LDIRS_ZYNQ))
-zynq_release: LIBS_STATIC=/home/jared/Research/workspace/libtiff/tiff-4.0.3-build/lib/libtiff.a
+zynq_release: LIBS_STATIC=/home/jared/Research/libs/arm-linux/libtiff/tiff-4.0.3-build/lib/libtiff.a
 zynq_release: LIBS=-lm
 zynq_release: release
 
 zynq_debug: CC=$(CC_ZYNQ)
 zynq_debug: INCLUDES += $(addprefix -I, $(INCLUDE_ZYNQ))
 #zynq_debug: LDIRS += $(addprefix -L, $(LDIRS_ZYNQ))
-zynq_debug: LIBS_STATIC=/home/jared/Research/workspace/libtiff/tiff-4.0.3-build/lib/libtiff.a
+zynq_debug: LIBS_STATIC=/home/jared/Research/libs/arm-linux/libtiff/tiff-4.0.3-build/lib/libtiff.a
 zynq_debug: LIBS=-lm
 zynq_debug: debug
 
