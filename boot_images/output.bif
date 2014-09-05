@@ -1,8 +1,0 @@
-the_ROM_image:
-{
-	[bootloader]/home/jared/Research/workspace/zynq_fsbl_0/Debug/zynq_fsbl_0.elf
-	/home/jared/Research/Zynq_Kernel/xilinx_u-boot/u-boot.elf
-	[load = 0x2a00000]/home/jared/Research/Zynq_Kernel/xilinx_device-tree/devicetree.dtb
-	[load = 0x3000000]/home/jared/Research/Zynq_Kernel/xilinx_linux/arch/arm/boot/uImage.bin
-	[load = 0x2000000]/home/jared/Research/Zynq_Kernel/xilinx_ramdisk/uramdisk.image.gz
-}
