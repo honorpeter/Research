@@ -1,0 +1,40 @@
+#-----------------------------------------------------------
+# Vivado v2014.2 (64-bit)
+# SW Build 932637 on Wed Jun 11 13:08:52 MDT 2014
+# IP Build 924643 on Fri May 30 09:20:16 MDT 2014
+# Start of session at: Sun Oct  5 15:10:48 2014
+# Process ID: 3477
+# Log file: /home/jared/Research/vivado_workspace/jmb_ip/vivado.log
+# Journal file: /home/jared/Research/vivado_workspace/jmb_ip/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project project_1 . -part xc7z020clg484-1
+set_property board_part xilinx.com:zc702:part0:1.0 [current_project]
+add_files -norecurse {/home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control_tb.v /home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top jmb_scanline_filter_control_tb [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+launch_xsim -simset sim_1 -mode behavioral
+launch_xsim -simset sim_1 -mode behavioral
+add_bp /home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control_tb.v 45
+remove_bps -file /home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control_tb.v -line 45
+launch_xsim -simset sim_1 -mode behavioral
+add_wave {{/jmb_scanline_filter_control_tb/dut/x_in_counter_r}} {{/jmb_scanline_filter_control_tb/dut/y_in_counter_r}} 
+restart
+run all
+launch_xsim -simset sim_1 -mode behavioral
+add_wave {{/jmb_scanline_filter_control_tb/dut/x_in_counter_r}} {{/jmb_scanline_filter_control_tb/dut/y_in_counter_r}} 
+restart
+run all
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+close_sim

@@ -25,7 +25,8 @@
 		spi0 = &ps7_qspi_0;
 	} ;
 	chosen {
-		bootargs = "console=ttyPS0,115200 root=/dev/ram rw earlyprintk";
+		//bootargs = "console=ttyPS0,115200 root=/dev/ram rw earlyprintk";
+		bootargs = "console=ttyPS0,115200 root=/dev/mmcblk0p2 rw earlyprintk rootfstype=ext4 rootwait devtmpfs.mount=1";
 		linux,stdout-path = "/amba@0/serial@e0001000";
 	} ;
 	cpus {
@@ -59,13 +60,48 @@
 	} ;
 	ps7_ddr_0: memory@0 {
 		device_type = "memory";
-		reg = <0x0 0x40000000>;
+		//reg = <0x0 0x40000000>;
+		reg = <0x0 0x39000000>;
 	} ;
 	ps7_axi_interconnect_0: amba@0 {
 		#address-cells = <1>;
 		#size-cells = <1>;
 		compatible = "xlnx,ps7-axi-interconnect-1.00.a", "simple-bus";
 		ranges ;
+		axi_dma_0: axi-dma@40400000 {
+			compatible = "xlnx,axi-dma", "xlnx,axi-dma-6.03.a", "xlnx,axi-dma-1.00.a";
+			interrupt-parent = <&ps7_scugic_0>;
+			interrupts = < 0 59 4 0 58 4 >;
+			reg = < 0x40400000 0x10000 >;
+			xlnx,dlytmr-resolution = <0x7d>;
+			xlnx,enable-multi-channel = <0x0>;
+			xlnx,generic = <0x1>;
+			xlnx,include-mm2s = <0x1>;
+			xlnx,include-mm2s-sf = <0x1>;
+			xlnx,include-s2mm = <0x1>;
+			xlnx,include-s2mm-sf = <0x1>;
+			xlnx,instance = "axi_dma_0";
+			xlnx,mm2s-burst-size = <0x10>;
+			xlnx,num-mm2s-channels = <0x1>;
+			xlnx,num-s2mm-channels = <0x1>;
+			xlnx,prmry-is-aclk-async = <0x0>;
+			xlnx,s2mm-burst-size = <0x10>;
+			xlnx,sg-include-desc-queue = <0x0>;
+			xlnx,sg-length-width = <0x0>;
+			xlnx,sg-use-stsapp-length = <0x0>;
+			dma-channel@40400000 {
+				compatible = "xlnx,axi-dma-mm2s-channel";
+				interrupts = < 0 59 4 >;
+				xlnx,datawidth = <0x20>;
+				xlnx,device-id = <0x0>;
+			} ;
+			dma-channel@40400030 {
+				compatible = "xlnx,axi-dma-s2mm-channel";
+				interrupts = < 0 58 4 >;
+				xlnx,datawidth = <0x20>;
+				xlnx,device-id = <0x0>;
+			} ;
+		} ;
 		ps7_afi_0: ps7-afi@f8008000 {
 			compatible = "xlnx,ps7-afi-1.00.a";
 			reg = <0xf8008000 0x1000>;

@@ -1,0 +1,5 @@
+02:00:34 INFO  : Processing command line option -hwspec /home/jared/Research/vivado_workspace/axi_loopback/sdk/design_1_wrapper.hdf.
+02:00:44 INFO  : Restoring global repository preferences: 
+		 /home/jared/Research/os/xilinx-device-tree
+02:02:57 INFO  : 'device-tree' is a board support package for an OS for which applications cannot be developed within SDK.
+02:02:57 INFO  : You can configure and build project 'device-tree_bsp_0' within SDK at will, but have to export it into the appropriate third party environment to develop applications.

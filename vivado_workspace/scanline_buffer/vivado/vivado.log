@@ -1,0 +1,457 @@
+#-----------------------------------------------------------
+# Vivado v2014.2 (64-bit)
+# SW Build 932637 on Wed Jun 11 13:08:52 MDT 2014
+# IP Build 924643 on Fri May 30 09:20:16 MDT 2014
+# Start of session at: Sun Sep 21 12:17:07 2014
+# Process ID: 13791
+# Log file: /home/jared/Research/vivado_workspace/scanline_buffer/vivado/vivado.log
+# Journal file: /home/jared/Research/vivado_workspace/scanline_buffer/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+CRITICAL WARNING: [Board 49-4] Problem parsing board_part file - /opt/Xilinx/Vivado/2014.2/data/boards/board_parts/zynq/zc706/1.0/board_part.xml, The board part 'xc7z045ffg900-2' is either not supported or invalid.
+CRITICAL WARNING: [Board 49-4] Problem parsing board_part file - /opt/Xilinx/Vivado/2014.2/data/boards/board_parts/zynq/zc706/0.9/board_part.xml, The board part 'xc7z045ffg900-2' is either not supported or invalid.
+CRITICAL WARNING: [Board 49-4] Problem parsing board_part file - /opt/Xilinx/Vivado/2014.2/data/boards/board_parts/kintex7/kc705/1.0/board_part.xml, The board part 'xc7k325tffg900-2' is either not supported or invalid.
+CRITICAL WARNING: [Board 49-4] Problem parsing board_part file - /opt/Xilinx/Vivado/2014.2/data/boards/board_parts/kintex7/kc705/0.9/board_part.xml, The board part 'xc7k325tffg900-2' is either not supported or invalid.
+create_project project_1 . -part xc7z020clg484-1
+set_property board_part xilinx.com:zc702:part0:1.0 [current_project]
+add_files -norecurse /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+remove_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v
+import_files -force -norecurse /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+set_property top scanline_buffer_v1_0 [current_fileset]
+launch_runs synth_1
+INFO: [HDL 9-1654] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v" into library work [/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v:1]
+WARNING: [filemgmt 20-1763] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v]
+[Sun Sep 21 12:38:50 2014] Launched synth_1...
+Run output will be captured here: /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.runs/synth_1/runme.log
+close [ open /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_tb.v w ]
+add_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_tb.v
+update_compile_order -fileset sources_1
+remove_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_tb.v
+import_files -norecurse /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_tb.v
+update_compile_order -fileset sources_1
+remove_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v
+import_files -force -norecurse /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_tb.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-1654] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v" into library work [/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v:1]
+INFO: [HDL 9-1654] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v" into library work [/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v:1]
+WARNING: [filemgmt 20-1763] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v]
+WARNING: [filemgmt 20-1763] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v]
+[Sun Sep 21 12:55:43 2014] Launched synth_1...
+Run output will be captured here: /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.runs/synth_1/runme.log
+launch_xsim -simset sim_1 -mode behavioral
+INFO: [Runs 36-130] *** Running xelab
+    with args "-m64 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot scanline_buffer_tb_behav --prj /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/scanline_buffer_tb.prj   xil_defaultlib.scanline_buffer_tb   xil_defaultlib.glbl"
+Vivado Simulator 2014.2
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2014.2/bin/unwrapped/lnx64.o/xelab --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot scanline_buffer_tb_behav --prj /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/scanline_buffer_tb.prj xil_defaultlib.scanline_buffer_tb xil_defaultlib.glbl 
+Multi-threading is on. Using 2 slave threads.
+Determining compilation order of HDL files.
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scanline_buffer_v1_0
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scanline_buffer_tb
+ERROR: [VRFC 10-91] clk is not declared [/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v:48]
+ERROR: [VRFC 10-1040] module scanline_buffer_tb ignored due to previous errors [/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v:2]
+ERROR: [Runs 36-25] xelab application returned error(s). Please see '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/xelab.log' file for more details.
+ERROR: [Common 17-69] Command failed: Failed to compile the design!
+launch_xsim -simset sim_1 -mode behavioral
+INFO: [Runs 36-130] *** Running xelab
+    with args "-m64 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot scanline_buffer_tb_behav --prj /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/scanline_buffer_tb.prj   xil_defaultlib.scanline_buffer_tb   xil_defaultlib.glbl"
+Vivado Simulator 2014.2
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2014.2/bin/unwrapped/lnx64.o/xelab --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot scanline_buffer_tb_behav --prj /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/scanline_buffer_tb.prj xil_defaultlib.scanline_buffer_tb xil_defaultlib.glbl 
+Multi-threading is on. Using 2 slave threads.
+Determining compilation order of HDL files.
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scanline_buffer_v1_0
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scanline_buffer_tb
+ERROR: [VRFC 10-91] clk is not declared [/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v:48]
+ERROR: [VRFC 10-1040] module scanline_buffer_tb ignored due to previous errors [/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v:2]
+ERROR: [Runs 36-25] xelab application returned error(s). Please see '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/xelab.log' file for more details.
+ERROR: [Common 17-69] Command failed: Failed to compile the design!
+remove_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+import_files -force -norecurse /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_tb.v
+launch_xsim -simset sim_1 -mode behavioral
+INFO: [Runs 36-130] *** Running xelab
+    with args "-m64 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot scanline_buffer_tb_behav --prj /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/scanline_buffer_tb.prj   xil_defaultlib.scanline_buffer_tb   xil_defaultlib.glbl"
+Vivado Simulator 2014.2
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2014.2/bin/unwrapped/lnx64.o/xelab --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot scanline_buffer_tb_behav --prj /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/scanline_buffer_tb.prj xil_defaultlib.scanline_buffer_tb xil_defaultlib.glbl 
+Multi-threading is on. Using 2 slave threads.
+Determining compilation order of HDL files.
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scanline_buffer_tb
+INFO: [VRFC 10-165] Analyzing Verilog file "/opt/Xilinx/Vivado/2014.2/data/verilog/src/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+Starting static elaboration
+ERROR: [VRFC 10-2063] Module <scanline_buffer_v1_0> not found while processing module instance <dut> [/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v:14]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+ERROR: [Runs 36-25] xelab application returned error(s). Please see '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/xelab.log' file for more details.
+ERROR: [Common 17-69] Command failed: Failed to compile the design!
+import_files -force -norecurse /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v
+update_compile_order -fileset sources_1
+launch_xsim -simset sim_1 -mode behavioral
+INFO: [Runs 36-130] *** Running xelab
+    with args "-m64 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot scanline_buffer_tb_behav --prj /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/scanline_buffer_tb.prj   xil_defaultlib.scanline_buffer_tb   xil_defaultlib.glbl"
+Vivado Simulator 2014.2
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2014.2/bin/unwrapped/lnx64.o/xelab --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot scanline_buffer_tb_behav --prj /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/scanline_buffer_tb.prj xil_defaultlib.scanline_buffer_tb xil_defaultlib.glbl 
+Multi-threading is on. Using 2 slave threads.
+Determining compilation order of HDL files.
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scanline_buffer_v1_0
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scanline_buffer_tb
+INFO: [VRFC 10-165] Analyzing Verilog file "/opt/Xilinx/Vivado/2014.2/data/verilog/src/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.scanline_buffer_v1_0
+Compiling module xil_defaultlib.scanline_buffer_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot scanline_buffer_tb_behav
+INFO: [Runs 36-26] xelab completed.
+INFO: [Vivado 12-1390] *** Running xsim
+    with args "scanline_buffer_tb_behav -key {Behavioral:sim_1:Functional:scanline_buffer_tb} -tclbatch {scanline_buffer_tb.tcl} -log {scanline_buffer_tb_behav.log}"
+Vivado Simulator 2014.2
+Time resolution is 1 ps
+INFO: [Vivado 12-1395] XSim completed. Design snapshot 'scanline_buffer_tb_behav' loaded.
+INFO: [Vivado 12-3703] XSim simulation ran for 1000ns
+run 100 us
+run 1 us
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 1 us
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+update_files -from_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_tb.v -to_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v -filesets [get_filesets *]
+INFO: [filemgmt 20-762] Replacing file '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v' with file '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_tb.v'.
+INFO: [filemgmt 20-1080] Importing file from '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_tb.v' to '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v'.
+launch_xsim -simset sim_1 -mode behavioral
+INFO: [Runs 36-130] *** Running xelab
+    with args "-m64 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot scanline_buffer_tb_behav --prj /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/scanline_buffer_tb.prj   xil_defaultlib.scanline_buffer_tb   xil_defaultlib.glbl"
+Vivado Simulator 2014.2
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2014.2/bin/unwrapped/lnx64.o/xelab --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot scanline_buffer_tb_behav --prj /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/scanline_buffer_tb.prj xil_defaultlib.scanline_buffer_tb xil_defaultlib.glbl 
+Multi-threading is on. Using 2 slave threads.
+Determining compilation order of HDL files.
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scanline_buffer_v1_0
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scanline_buffer_tb
+INFO: [VRFC 10-165] Analyzing Verilog file "/opt/Xilinx/Vivado/2014.2/data/verilog/src/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.scanline_buffer_v1_0
+Compiling module xil_defaultlib.scanline_buffer_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot scanline_buffer_tb_behav
+INFO: [Runs 36-26] xelab completed.
+INFO: [Vivado 12-1390] *** Running xsim
+    with args "scanline_buffer_tb_behav -key {Behavioral:sim_1:Functional:scanline_buffer_tb} -tclbatch {scanline_buffer_tb.tcl} -log {scanline_buffer_tb_behav.log}"
+Vivado Simulator 2014.2
+Time resolution is 1 ps
+INFO: [Vivado 12-1395] XSim completed. Design snapshot 'scanline_buffer_tb_behav' loaded.
+INFO: [Vivado 12-3703] XSim simulation ran for 1000ns
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 500 ps
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 500 ns
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 500 ns
+add_wave {{/scanline_buffer_tb/dut}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 500 ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+update_files -from_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v -to_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v -filesets [get_filesets *]
+INFO: [filemgmt 20-762] Replacing file '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v' with file '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v'.
+INFO: [filemgmt 20-1080] Importing file from '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v' to '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v'.
+launch_xsim -simset sim_1 -mode behavioral
+INFO: [Runs 36-130] *** Running xelab
+    with args "-m64 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot scanline_buffer_tb_behav --prj /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/scanline_buffer_tb.prj   xil_defaultlib.scanline_buffer_tb   xil_defaultlib.glbl"
+Vivado Simulator 2014.2
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2014.2/bin/unwrapped/lnx64.o/xelab --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot scanline_buffer_tb_behav --prj /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/scanline_buffer_tb.prj xil_defaultlib.scanline_buffer_tb xil_defaultlib.glbl 
+Multi-threading is on. Using 2 slave threads.
+Determining compilation order of HDL files.
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scanline_buffer_v1_0
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scanline_buffer_tb
+INFO: [VRFC 10-165] Analyzing Verilog file "/opt/Xilinx/Vivado/2014.2/data/verilog/src/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.scanline_buffer_v1_0
+Compiling module xil_defaultlib.scanline_buffer_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot scanline_buffer_tb_behav
+INFO: [Runs 36-26] xelab completed.
+INFO: [Vivado 12-1390] *** Running xsim
+    with args "scanline_buffer_tb_behav -key {Behavioral:sim_1:Functional:scanline_buffer_tb} -tclbatch {scanline_buffer_tb.tcl} -log {scanline_buffer_tb_behav.log}"
+Vivado Simulator 2014.2
+Time resolution is 1 ps
+INFO: [Vivado 12-1395] XSim completed. Design snapshot 'scanline_buffer_tb_behav' loaded.
+INFO: [Vivado 12-3703] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+update_files -from_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_tb.v -to_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v -filesets [get_filesets *]
+INFO: [filemgmt 20-762] Replacing file '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v' with file '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_tb.v'.
+INFO: [filemgmt 20-1080] Importing file from '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_tb.v' to '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v'.
+launch_xsim -simset sim_1 -mode behavioral
+INFO: [Runs 36-130] *** Running xelab
+    with args "-m64 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot scanline_buffer_tb_behav --prj /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/scanline_buffer_tb.prj   xil_defaultlib.scanline_buffer_tb   xil_defaultlib.glbl"
+Vivado Simulator 2014.2
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2014.2/bin/unwrapped/lnx64.o/xelab --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot scanline_buffer_tb_behav --prj /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/scanline_buffer_tb.prj xil_defaultlib.scanline_buffer_tb xil_defaultlib.glbl 
+Multi-threading is on. Using 2 slave threads.
+Determining compilation order of HDL files.
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scanline_buffer_v1_0
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scanline_buffer_tb
+INFO: [VRFC 10-165] Analyzing Verilog file "/opt/Xilinx/Vivado/2014.2/data/verilog/src/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.scanline_buffer_v1_0
+Compiling module xil_defaultlib.scanline_buffer_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot scanline_buffer_tb_behav
+INFO: [Runs 36-26] xelab completed.
+INFO: [Vivado 12-1390] *** Running xsim
+    with args "scanline_buffer_tb_behav -key {Behavioral:sim_1:Functional:scanline_buffer_tb} -tclbatch {scanline_buffer_tb.tcl} -log {scanline_buffer_tb_behav.log}"
+Vivado Simulator 2014.2
+Time resolution is 1 ps
+INFO: [Vivado 12-1395] XSim completed. Design snapshot 'scanline_buffer_tb_behav' loaded.
+INFO: [Vivado 12-3703] XSim simulation ran for 1000ns
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 500 ns
+add_wave {{/scanline_buffer_tb/dut}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 500 ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+update_files -from_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_tb.v -to_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v -filesets [get_filesets *]
+INFO: [filemgmt 20-762] Replacing file '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v' with file '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_tb.v'.
+INFO: [filemgmt 20-1080] Importing file from '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_tb.v' to '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v'.
+update_files -from_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v -to_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v -filesets [get_filesets *]
+INFO: [filemgmt 20-762] Replacing file '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v' with file '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v'.
+INFO: [filemgmt 20-1080] Importing file from '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v' to '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v'.
+launch_xsim -simset sim_1 -mode behavioral
+INFO: [Runs 36-130] *** Running xelab
+    with args "-m64 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot scanline_buffer_tb_behav --prj /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/scanline_buffer_tb.prj   xil_defaultlib.scanline_buffer_tb   xil_defaultlib.glbl"
+Vivado Simulator 2014.2
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2014.2/bin/unwrapped/lnx64.o/xelab --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot scanline_buffer_tb_behav --prj /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/scanline_buffer_tb.prj xil_defaultlib.scanline_buffer_tb xil_defaultlib.glbl 
+Multi-threading is on. Using 2 slave threads.
+Determining compilation order of HDL files.
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scanline_buffer_v1_0
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scanline_buffer_tb
+INFO: [VRFC 10-165] Analyzing Verilog file "/opt/Xilinx/Vivado/2014.2/data/verilog/src/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.scanline_buffer_v1_0
+Compiling module xil_defaultlib.scanline_buffer_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot scanline_buffer_tb_behav
+INFO: [Runs 36-26] xelab completed.
+INFO: [Vivado 12-1390] *** Running xsim
+    with args "scanline_buffer_tb_behav -key {Behavioral:sim_1:Functional:scanline_buffer_tb} -tclbatch {scanline_buffer_tb.tcl} -log {scanline_buffer_tb_behav.log}"
+Vivado Simulator 2014.2
+Time resolution is 1 ps
+INFO: [Vivado 12-1395] XSim completed. Design snapshot 'scanline_buffer_tb_behav' loaded.
+INFO: [Vivado 12-3703] XSim simulation ran for 1000ns
+add_wave {{/scanline_buffer_tb/dut}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 500 ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+update_files -from_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v -to_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v -filesets [get_filesets *]
+INFO: [filemgmt 20-762] Replacing file '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v' with file '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v'.
+INFO: [filemgmt 20-1080] Importing file from '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v' to '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v'.
+launch_xsim -simset sim_1 -mode behavioral
+INFO: [Runs 36-130] *** Running xelab
+    with args "-m64 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot scanline_buffer_tb_behav --prj /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/scanline_buffer_tb.prj   xil_defaultlib.scanline_buffer_tb   xil_defaultlib.glbl"
+Vivado Simulator 2014.2
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2014.2/bin/unwrapped/lnx64.o/xelab --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot scanline_buffer_tb_behav --prj /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/scanline_buffer_tb.prj xil_defaultlib.scanline_buffer_tb xil_defaultlib.glbl 
+Multi-threading is on. Using 2 slave threads.
+Determining compilation order of HDL files.
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scanline_buffer_v1_0
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scanline_buffer_tb
+INFO: [VRFC 10-165] Analyzing Verilog file "/opt/Xilinx/Vivado/2014.2/data/verilog/src/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.scanline_buffer_v1_0
+Compiling module xil_defaultlib.scanline_buffer_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot scanline_buffer_tb_behav
+INFO: [Runs 36-26] xelab completed.
+INFO: [Vivado 12-1390] *** Running xsim
+    with args "scanline_buffer_tb_behav -key {Behavioral:sim_1:Functional:scanline_buffer_tb} -tclbatch {scanline_buffer_tb.tcl} -log {scanline_buffer_tb_behav.log}"
+Vivado Simulator 2014.2
+Time resolution is 1 ps
+INFO: [Vivado 12-1395] XSim completed. Design snapshot 'scanline_buffer_tb_behav' loaded.
+INFO: [Vivado 12-3703] XSim simulation ran for 1000ns
+add_wave {{/scanline_buffer_tb/dut}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 500 ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+update_files -from_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v -to_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v -filesets [get_filesets *]
+INFO: [filemgmt 20-762] Replacing file '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v' with file '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v'.
+INFO: [filemgmt 20-1080] Importing file from '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v' to '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v'.
+launch_xsim -simset sim_1 -mode behavioral
+INFO: [Runs 36-130] *** Running xelab
+    with args "-m64 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot scanline_buffer_tb_behav --prj /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/scanline_buffer_tb.prj   xil_defaultlib.scanline_buffer_tb   xil_defaultlib.glbl"
+Vivado Simulator 2014.2
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2014.2/bin/unwrapped/lnx64.o/xelab --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot scanline_buffer_tb_behav --prj /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/scanline_buffer_tb.prj xil_defaultlib.scanline_buffer_tb xil_defaultlib.glbl 
+Multi-threading is on. Using 2 slave threads.
+Determining compilation order of HDL files.
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scanline_buffer_v1_0
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scanline_buffer_tb
+INFO: [VRFC 10-165] Analyzing Verilog file "/opt/Xilinx/Vivado/2014.2/data/verilog/src/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.scanline_buffer_v1_0
+Compiling module xil_defaultlib.scanline_buffer_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot scanline_buffer_tb_behav
+INFO: [Runs 36-26] xelab completed.
+INFO: [Vivado 12-1390] *** Running xsim
+    with args "scanline_buffer_tb_behav -key {Behavioral:sim_1:Functional:scanline_buffer_tb} -tclbatch {scanline_buffer_tb.tcl} -log {scanline_buffer_tb_behav.log}"
+Vivado Simulator 2014.2
+Time resolution is 1 ps
+INFO: [Vivado 12-1395] XSim completed. Design snapshot 'scanline_buffer_tb_behav' loaded.
+INFO: [Vivado 12-3703] XSim simulation ran for 1000ns
+add_wave {{/scanline_buffer_tb/dut}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 500 ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+update_files -from_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v -to_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v -filesets [get_filesets *]
+INFO: [filemgmt 20-762] Replacing file '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v' with file '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v'.
+INFO: [filemgmt 20-1080] Importing file from '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v' to '/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v'.
+launch_xsim -simset sim_1 -mode behavioral
+INFO: [Runs 36-130] *** Running xelab
+    with args "-m64 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot scanline_buffer_tb_behav --prj /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/scanline_buffer_tb.prj   xil_defaultlib.scanline_buffer_tb   xil_defaultlib.glbl"
+Vivado Simulator 2014.2
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2014.2/bin/unwrapped/lnx64.o/xelab --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot scanline_buffer_tb_behav --prj /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.sim/sim_1/behav/scanline_buffer_tb.prj xil_defaultlib.scanline_buffer_tb xil_defaultlib.glbl 
+Multi-threading is on. Using 2 slave threads.
+Determining compilation order of HDL files.
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scanline_buffer_v1_0
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scanline_buffer_tb
+INFO: [VRFC 10-165] Analyzing Verilog file "/opt/Xilinx/Vivado/2014.2/data/verilog/src/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.scanline_buffer_v1_0
+Compiling module xil_defaultlib.scanline_buffer_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot scanline_buffer_tb_behav
+INFO: [Runs 36-26] xelab completed.
+INFO: [Vivado 12-1390] *** Running xsim
+    with args "scanline_buffer_tb_behav -key {Behavioral:sim_1:Functional:scanline_buffer_tb} -tclbatch {scanline_buffer_tb.tcl} -log {scanline_buffer_tb_behav.log}"
+Vivado Simulator 2014.2
+Time resolution is 1 ps
+INFO: [Vivado 12-1395] XSim completed. Design snapshot 'scanline_buffer_tb_behav' loaded.
+INFO: [Vivado 12-3703] XSim simulation ran for 1000ns
+add_wave {{/scanline_buffer_tb/dut}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 500 ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-1654] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v" into library work [/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v:1]
+INFO: [HDL 9-1654] Analyzing Verilog file "/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v" into library work [/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v:1]
+WARNING: [filemgmt 20-1763] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v]
+WARNING: [filemgmt 20-1763] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v]
+[Sun Sep 21 14:16:54 2014] Launched synth_1...
+Run output will be captured here: /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.runs/synth_1/runme.log
+launch_runs impl_1
+[Sun Sep 21 14:18:19 2014] Launched impl_1...
+Run output will be captured here: /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.runs/impl_1/runme.log
+import_files -force -norecurse /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v
+update_compile_order -fileset sources_1
+remove_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+set_property top scanline_buffer_v1_0 [current_fileset]
+reset_run synth_1
+launch_runs impl_1
+WARNING: [filemgmt 20-1763] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v]
+[Sun Sep 21 14:20:00 2014] Launched synth_1...
+Run output will be captured here: /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.runs/synth_1/runme.log
+[Sun Sep 21 14:20:01 2014] Launched impl_1...
+Run output will be captured here: /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.runs/impl_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Sep 22 11:37:41 2014...

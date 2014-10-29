@@ -1,0 +1,4 @@
+Vivado Simulator 2014.2
+Time resolution is 1 ps
+$finish called at time : 515 ns : File "/home/jared/Research/vivado_workspace/jmb_ip/jmb_3x3_filter_tb.v" Line 99
+$finish called at time : 515 ns : File "/home/jared/Research/vivado_workspace/jmb_ip/jmb_3x3_filter_tb.v" Line 99

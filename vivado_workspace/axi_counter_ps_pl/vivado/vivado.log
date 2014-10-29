@@ -1,0 +1,183 @@
+#-----------------------------------------------------------
+# Vivado v2014.2 (64-bit)
+# SW Build 932637 on Wed Jun 11 13:08:52 MDT 2014
+# IP Build 924643 on Fri May 30 09:20:16 MDT 2014
+# Start of session at: Wed Sep 10 19:48:45 2014
+# Process ID: 27280
+# Log file: /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/vivado.log
+# Journal file: /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+CRITICAL WARNING: [Board 49-4] Problem parsing board_part file - /opt/Xilinx/Vivado/2014.2/data/boards/board_parts/zynq/zc706/1.0/board_part.xml, The board part 'xc7z045ffg900-2' is either not supported or invalid.
+CRITICAL WARNING: [Board 49-4] Problem parsing board_part file - /opt/Xilinx/Vivado/2014.2/data/boards/board_parts/zynq/zc706/0.9/board_part.xml, The board part 'xc7z045ffg900-2' is either not supported or invalid.
+CRITICAL WARNING: [Board 49-4] Problem parsing board_part file - /opt/Xilinx/Vivado/2014.2/data/boards/board_parts/kintex7/kc705/1.0/board_part.xml, The board part 'xc7k325tffg900-2' is either not supported or invalid.
+CRITICAL WARNING: [Board 49-4] Problem parsing board_part file - /opt/Xilinx/Vivado/2014.2/data/boards/board_parts/kintex7/kc705/0.9/board_part.xml, The board part 'xc7k325tffg900-2' is either not supported or invalid.
+create_project project_1 . -part xc7z020clg484-1
+set_property board_part xilinx.com:zc702:part0:1.0 [current_project]
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2014.2/data/ip'.
+create_bd_design "design_1"
+Wrote  : </home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+set_property ip_repo_paths  /home/jared/Research/vivado_workspace/ip [current_fileset]
+update_ip_catalog
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/jared/Research/vivado_workspace/ip'.
+startgroup
+create_bd_cell -type ip -vlnv RIT:user:jmb_axi_counter:1.0 jmb_axi_counter_0
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_dma:7.1 axi_dma_0
+endgroup
+set_property location {1 197 262} [get_bd_cells axi_dma_0]
+set_property location {1 181 110} [get_bd_cells axi_dma_0]
+startgroup
+set_property -dict [list CONFIG.c_include_sg {0} CONFIG.c_include_mm2s {0}] [get_bd_cells axi_dma_0]
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.4 processing_system7_0
+endgroup
+regenerate_bd_layout
+apply_bd_automation -rule xilinx.com:bd_rule:processing_system7 -config {make_external "FIXED_IO, DDR" apply_board_preset "1" Master "Disable" Slave "Disable" }  [get_bd_cells processing_system7_0]
+apply_bd_automation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 4804.941 ; gain = 21.188
+startgroup
+set_property -dict [list CONFIG.PCW_USE_S_AXI_HP0 {1} CONFIG.PCW_TTC0_PERIPHERAL_ENABLE {0}] [get_bd_cells processing_system7_0]
+endgroup
+regenerate_bd_layout
+startgroup
+set_property -dict [list CONFIG.PCW_USE_FABRIC_INTERRUPT {1} CONFIG.PCW_IRQ_F2P_INTR {1}] [get_bd_cells processing_system7_0]
+endgroup
+connect_bd_net [get_bd_pins axi_dma_0/s2mm_introut] [get_bd_pins processing_system7_0/IRQ_F2P]
+connect_bd_intf_net [get_bd_intf_pins jmb_axi_counter_0/M00_AXIS] [get_bd_intf_pins axi_dma_0/S_AXIS_S2MM]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0
+endgroup
+set_property location {1 36 482} [get_bd_cells xlconstant_0]
+set_property -dict [list CONFIG.CONST_WIDTH {4}] [get_bd_cells xlconstant_0]
+connect_bd_net [get_bd_pins xlconstant_0/dout] [get_bd_pins axi_dma_0/s_axis_s2mm_tkeep]
+WARNING: [BD 41-1306] The connection to interface pin /axi_dma_0/s_axis_s2mm_tkeep is being overridden by the user. This pin will not be connected as a part of interface connection S_AXIS_S2MM
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins axi_dma_0/S_AXI_LITE]
+</axi_dma_0/S_AXI_LITE/Reg> is being mapped into </processing_system7_0/Data> at <0x40400000[ 64K ]>
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/axi_dma_0/M_AXI_S2MM" Clk "Auto" }  [get_bd_intf_pins processing_system7_0/S_AXI_HP0]
+</processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM> is being mapped into </axi_dma_0/Data_S2MM> at <0x00000000[ 1G ]>
+regenerate_bd_layout
+connect_bd_net -net [get_bd_nets processing_system7_0_FCLK_CLK0] [get_bd_pins jmb_axi_counter_0/m00_axis_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0]
+connect_bd_net -net [get_bd_nets rst_processing_system7_0_50M_peripheral_aresetn] [get_bd_pins jmb_axi_counter_0/m00_axis_aresetn] [get_bd_pins rst_processing_system7_0_50M/peripheral_aresetn]
+regenerate_bd_layout
+save_bd_design
+Wrote  : </home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+make_wrapper -files [get_files /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd] -top
+INFO: [BD 41-237] Bus Interface property HAS_TSTRB does not match between /axi_dma_0/S_AXIS_S2MM(0) and /jmb_axi_counter_0/M00_AXIS(1)
+INFO: [BD 41-237] Bus Interface property HAS_TKEEP does not match between /axi_dma_0/S_AXIS_S2MM(1) and /jmb_axi_counter_0/M00_AXIS(0)
+INFO: [BD 41-237] Bus Interface property NUM_WRITE_OUTSTANDING does not match between /axi_mem_intercon/s00_couplers/auto_us/S_AXI(8) and /axi_mem_intercon/s00_couplers/auto_pc/M_AXI(2)
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /processing_system7_0/S_AXI_HP0(READ_WRITE) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(WRITE_ONLY)
+Exporting to file /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Verilog Output written to : design_1.v
+Verilog Output written to : design_1_wrapper.v
+Wrote  : </home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+make_wrapper: Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 4862.098 ; gain = 1.828
+add_files -norecurse /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+generate_target all [get_files  /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd]
+INFO: [BD 41-237] Bus Interface property HAS_TSTRB does not match between /axi_dma_0/S_AXIS_S2MM(0) and /jmb_axi_counter_0/M00_AXIS(1)
+INFO: [BD 41-237] Bus Interface property HAS_TKEEP does not match between /axi_dma_0/S_AXIS_S2MM(1) and /jmb_axi_counter_0/M00_AXIS(0)
+INFO: [BD 41-237] Bus Interface property NUM_WRITE_OUTSTANDING does not match between /axi_mem_intercon/s00_couplers/auto_us/S_AXI(8) and /axi_mem_intercon/s00_couplers/auto_pc/M_AXI(2)
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /processing_system7_0/S_AXI_HP0(READ_WRITE) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(WRITE_ONLY)
+Exporting to file /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Verilog Output written to : design_1.v
+Verilog Output written to : design_1_wrapper.v
+Wrote  : </home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_jmb_axi_counter_0_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_jmb_axi_counter_0_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_jmb_axi_counter_0_0'...
+INFO: [BD 41-1029] Generation completed for the IP Integrator block jmb_axi_counter_0 .
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_axi_dma_0_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_axi_dma_0_0'...
+WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'design_1_axi_dma_0_0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_axi_dma_0_0'...
+WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'design_1_axi_dma_0_0' does not support 'Verilog Simulation' output products, delivering 'VHDL Simulation' output products instead.
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'design_1_axi_dma_0_0'...
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_processing_system7_0_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_processing_system7_0_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_processing_system7_0_0'...
+WARNING: [xilinx.com:ip:processing_system7:5.4-1] design_1_processing_system7_0_0: The Zynq BFM requires an AXI BFM license to run. Please ensure that you have purchased and setup the AXI BFM license prior to running simulation with this block. Please contact your Xilinx sales office for more information on purchasing this license
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'design_1_processing_system7_0_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'design_1_processing_system7_0_0'...
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_xlconstant_0_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_xlconstant_0_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_xlconstant_0_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'design_1_xlconstant_0_0'...
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_rst_processing_system7_0_50M_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_rst_processing_system7_0_50M_0'...
+WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'design_1_rst_processing_system7_0_50M_0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_rst_processing_system7_0_50M_0'...
+WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'design_1_rst_processing_system7_0_50M_0' does not support 'Verilog Simulation' output products, delivering 'VHDL Simulation' output products instead.
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'design_1_rst_processing_system7_0_50M_0'...
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_processing_system7_0_50M .
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_auto_pc_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_pc_0'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_auto_pc_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'design_1_auto_pc_0'...
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/s00_couplers/auto_pc .
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_auto_pc_1'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_pc_1'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_auto_pc_1'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'design_1_auto_pc_1'...
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_pc .
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'design_1_auto_us_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_us_0'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'design_1_auto_us_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'design_1_auto_us_0'...
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us .
+generate_target: Time (s): cpu = 00:01:20 ; elapsed = 00:01:24 . Memory (MB): peak = 4915.816 ; gain = 45.719
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+WARNING: [filemgmt 20-1763] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v]
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_jmb_axi_counter_0_0/design_1_jmb_axi_counter_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_0_0/design_1_xlconstant_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_axi_periph_0/design_1_processing_system7_0_axi_periph_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_50M_0/design_1_rst_processing_system7_0_50M_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_mem_intercon_0/design_1_axi_mem_intercon_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_jmb_axi_counter_0_0/design_1_jmb_axi_counter_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_0_0/design_1_xlconstant_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_axi_periph_0/design_1_processing_system7_0_axi_periph_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_50M_0/design_1_rst_processing_system7_0_50M_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_mem_intercon_0/design_1_axi_mem_intercon_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0.xci
+[Wed Sep 10 20:27:25 2014] Launched synth_1...
+Run output will be captured here: /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.runs/synth_1/runme.log
+[Wed Sep 10 20:27:25 2014] Launched impl_1...
+Run output will be captured here: /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.runs/impl_1/runme.log
+file mkdir /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.sdk
+file copy -force /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.runs/impl_1/design_1_wrapper.sysdef /home/jared/Research/vivado_workspace/axi_counter_ps_pl/sdk/design_1_wrapper.hdf
+
+launch_sdk -workspace /home/jared/Research/vivado_workspace/axi_counter_ps_pl/sdk -hwspec /home/jared/Research/vivado_workspace/axi_counter_ps_pl/sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace /home/jared/Research/vivado_workspace/axi_counter_ps_pl/sdk -hwspec /home/jared/Research/vivado_workspace/axi_counter_ps_pl/sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+file copy -force /home/jared/Research/vivado_workspace/axi_counter_ps_pl/vivado/project_1.runs/impl_1/design_1_wrapper.bit /home/jared/Research/vivado_workspace/axi_counter_ps_pl/sdk/axi_counter_ps_pl.bit
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Sep 10 23:24:42 2014...

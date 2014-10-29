@@ -1,0 +1,6 @@
+21:46:24 **** Build of project device-tree_bsp_0 ****
+make -k all 
+make: Nothing to be done for `all'.
+
+21:46:24 Build Finished (took 65ms)
+

@@ -1,0 +1,12 @@
+!SESSION 2014-09-17 17:47:25.624 -----------------------------------------------
+eclipse.buildId=2014.2
+java.version=1.7.0_40
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -data /home/jared/Research/os/zynq-fsbl-vanilla -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-09-17 17:48:29.661
+!MESSAGE Indexed 'zynq-fsbl-vanilla1' (12 sources, 58 headers) in 2.26 sec: 1,615 declarations; 7,221 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-09-17 17:48:32.405
+!MESSAGE Indexed 'zynq-fsbl-vanilla1_bsp' (132 sources, 152 headers) in 2.69 sec: 6,876 declarations; 33,336 references; 65 unresolved inclusions; 9 syntax errors; 38 unresolved names (0.09%)

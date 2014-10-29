@@ -1,0 +1,26 @@
+Vivado Simulator 2014.2
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2014.2/bin/unwrapped/lnx64.o/xelab --debug typical --relax --include /home/jared/Research/vivado_workspace/jmb_ip -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot jmb_3x3_filter_tb_behav --prj /home/jared/Research/vivado_workspace/project_1.sim/sim_1/behav/jmb_3x3_filter_tb.prj xil_defaultlib.jmb_3x3_filter_tb xil_defaultlib.glbl 
+Multi-threading is on. Using 2 slave threads.
+Determining compilation order of HDL files.
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/jmb_ip/jmb_3x3_filter_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module jmb_fifo
+INFO: [VRFC 10-311] analyzing module jmb_3x3_window
+INFO: [VRFC 10-311] analyzing module jmb_3x3_filter
+INFO: [VRFC 10-311] analyzing module jmb_3x3_filter_tb
+INFO: [VRFC 10-165] Analyzing Verilog file "/opt/Xilinx/Vivado/2014.2/data/verilog/src/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/opt/Xilinx/Vivado/2014.2/data/verilog/src/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/opt/Xilinx/Vivado/2014.2/data/verilog/src/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.jmb_fifo(pixel_width=8,sl_width=...
+Compiling module xil_defaultlib.jmb_3x3_window(pixel_width=8,ima...
+Compiling module xil_defaultlib.jmb_3x3_filter(image_width=10,im...
+Compiling module xil_defaultlib.jmb_3x3_filter_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot jmb_3x3_filter_tb_behav

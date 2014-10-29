@@ -41,6 +41,7 @@ extern const Image IMAGE_INITIALIZER;           /* Initializer for image object 
 int ImageCleanup(Image* img);                  /* Cleans up an image object */
 
 int ImageRead(char* fileName, Image* img);      /* Reads in a TIFF image */
-int ImageWrite(char* fileName, Image* imt);     /* Writes out a TIFF image */
+int ImageWrite(char* fileName, Image* img);     /* Writes out a TIFF image */
+int ImageGenerateTest(Image *pImg, UINT width, UINT height);
 
 #endif // !_IMAGE_H_

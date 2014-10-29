@@ -1,0 +1,49 @@
+#-----------------------------------------------------------
+# Vivado v2014.2 (64-bit)
+# SW Build 932637 on Wed Jun 11 13:08:52 MDT 2014
+# IP Build 924643 on Fri May 30 09:20:16 MDT 2014
+# Start of session at: Mon Oct 27 01:56:29 2014
+# Process ID: 6320
+# Log file: /home/jared/Research/vivado_workspace/axi_3x3_filter/vivado/vivado.log
+# Journal file: /home/jared/Research/vivado_workspace/axi_3x3_filter/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project project_1.xpr
+open_bd_design {/home/jared/Research/vivado_workspace/axi_3x3_filter/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd}
+startgroup
+set_property -dict [list CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {250} CONFIG.PCW_EN_CLK0_PORT {0}] [get_bd_cells processing_system7_0]
+endgroup
+save_bd_design
+set_property location {5 1072 709} [get_bd_cells jmb_axi_filter_3x3_0]
+startgroup
+set_property -dict [list CONFIG.C_IMAGE_WIDTH {512}] [get_bd_cells jmb_axi_filter_3x3_0]
+endgroup
+save_bd_design
+reset_target all [get_files  /home/jared/Research/vivado_workspace/axi_3x3_filter/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd]
+generate_target all [get_files  /home/jared/Research/vivado_workspace/axi_3x3_filter/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd]
+startgroup
+set_property -dict [list CONFIG.PCW_EN_CLK0_PORT {1}] [get_bd_cells processing_system7_0]
+endgroup
+connect_bd_net -net [get_bd_nets processing_system7_0_FCLK_CLK0] [get_bd_pins processing_system7_0/FCLK_CLK0]
+save_bd_design
+generate_target all [get_files  /home/jared/Research/vivado_workspace/axi_3x3_filter/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+file copy -force /home/jared/Research/vivado_workspace/axi_3x3_filter/vivado/project_1.runs/impl_1/design_1_wrapper.bit /home/jared/Research/zynq_workspace/filter_sym_3x3/data/filter_3x3_512.bit
+startgroup
+set_property -dict [list CONFIG.C_IMAGE_WIDTH {1024}] [get_bd_cells jmb_axi_filter_3x3_0]
+endgroup
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+file copy -force /home/jared/Research/vivado_workspace/axi_3x3_filter/vivado/project_1.runs/impl_1/design_1_wrapper.bit /home/jared/Research/zynq_workspace/filter_sym_3x3/data/filter_1024.bit
+startgroup
+set_property -dict [list CONFIG.C_IMAGE_WIDTH {2048}] [get_bd_cells jmb_axi_filter_3x3_0]
+endgroup
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+file copy -force /home/jared/Research/vivado_workspace/axi_3x3_filter/vivado/project_1.runs/impl_1/design_1_wrapper.bit /home/jared/Research/zynq_workspace/filter_sym_3x3/data/filter_2048.bit

@@ -1,0 +1,58 @@
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.2 (lin64) Build 932637 Wed Jun 11 13:08:52 MDT 2014
+| Date         : Wed Sep 10 18:29:00 2014
+| Host         : jared-Lenovo running 64-bit Ubuntu 14.04.1 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+-----------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_jmb_axi_counter_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_jmb_axi_counter_0_0 (RIT:user:jmb_axi_counter:1.0) from (Rev. 3) to (Rev. 4)
+
+
+
+
+
+
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.2 (lin64) Build 932637 Wed Jun 11 13:08:52 MDT 2014
+| Date         : Wed Sep 10 18:25:00 2014
+| Host         : jared-Lenovo running 64-bit Ubuntu 14.04.1 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+-----------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_jmb_axi_counter_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_jmb_axi_counter_0_0 (RIT:user:jmb_axi_counter:1.0) from (Rev. 2) to (Rev. 3)
+
+
+
+
+
+
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.2 (lin64) Build 932637 Wed Jun 11 13:08:52 MDT 2014
+| Date         : Wed Sep 10 18:21:06 2014
+| Host         : jared-Lenovo running 64-bit Ubuntu 14.04.1 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+-----------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_jmb_axi_counter_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_jmb_axi_counter_0_0 (RIT:user:jmb_axi_counter:1.0) from (Rev. 1) to (Rev. 2)
+

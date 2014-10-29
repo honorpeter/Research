@@ -1,0 +1,914 @@
+#-----------------------------------------------------------
+# Vivado v2014.2 (64-bit)
+# SW Build 932637 on Wed Jun 11 13:08:52 MDT 2014
+# IP Build 924643 on Fri May 30 09:20:16 MDT 2014
+# Start of session at: Tue Sep 16 19:05:58 2014
+# Process ID: 8485
+# Log file: /home/jared/Research/vivado_workspace/axi_loopback/vivado/vivado.log
+# Journal file: /home/jared/Research/vivado_workspace/axi_loopback/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+CRITICAL WARNING: [Board 49-4] Problem parsing board_part file - /opt/Xilinx/Vivado/2014.2/data/boards/board_parts/zynq/zc706/1.0/board_part.xml, The board part 'xc7z045ffg900-2' is either not supported or invalid.
+CRITICAL WARNING: [Board 49-4] Problem parsing board_part file - /opt/Xilinx/Vivado/2014.2/data/boards/board_parts/zynq/zc706/0.9/board_part.xml, The board part 'xc7z045ffg900-2' is either not supported or invalid.
+CRITICAL WARNING: [Board 49-4] Problem parsing board_part file - /opt/Xilinx/Vivado/2014.2/data/boards/board_parts/kintex7/kc705/1.0/board_part.xml, The board part 'xc7k325tffg900-2' is either not supported or invalid.
+CRITICAL WARNING: [Board 49-4] Problem parsing board_part file - /opt/Xilinx/Vivado/2014.2/data/boards/board_parts/kintex7/kc705/0.9/board_part.xml, The board part 'xc7k325tffg900-2' is either not supported or invalid.
+create_project project_1 . -part xc7z020clg484-1
+set_property board_part xilinx.com:zc702:part0:1.0 [current_project]
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2014.2/data/ip'.
+create_bd_design "design_1"
+Wrote  : </home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+create_bd_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 4723.910 ; gain = 139.070
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_dma:7.1 axi_dma_0
+endgroup
+set_property location {1 66 158} [get_bd_cells axi_dma_0]
+set_property location {0.5 -167 134} [get_bd_cells axi_dma_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.4 processing_system7_0
+endgroup
+regenerate_bd_layout
+apply_bd_automation -rule xilinx.com:bd_rule:processing_system7 -config {make_external "FIXED_IO, DDR" apply_board_preset "1" Master "Disable" Slave "Disable" }  [get_bd_cells processing_system7_0]
+apply_bd_automation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 4790.547 ; gain = 10.000
+startgroup
+set_property -dict [list CONFIG.PCW_USE_S_AXI_HP0 {1} CONFIG.PCW_TTC0_PERIPHERAL_ENABLE {0}] [get_bd_cells processing_system7_0]
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/axi_dma_0/M_AXI_MM2S" Clk "Auto" }  [get_bd_intf_pins processing_system7_0/S_AXI_HP0]
+</processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM> is being mapped into </axi_dma_0/Data_MM2S> at <0x00000000[ 1G ]>
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Slave "/processing_system7_0/S_AXI_HP0" Clk "Auto" }  [get_bd_intf_pins axi_dma_0/M_AXI_S2MM]
+</processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM> is being mapped into </axi_dma_0/Data_S2MM> at <0x00000000[ 1G ]>
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins axi_dma_0/S_AXI_LITE]
+</axi_dma_0/S_AXI_LITE/Reg> is being mapped into </processing_system7_0/Data> at <0x40400000[ 64K ]>
+startgroup
+set_property -dict [list CONFIG.c_include_sg {0} CONFIG.c_sg_length_width {23}] [get_bd_cells axi_dma_0]
+endgroup
+connect_bd_intf_net [get_bd_intf_pins axi_dma_0/S_AXIS_S2MM] [get_bd_intf_pins axi_dma_0/M_AXIS_MM2S]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:c_counter_binary:12.0 c_counter_binary_0
+endgroup
+connect_bd_net -net [get_bd_nets processing_system7_0_FCLK_CLK0] [get_bd_pins c_counter_binary_0/CLK] [get_bd_pins processing_system7_0/FCLK_CLK0]
+startgroup
+create_bd_port -dir O -from 15 -to 0 -type data Q
+connect_bd_net [get_bd_pins /c_counter_binary_0/Q] [get_bd_ports Q]
+endgroup
+regenerate_bd_layout
+make_wrapper -files [get_files /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd] -top
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /axi_mem_intercon/xbar/S00_AXI(READ_WRITE) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(READ_ONLY)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon/xbar/S00_AXI(1) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon/xbar/S00_AXI(256) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /axi_mem_intercon/xbar/S01_AXI(READ_WRITE) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(WRITE_ONLY)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon/xbar/S01_AXI(1) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon/xbar/S01_AXI(256) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(8)
+Exporting to file /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_AWID'(6) to net 'axi_mem_intercon_M00_AXI_AWID'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_mem_intercon/M00_AXI_bid'(1) to net 'axi_mem_intercon_M00_AXI_BID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_WID'(6) to net 'axi_mem_intercon_M00_AXI_WID'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_mem_intercon/M00_AXI_rid'(1) to net 'axi_mem_intercon_M00_AXI_RID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_ARID'(6) to net 'axi_mem_intercon_M00_AXI_ARID'(1) - Only lower order bits will be connected.
+Verilog Output written to : design_1.v
+Verilog Output written to : design_1_wrapper.v
+Wrote  : </home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+make_wrapper: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 4885.547 ; gain = 24.656
+add_files -norecurse /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+save_bd_design
+Wrote  : </home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+launch_runs synth_1
+INFO: [HDL 9-1654] Analyzing Verilog file "/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library work [/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:1]
+INFO: [HDL 9-1654] Analyzing Verilog file "/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1.v" into library work [/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1.v:1]
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /axi_mem_intercon/xbar/S00_AXI(READ_WRITE) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(READ_ONLY)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon/xbar/S00_AXI(1) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon/xbar/S00_AXI(256) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /axi_mem_intercon/xbar/S01_AXI(READ_WRITE) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(WRITE_ONLY)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon/xbar/S01_AXI(1) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon/xbar/S01_AXI(256) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(8)
+Exporting to file /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_AWID'(6) to net 'axi_mem_intercon_M00_AXI_AWID'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_mem_intercon/M00_AXI_bid'(1) to net 'axi_mem_intercon_M00_AXI_BID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_WID'(6) to net 'axi_mem_intercon_M00_AXI_WID'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_mem_intercon/M00_AXI_rid'(1) to net 'axi_mem_intercon_M00_AXI_RID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_ARID'(6) to net 'axi_mem_intercon_M00_AXI_ARID'(1) - Only lower order bits will be connected.
+Verilog Output written to : design_1.v
+Verilog Output written to : design_1_wrapper.v
+Wrote  : </home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_axi_dma_0_0'...
+WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'design_1_axi_dma_0_0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_processing_system7_0_0'...
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_rst_processing_system7_0_50M_0'...
+WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'design_1_rst_processing_system7_0_50M_0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_processing_system7_0_50M .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_xbar_0'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/xbar .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_c_counter_binary_0_0'...
+WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'design_1_c_counter_binary_0_0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block c_counter_binary_0 .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_pc_0'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_pc .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_us_0'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_us_1'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_us .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_pc_1'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/s00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_processing_system7_0_50M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block c_counter_binary_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/s00_couplers/auto_pc .
+WARNING: [filemgmt 20-1763] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v]
+[Tue Sep 16 19:20:53 2014] Launched synth_1...
+Run output will be captured here: /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:40 ; elapsed = 00:00:43 . Memory (MB): peak = 4937.965 ; gain = 11.887
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0
+apply_board_connection -board_interface "leds_4bits" -ip_intf "axi_gpio_0/GPIO" -diagram "design_1" 
+INFO: [board_interface:-100] set_property CONFIG.USE_BOARD_FLOW true [get_bd_cells -quiet /axi_gpio_0]
+INFO: [board_interface:-100] set_property CONFIG.GPIO_BOARD_INTERFACE leds_4bits [get_bd_cells -quiet /axi_gpio_0]
+INFO: [board_interface:-100] create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 leds_4bits
+INFO: [board_interface:-100] connect_bd_intf_net /leds_4bits /axi_gpio_0/GPIO
+endgroup
+undo
+INFO: [Common 17-17] undo 'endgroup'
+INFO: [Common 17-17] undo 'apply_board_connection -board_interface "leds_4bits" -ip_intf "axi_gpio_0/GPIO" -diagram "design_1" '
+INFO: [Common 17-17] undo 'create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0'
+INFO: [Common 17-17] undo 'startgroup'
+redo
+INFO: [Common 17-16] redo 'startgroup'
+INFO: [Common 17-16] redo 'create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0'
+INFO: [Common 17-16] redo 'apply_board_connection -board_interface "leds_4bits" -ip_intf "axi_gpio_0/GPIO" -diagram "design_1" '
+INFO: [Common 17-16] redo 'endgroup'
+reset_run synth_1
+delete_bd_objs [get_bd_nets c_counter_binary_0_Q] [get_bd_ports Q]
+delete_bd_objs [get_bd_intf_nets axi_gpio_0_GPIO] [get_bd_cells axi_gpio_0]
+delete_bd_objs [get_bd_intf_ports leds_4bits]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:iomodule:2.2 iomodule_0
+apply_board_connection -board_interface "leds_4bits" -ip_intf "iomodule_0/GPIO1" -diagram "design_1" 
+INFO: [board_interface:-100] set_property CONFIG.USE_BOARD_FLOW true [get_bd_cells -quiet /iomodule_0]
+INFO: [board_interface:-100] set_property CONFIG.GPIO1_BOARD_INTERFACE leds_4bits [get_bd_cells -quiet /iomodule_0]
+INFO: [board_interface:-100] create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 leds_4bits
+INFO: [board_interface:-100] connect_bd_intf_net /leds_4bits /iomodule_0/GPIO1
+endgroup
+undo
+INFO: [Common 17-17] undo 'endgroup'
+INFO: [Common 17-17] undo 'apply_board_connection -board_interface "leds_4bits" -ip_intf "iomodule_0/GPIO1" -diagram "design_1" '
+INFO: [Common 17-17] undo 'create_bd_cell -type ip -vlnv xilinx.com:ip:iomodule:2.2 iomodule_0'
+INFO: [Common 17-17] undo 'startgroup'
+undo
+INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_intf_ports leds_4bits]'
+startgroup
+create_bd_port -dir O -from 15 -to 0 -type data Q
+connect_bd_net [get_bd_pins /c_counter_binary_0/Q] [get_bd_ports Q]
+endgroup
+open_hw
+close_hw
+open_bd_design {/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd}
+validate_bd_design
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /axi_mem_intercon/xbar/S00_AXI(READ_WRITE) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(READ_ONLY)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon/xbar/S00_AXI(1) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon/xbar/S00_AXI(256) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /axi_mem_intercon/xbar/S01_AXI(READ_WRITE) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(WRITE_ONLY)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon/xbar/S01_AXI(1) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon/xbar/S01_AXI(256) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(8)
+save_bd_design
+Wrote  : </home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+launch_runs synth_1
+INFO: [HDL 9-1654] Analyzing Verilog file "/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library work [/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:1]
+INFO: [HDL 9-1654] Analyzing Verilog file "/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1.v" into library work [/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1.v:1]
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /axi_mem_intercon/xbar/S00_AXI(READ_WRITE) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(READ_ONLY)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon/xbar/S00_AXI(1) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon/xbar/S00_AXI(256) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /axi_mem_intercon/xbar/S01_AXI(READ_WRITE) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(WRITE_ONLY)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon/xbar/S01_AXI(1) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon/xbar/S01_AXI(256) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(8)
+Exporting to file /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_AWID'(6) to net 'axi_mem_intercon_M00_AXI_AWID'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_mem_intercon/M00_AXI_bid'(1) to net 'axi_mem_intercon_M00_AXI_BID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_WID'(6) to net 'axi_mem_intercon_M00_AXI_WID'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_mem_intercon/M00_AXI_rid'(1) to net 'axi_mem_intercon_M00_AXI_RID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_ARID'(6) to net 'axi_mem_intercon_M00_AXI_ARID'(1) - Only lower order bits will be connected.
+Verilog Output written to : design_1.v
+Verilog Output written to : design_1_wrapper.v
+Wrote  : </home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_axi_dma_0_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_processing_system7_0_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_rst_processing_system7_0_50M_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_processing_system7_0_50M .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_xbar_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/xbar .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_c_counter_binary_0_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block c_counter_binary_0 .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_pc_0'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_pc .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_us_0'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_us_1'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_us .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_pc_1'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/s00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_processing_system7_0_50M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block c_counter_binary_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/s00_couplers/auto_pc .
+WARNING: [filemgmt 20-1763] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v]
+[Tue Sep 16 19:34:18 2014] Launched synth_1...
+Run output will be captured here: /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:15 ; elapsed = 00:00:13 . Memory (MB): peak = 4967.246 ; gain = 0.000
+launch_runs impl_1
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_mem_intercon_0/design_1_axi_mem_intercon_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_50M_0/design_1_rst_processing_system7_0_50M_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_axi_periph_0/design_1_processing_system7_0_axi_periph_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_c_counter_binary_0_0/design_1_c_counter_binary_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_mem_intercon_0/design_1_axi_mem_intercon_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_50M_0/design_1_rst_processing_system7_0_50M_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_axi_periph_0/design_1_processing_system7_0_axi_periph_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_c_counter_binary_0_0/design_1_c_counter_binary_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1.xci
+[Tue Sep 16 19:40:45 2014] Launched impl_1...
+Run output will be captured here: /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 101 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2014.2
+Loading clock regions from /opt/Xilinx/Vivado/2014.2/data/parts/xilinx/zynq/zynq/xc7z020/ClockRegion.xml
+Loading clock buffers from /opt/Xilinx/Vivado/2014.2/data/parts/xilinx/zynq/zynq/xc7z020/ClockBuffers.xml
+Loading clock placement rules from /opt/Xilinx/Vivado/2014.2/data/parts/xilinx/zynq/ClockPlacerRules.xml
+Loading package pin functions from /opt/Xilinx/Vivado/2014.2/data/parts/xilinx/zynq/PinFunctions.xml...
+Loading package from /opt/Xilinx/Vivado/2014.2/data/parts/xilinx/zynq/zynq/xc7z020/clg484/Package.xml
+Loading io standards from /opt/Xilinx/Vivado/2014.2/data/./parts/xilinx/zynq/IOStandards.xml
+Parsing XDC File [/home/jared/Research/vivado_workspace/axi_loopback/vivado/.Xil/Vivado-8485-jared-Lenovo/dcp/design_1_wrapper_early.xdc]
+Finished Parsing XDC File [/home/jared/Research/vivado_workspace/axi_loopback/vivado/.Xil/Vivado-8485-jared-Lenovo/dcp/design_1_wrapper_early.xdc]
+Parsing XDC File [/home/jared/Research/vivado_workspace/axi_loopback/vivado/.Xil/Vivado-8485-jared-Lenovo/dcp/design_1_wrapper_late.xdc]
+Finished Parsing XDC File [/home/jared/Research/vivado_workspace/axi_loopback/vivado/.Xil/Vivado-8485-jared-Lenovo/dcp/design_1_wrapper_late.xdc]
+Reading XDEF placement.
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00.56 ; elapsed = 00:00:00.36 . Memory (MB): peak = 5170.844 ; gain = 5.000
+Restoring placement.
+Restored 1427 out of 1427 XDEF sites from archive | CPU: 1.580000 secs | Memory: 8.517960 MB |
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_mem_intercon_0/design_1_axi_mem_intercon_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_50M_0/design_1_rst_processing_system7_0_50M_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_axi_periph_0/design_1_processing_system7_0_axi_periph_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_c_counter_binary_0_0/design_1_c_counter_binary_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_mem_intercon_0/design_1_axi_mem_intercon_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_50M_0/design_1_rst_processing_system7_0_50M_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_axi_periph_0/design_1_processing_system7_0_axi_periph_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_c_counter_binary_0_0/design_1_c_counter_binary_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1.xci
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 5 instances were transformed.
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 4 instances
+  RAM32X1D => RAM32X1D (RAMD32, RAMD32): 1 instances
+
+open_run: Time (s): cpu = 00:00:23 ; elapsed = 00:00:12 . Memory (MB): peak = 5304.840 ; gain = 308.977
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[0]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[0]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[15]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[15]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+startgroup
+route_design -unroute -nets [get_nets Q[15]]
+Command: route_design -unroute -nets [get_nets {Q[15]}]
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Route 35-333] 1 net was fully unrouted.
+INFO: [Common 17-83] Releasing license: Implementation
+3 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+select_objects [get_nets Q[15]]
+INFO: [Coretcl 2-12] 'Q[15]' selected.
+endgroup
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[15]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[15]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[15]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[15]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+startgroup
+set_property is_route_fixed 1 [get_nets {design_1_i/c_counter_binary_0/Q[15] }]
+set_property is_bel_fixed 1 [get_cells {Q_OBUF[15]_inst design_1_i/c_counter_binary_0/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_simple_model.i_gt_1.carrychaingen[12].carrymux_CARRY4 design_1_i/c_counter_binary_0/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[16] }]
+set_property is_loc_fixed 1 [get_cells {Q_OBUF[15]_inst design_1_i/c_counter_binary_0/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_simple_model.i_gt_1.carrychaingen[12].carrymux_CARRY4 design_1_i/c_counter_binary_0/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[16] }]
+endgroup
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[15]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[14]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[13]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[12]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[11]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[10]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[9]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[8]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[7]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[6]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[5]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[4]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[3]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[2]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[1]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[0]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[15]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[15]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+WARNING: [Chipscope 16-3] Cannot debug net 'Q[15]'; it is not on a fabric-accessible route (beyond IBUF/OBUF).
+close_design
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+
+Starting synthesis...
+
+Using part: xc7z020clg484-1
+Top: design_1_wrapper
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:08:01 ; elapsed = 00:46:48 . Memory (MB): peak = 5643.848 ; gain = 5015.270
+---------------------------------------------------------------------------------
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Common 17-344] 'source' was cancelled
+2 Infos, 0 Warnings, 0 Critical Warnings and 1 Errors encountered.
+synth_design failed
+INFO: [Common 17-344] 'synth_design' was cancelled
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 101 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2014.2
+Parsing XDC File [/home/jared/Research/vivado_workspace/axi_loopback/vivado/.Xil/Vivado-8485-jared-Lenovo/dcp/design_1_wrapper_early.xdc]
+Finished Parsing XDC File [/home/jared/Research/vivado_workspace/axi_loopback/vivado/.Xil/Vivado-8485-jared-Lenovo/dcp/design_1_wrapper_early.xdc]
+Parsing XDC File [/home/jared/Research/vivado_workspace/axi_loopback/vivado/.Xil/Vivado-8485-jared-Lenovo/dcp/design_1_wrapper_late.xdc]
+Finished Parsing XDC File [/home/jared/Research/vivado_workspace/axi_loopback/vivado/.Xil/Vivado-8485-jared-Lenovo/dcp/design_1_wrapper_late.xdc]
+Reading XDEF placement.
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00.59 ; elapsed = 00:00:00.37 . Memory (MB): peak = 5643.848 ; gain = 0.000
+Restoring placement.
+Restored 1427 out of 1427 XDEF sites from archive | CPU: 1.340000 secs | Memory: 10.016190 MB |
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_mem_intercon_0/design_1_axi_mem_intercon_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_50M_0/design_1_rst_processing_system7_0_50M_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_axi_periph_0/design_1_processing_system7_0_axi_periph_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_c_counter_binary_0_0/design_1_c_counter_binary_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_mem_intercon_0/design_1_axi_mem_intercon_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_50M_0/design_1_rst_processing_system7_0_50M_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_axi_periph_0/design_1_processing_system7_0_axi_periph_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_c_counter_binary_0_0/design_1_c_counter_binary_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1.xci
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 5 instances were transformed.
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 4 instances
+  RAM32X1D => RAM32X1D (RAMD32, RAMD32): 1 instances
+
+open_run: Time (s): cpu = 00:00:15 ; elapsed = 00:00:07 . Memory (MB): peak = 5643.848 ; gain = 0.000
+set_property iostandard LVCMOS18 [get_ports [list {Q[15]} {Q[14]} {Q[13]} {Q[12]} {Q[11]} {Q[10]} {Q[9]} {Q[8]} {Q[7]} {Q[6]} {Q[5]} {Q[4]} {Q[3]} {Q[2]} {Q[1]} {Q[0]}]]
+startgroup
+set_property package_pin Y4 [get_ports {Q[14]}]
+endgroup
+startgroup
+set_property package_pin AB6 [get_ports {Q[15]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {Q[15]}]]
+set_property is_loc_fixed false [get_ports [list  {Q[14]}]]
+startgroup
+set_property package_pin P17 [get_ports {Q[15]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {Q[15]}]]
+set_property is_loc_fixed true [get_ports [list  {Q[15]}]]
+startgroup
+set_property package_pin P18 [get_ports {Q[14]}]
+endgroup
+startgroup
+set_property package_pin W10 [get_ports {Q[13]}]
+endgroup
+startgroup
+set_property package_pin A21 [get_ports {Q[4]}]
+endgroup
+set_property is_loc_fixed true [get_ports [list  {Q[12]}]]
+set_property is_loc_fixed false [get_ports [list  {Q[4]}]]
+startgroup
+set_property package_pin V7 [get_ports {Q[12]}]
+endgroup
+startgroup
+set_property package_pin A18 [get_ports {Q[1]}]
+endgroup
+startgroup
+set_property package_pin W5 [get_ports {Q[11]}]
+endgroup
+startgroup
+set_property package_pin W17 [get_ports {Q[10]}]
+endgroup
+startgroup
+set_property package_pin D15 [get_ports {Q[9]}]
+endgroup
+startgroup
+set_property package_pin E15 [get_ports {Q[8]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {Q[1]}]]
+file mkdir /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/constrs_1/new
+close [ open /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/constrs_1/new/const.xdc w ]
+add_files -fileset constrs_1 /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/constrs_1/new/const.xdc
+set_property target_constrs_file /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/constrs_1/new/const.xdc [current_fileset -constrset]
+save_constraints -force
+close_design
+open_bd_design {/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd}
+validate_bd_design
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /axi_mem_intercon/xbar/S00_AXI(READ_WRITE) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(READ_ONLY)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon/xbar/S00_AXI(1) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon/xbar/S00_AXI(256) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /axi_mem_intercon/xbar/S01_AXI(READ_WRITE) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(WRITE_ONLY)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon/xbar/S01_AXI(1) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon/xbar/S01_AXI(256) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(8)
+save_bd_design
+Wrote  : </home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /axi_mem_intercon/xbar/S00_AXI(READ_WRITE) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(READ_ONLY)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon/xbar/S00_AXI(1) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon/xbar/S00_AXI(256) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /axi_mem_intercon/xbar/S01_AXI(READ_WRITE) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(WRITE_ONLY)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon/xbar/S01_AXI(1) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon/xbar/S01_AXI(256) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(8)
+Exporting to file /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_AWID'(6) to net 'axi_mem_intercon_M00_AXI_AWID'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_mem_intercon/M00_AXI_bid'(1) to net 'axi_mem_intercon_M00_AXI_BID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_WID'(6) to net 'axi_mem_intercon_M00_AXI_WID'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_mem_intercon/M00_AXI_rid'(1) to net 'axi_mem_intercon_M00_AXI_RID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_ARID'(6) to net 'axi_mem_intercon_M00_AXI_ARID'(1) - Only lower order bits will be connected.
+Verilog Output written to : design_1.v
+Verilog Output written to : design_1_wrapper.v
+Wrote  : </home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_axi_dma_0_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_processing_system7_0_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_rst_processing_system7_0_50M_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_processing_system7_0_50M .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_xbar_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/xbar .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_c_counter_binary_0_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block c_counter_binary_0 .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_pc_0'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_pc .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_us_0'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_us_1'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_us .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_pc_1'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/s00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_processing_system7_0_50M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block c_counter_binary_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/s00_couplers/auto_pc .
+WARNING: [filemgmt 20-1763] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v]
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_mem_intercon_0/design_1_axi_mem_intercon_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_50M_0/design_1_rst_processing_system7_0_50M_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_axi_periph_0/design_1_processing_system7_0_axi_periph_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_c_counter_binary_0_0/design_1_c_counter_binary_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_mem_intercon_0/design_1_axi_mem_intercon_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_50M_0/design_1_rst_processing_system7_0_50M_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_axi_periph_0/design_1_processing_system7_0_axi_periph_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_c_counter_binary_0_0/design_1_c_counter_binary_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1.xci
+[Tue Sep 16 20:06:33 2014] Launched synth_1...
+Run output will be captured here: /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.runs/synth_1/runme.log
+[Tue Sep 16 20:06:33 2014] Launched impl_1...
+Run output will be captured here: /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 5649.336 ; gain = 0.000
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 101 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2014.2
+Parsing XDC File [/home/jared/Research/vivado_workspace/axi_loopback/vivado/.Xil/Vivado-8485-jared-Lenovo/dcp/design_1_wrapper_early.xdc]
+Finished Parsing XDC File [/home/jared/Research/vivado_workspace/axi_loopback/vivado/.Xil/Vivado-8485-jared-Lenovo/dcp/design_1_wrapper_early.xdc]
+Parsing XDC File [/home/jared/Research/vivado_workspace/axi_loopback/vivado/.Xil/Vivado-8485-jared-Lenovo/dcp/design_1_wrapper.xdc]
+Finished Parsing XDC File [/home/jared/Research/vivado_workspace/axi_loopback/vivado/.Xil/Vivado-8485-jared-Lenovo/dcp/design_1_wrapper.xdc]
+Parsing XDC File [/home/jared/Research/vivado_workspace/axi_loopback/vivado/.Xil/Vivado-8485-jared-Lenovo/dcp/design_1_wrapper_late.xdc]
+Finished Parsing XDC File [/home/jared/Research/vivado_workspace/axi_loopback/vivado/.Xil/Vivado-8485-jared-Lenovo/dcp/design_1_wrapper_late.xdc]
+Reading XDEF placement.
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00.33 ; elapsed = 00:00:00.33 . Memory (MB): peak = 5649.336 ; gain = 0.000
+Restoring placement.
+Restored 1470 out of 1470 XDEF sites from archive | CPU: 1.100000 secs | Memory: 11.114838 MB |
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_mem_intercon_0/design_1_axi_mem_intercon_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_50M_0/design_1_rst_processing_system7_0_50M_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_axi_periph_0/design_1_processing_system7_0_axi_periph_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_c_counter_binary_0_0/design_1_c_counter_binary_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_mem_intercon_0/design_1_axi_mem_intercon_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_50M_0/design_1_rst_processing_system7_0_50M_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_axi_periph_0/design_1_processing_system7_0_axi_periph_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_c_counter_binary_0_0/design_1_c_counter_binary_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1.xci
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 5 instances were transformed.
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 4 instances
+  RAM32X1D => RAM32X1D (RAMD32, RAMD32): 1 instances
+
+open_run: Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 5649.340 ; gain = 0.004
+close_design
+open_bd_design {/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd}
+delete_bd_objs [get_bd_nets c_counter_binary_0_Q] [get_bd_ports Q]
+startgroup
+set_property -dict [list CONFIG.Output_Width {8}] [get_bd_cells c_counter_binary_0]
+endgroup
+startgroup
+create_bd_port -dir O -from 7 -to 0 -type data Q
+connect_bd_net [get_bd_pins /c_counter_binary_0/Q] [get_bd_ports Q]
+endgroup
+save_bd_design
+Wrote  : </home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-1654] Analyzing Verilog file "/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library work [/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:1]
+INFO: [HDL 9-1654] Analyzing Verilog file "/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1.v" into library work [/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1.v:1]
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /axi_mem_intercon/xbar/S00_AXI(READ_WRITE) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(READ_ONLY)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon/xbar/S00_AXI(1) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon/xbar/S00_AXI(256) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /axi_mem_intercon/xbar/S01_AXI(READ_WRITE) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(WRITE_ONLY)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon/xbar/S01_AXI(1) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon/xbar/S01_AXI(256) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(8)
+Exporting to file /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_AWID'(6) to net 'axi_mem_intercon_M00_AXI_AWID'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_mem_intercon/M00_AXI_bid'(1) to net 'axi_mem_intercon_M00_AXI_BID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_WID'(6) to net 'axi_mem_intercon_M00_AXI_WID'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_mem_intercon/M00_AXI_rid'(1) to net 'axi_mem_intercon_M00_AXI_RID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_ARID'(6) to net 'axi_mem_intercon_M00_AXI_ARID'(1) - Only lower order bits will be connected.
+Verilog Output written to : design_1.v
+Verilog Output written to : design_1_wrapper.v
+Wrote  : </home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_axi_dma_0_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_processing_system7_0_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_rst_processing_system7_0_50M_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_processing_system7_0_50M .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_xbar_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/xbar .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_c_counter_binary_0_0'...
+WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'design_1_c_counter_binary_0_0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block c_counter_binary_0 .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_pc_0'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_pc .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_us_0'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_us_1'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_us .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_pc_1'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/s00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_processing_system7_0_50M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block c_counter_binary_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/s00_couplers/auto_pc .
+WARNING: [filemgmt 20-1763] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v]
+[Wed Sep 17 01:31:14 2014] Launched synth_1...
+Run output will be captured here: /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 5649.340 ; gain = 0.000
+reset_run synth_1
+startgroup
+set_property -dict [list CONFIG.Output_Width {16}] [get_bd_cells c_counter_binary_0]
+endgroup
+delete_bd_objs [get_bd_nets c_counter_binary_0_Q] [get_bd_ports Q]
+create_bd_port -dir O -from 15 -to 8 -type data Q
+connect_bd_net [get_bd_ports Q] [get_bd_pins c_counter_binary_0/Q]
+validate_bd_design
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /axi_mem_intercon/xbar/S00_AXI(READ_WRITE) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(READ_ONLY)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon/xbar/S00_AXI(1) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon/xbar/S00_AXI(256) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /axi_mem_intercon/xbar/S01_AXI(READ_WRITE) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(WRITE_ONLY)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon/xbar/S01_AXI(1) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon/xbar/S01_AXI(256) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(8)
+delete_bd_objs [get_bd_nets c_counter_binary_0_Q]
+delete_bd_objs [get_bd_ports Q]
+create_bd_port -dir O -from 15 -to 8 -type data Q
+delete_bd_objs [get_bd_ports Q]
+delete_bd_objs [get_bd_intf_ports leds_4bits]
+startgroup
+create_bd_port -dir O -from 15 -to 0 -type data Q
+connect_bd_net [get_bd_pins /c_counter_binary_0/Q] [get_bd_ports Q]
+endgroup
+startgroup
+set_property -dict [list CONFIG.Output_Width {8} CONFIG.Latency {32}] [get_bd_cells c_counter_binary_0]
+endgroup
+delete_bd_objs [get_bd_nets c_counter_binary_0_Q] [get_bd_ports Q]
+startgroup
+create_bd_port -dir O -from 7 -to 0 -type data Q
+connect_bd_net [get_bd_pins /c_counter_binary_0/Q] [get_bd_ports Q]
+endgroup
+save_bd_design
+Wrote  : </home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+launch_runs synth_1
+INFO: [HDL 9-1654] Analyzing Verilog file "/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" into library work [/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:1]
+INFO: [HDL 9-1654] Analyzing Verilog file "/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1.v" into library work [/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1.v:1]
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /axi_mem_intercon/xbar/S00_AXI(READ_WRITE) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(READ_ONLY)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon/xbar/S00_AXI(1) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon/xbar/S00_AXI(256) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /axi_mem_intercon/xbar/S01_AXI(READ_WRITE) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(WRITE_ONLY)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon/xbar/S01_AXI(1) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon/xbar/S01_AXI(256) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(8)
+Exporting to file /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_AWID'(6) to net 'axi_mem_intercon_M00_AXI_AWID'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_mem_intercon/M00_AXI_bid'(1) to net 'axi_mem_intercon_M00_AXI_BID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_WID'(6) to net 'axi_mem_intercon_M00_AXI_WID'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_mem_intercon/M00_AXI_rid'(1) to net 'axi_mem_intercon_M00_AXI_RID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_ARID'(6) to net 'axi_mem_intercon_M00_AXI_ARID'(1) - Only lower order bits will be connected.
+Verilog Output written to : design_1.v
+Verilog Output written to : design_1_wrapper.v
+Wrote  : </home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_axi_dma_0_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_processing_system7_0_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_rst_processing_system7_0_50M_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_processing_system7_0_50M .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_xbar_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/xbar .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_c_counter_binary_0_0'...
+WARNING: [IP_Flow 19-1687] The current project language is set to Verilog. However IP 'design_1_c_counter_binary_0_0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block c_counter_binary_0 .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_pc_0'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_pc .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_us_0'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_us_1'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_us .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_pc_1'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/s00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_processing_system7_0_50M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block c_counter_binary_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/s00_couplers/auto_pc .
+WARNING: [filemgmt 20-1763] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v]
+[Wed Sep 17 01:42:18 2014] Launched synth_1...
+Run output will be captured here: /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 5649.340 ; gain = 0.000
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:5.1 clk_wiz_0
+endgroup
+connect_bd_net -net [get_bd_nets processing_system7_0_FCLK_CLK0] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0]
+disconnect_bd_net /processing_system7_0_FCLK_CLK0 [get_bd_pins c_counter_binary_0/CLK]
+connect_bd_net [get_bd_pins c_counter_binary_0/CLK] [get_bd_pins clk_wiz_0/clk_out1]
+delete_bd_objs [get_bd_nets clk_wiz_0_clk_out1] [get_bd_cells clk_wiz_0]
+delete_bd_objs [get_bd_nets c_counter_binary_0_Q] [get_bd_cells c_counter_binary_0]
+delete_bd_objs [get_bd_ports Q]
+save_bd_design
+Wrote  : </home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /axi_mem_intercon/xbar/S00_AXI(READ_WRITE) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(READ_ONLY)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon/xbar/S00_AXI(1) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon/xbar/S00_AXI(256) and /axi_mem_intercon/s00_couplers/auto_us/M_AXI(8)
+INFO: [BD 41-237] Bus Interface property READ_WRITE_MODE does not match between /axi_mem_intercon/xbar/S01_AXI(READ_WRITE) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(WRITE_ONLY)
+INFO: [BD 41-237] Bus Interface property SUPPORTS_NARROW_BURST does not match between /axi_mem_intercon/xbar/S01_AXI(1) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(0)
+INFO: [BD 41-237] Bus Interface property MAX_BURST_LENGTH does not match between /axi_mem_intercon/xbar/S01_AXI(256) and /axi_mem_intercon/s01_couplers/auto_us/M_AXI(8)
+Exporting to file /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_AWID'(6) to net 'axi_mem_intercon_M00_AXI_AWID'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_mem_intercon/M00_AXI_bid'(1) to net 'axi_mem_intercon_M00_AXI_BID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_WID'(6) to net 'axi_mem_intercon_M00_AXI_WID'(1) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/axi_mem_intercon/M00_AXI_rid'(1) to net 'axi_mem_intercon_M00_AXI_RID'(6) - Only lower order bits will be connected.
+WARNING: [BD 41-235] Width mismatch when connecting pin: '/processing_system7_0/S_AXI_HP0_ARID'(6) to net 'axi_mem_intercon_M00_AXI_ARID'(1) - Only lower order bits will be connected.
+Verilog Output written to : design_1.v
+Verilog Output written to : design_1_wrapper.v
+Wrote  : </home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd> 
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_axi_dma_0_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_processing_system7_0_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_rst_processing_system7_0_50M_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_processing_system7_0_50M .
+INFO: [IP_Flow 19-1706] Not generating 'Synthesis' target for IP 'design_1_xbar_0'. Target already exists and is up to date.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/xbar .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_pc_0'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_pc .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_us_0'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_us_1'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_us .
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'design_1_auto_pc_1'...
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:fifo_generator:12.0' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [IP_Flow 19-616] The current project language is set to Verilog. However the IP definition 'xilinx.com:ip:blk_mem_gen:8.2' does not support 'Verilog Synthesis' output products, delivering 'VHDL Synthesis' output products instead.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/s00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_processing_system7_0_50M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_pc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0_axi_periph/s00_couplers/auto_pc .
+WARNING: [filemgmt 20-1763] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v]
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_mem_intercon_0/design_1_axi_mem_intercon_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_50M_0/design_1_rst_processing_system7_0_50M_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_axi_periph_0/design_1_processing_system7_0_axi_periph_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_axi_mem_intercon_0/design_1_axi_mem_intercon_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_rst_processing_system7_0_50M_0/design_1_rst_processing_system7_0_50M_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_axi_periph_0/design_1_processing_system7_0_axi_periph_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_us_1/design_1_auto_us_1.xci
+INFO: [Memdata 28-152] Did  not create MIG processor data. /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1.xci
+[Wed Sep 17 01:52:06 2014] Launched synth_1...
+Run output will be captured here: /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.runs/synth_1/runme.log
+[Wed Sep 17 01:52:06 2014] Launched impl_1...
+Run output will be captured here: /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:22 ; elapsed = 00:00:12 . Memory (MB): peak = 5681.344 ; gain = 0.000
+file mkdir /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.sdk
+file copy -force /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.runs/impl_1/design_1_wrapper.sysdef /home/jared/Research/vivado_workspace/axi_loopback/sdk/design_1_wrapper.hdf
+
+launch_sdk -workspace /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.sdk -hwspec /home/jared/Research/vivado_workspace/axi_loopback/sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.sdk -hwspec /home/jared/Research/vivado_workspace/axi_loopback/sdk/design_1_wrapper.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+file copy -force /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.runs/impl_1/design_1_wrapper.bit /home/jared/Research/vivado_workspace/axi_loopback/sdk/bitstream.bit
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Sep 17 17:46:33 2014...

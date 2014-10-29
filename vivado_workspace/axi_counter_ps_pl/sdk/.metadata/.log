@@ -1,0 +1,24 @@
+!SESSION 2014-09-10 20:47:30.935 -----------------------------------------------
+eclipse.buildId=2014.2
+java.version=1.7.0_40
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -data /home/jared/Research/vivado_workspace/axi_counter_ps_pl/sdk
+
+!ENTRY org.eclipse.ui.browser 2 0 2014-09-10 21:09:10.291
+!MESSAGE Internal browser is not available: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)]
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-09-10 21:26:31.941
+!MESSAGE Indexed 'fsbl' (12 sources, 57 headers) in 2.91 sec: 1,594 declarations; 7,219 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-09-10 21:26:35.558
+!MESSAGE Indexed 'fsbl_bsp' (132 sources, 159 headers) in 3.53 sec: 7,234 declarations; 35,227 references; 69 unresolved inclusions; 9 syntax errors; 38 unresolved names (0.09%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-09-10 21:37:50.644
+!MESSAGE Indexed 'device-tree_bsp_0' (0 sources, 0 headers) in 0.00 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-09-10 21:40:46.524
+!MESSAGE Indexed 'device-tree_bsp_0' (0 sources, 0 headers) in 0.00 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-09-10 21:46:02.289
+!MESSAGE Indexed 'device-tree_bsp_0' (0 sources, 0 headers) in 0.00 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)

@@ -1,0 +1,1 @@
+--debug "typical" --relax -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "jmb_counter_tb_behav" --prj "/home/jared/Research/vivado_workspace/vivado/project_2/project_2.sim/sim_1/behav/jmb_counter_tb.prj" "xil_defaultlib.jmb_counter_tb" "xil_defaultlib.glbl" 

@@ -1,0 +1,57 @@
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.2 (lin64) Build 932637 Wed Jun 11 13:08:52 MDT 2014
+| Date         : Sun Sep 21 14:23:07 2014
+| Host         : jared-Lenovo running 64-bit Ubuntu 14.04.1 LTS
+| Command      : report_control_sets -verbose -file scanline_buffer_v1_0_control_sets_placed.rpt
+| Design       : scanline_buffer_v1_0
+| Device       : xc7z020
+-------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++-------------------------------------------------------------------+-------+
+|                               Status                              | Count |
++-------------------------------------------------------------------+-------+
+| Number of unique control sets                                     |     4 |
+| Minimum Number of register sites lost to control set restrictions |     6 |
++-------------------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               2 |            2 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |            4128 |         1268 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++------------------+----------------------------------+-------------------+------------------+----------------+
+|   Clock Signal   |           Enable Signal          |  Set/Reset Signal | Slice Load Count | Bel Load Count |
++------------------+----------------------------------+-------------------+------------------+----------------+
+|  clock_IBUF_BUFG |                                  |                   |                2 |              2 |
+|  clock_IBUF_BUFG | n_0_R[511][7]_i_1                | n_0_R[150][7]_i_1 |                2 |              8 |
+|  clock_IBUF_BUFG | n_0_counter_current_fill[31]_i_1 | n_0_R[150][7]_i_1 |               11 |             32 |
+|  clock_IBUF_BUFG | enable_IBUF                      | n_0_R[150][7]_i_1 |             1255 |           4088 |
++------------------+----------------------------------+-------------------+------------------+----------------+
+
+

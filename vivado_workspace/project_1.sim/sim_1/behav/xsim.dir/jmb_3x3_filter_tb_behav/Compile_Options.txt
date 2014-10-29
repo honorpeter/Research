@@ -1,0 +1,1 @@
+--debug "typical" --relax --include "/home/jared/Research/vivado_workspace/jmb_ip" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "jmb_3x3_filter_tb_behav" --prj "/home/jared/Research/vivado_workspace/project_1.sim/sim_1/behav/jmb_3x3_filter_tb.prj" "xil_defaultlib.jmb_3x3_filter_tb" "xil_defaultlib.glbl" 

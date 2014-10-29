@@ -1,0 +1,85 @@
+#-----------------------------------------------------------
+# Vivado v2014.2 (64-bit)
+# SW Build 932637 on Wed Jun 11 13:08:52 MDT 2014
+# IP Build 924643 on Fri May 30 09:20:16 MDT 2014
+# Start of session at: Wed Oct  8 02:54:21 2014
+# Process ID: 10281
+# Log file: /home/jared/Research/vivado_workspace/ip/ip_repo/vivado.log
+# Journal file: /home/jared/Research/vivado_workspace/ip/ip_repo/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/jared/Research/vivado_workspace/ip/managed_ip_project/managed_ip_project.xpr
+CRITICAL WARNING: [Board 49-4] Problem parsing board_part file - /opt/Xilinx/Vivado/2014.2/data/boards/board_parts/zynq/zc706/1.0/board_part.xml, The board part 'xc7z045ffg900-2' is either not supported or invalid.
+CRITICAL WARNING: [Board 49-4] Problem parsing board_part file - /opt/Xilinx/Vivado/2014.2/data/boards/board_parts/zynq/zc706/0.9/board_part.xml, The board part 'xc7z045ffg900-2' is either not supported or invalid.
+CRITICAL WARNING: [Board 49-4] Problem parsing board_part file - /opt/Xilinx/Vivado/2014.2/data/boards/board_parts/kintex7/kc705/1.0/board_part.xml, The board part 'xc7k325tffg900-2' is either not supported or invalid.
+CRITICAL WARNING: [Board 49-4] Problem parsing board_part file - /opt/Xilinx/Vivado/2014.2/data/boards/board_parts/kintex7/kc705/0.9/board_part.xml, The board part 'xc7k325tffg900-2' is either not supported or invalid.
+CRITICAL WARNING: [Project 1-19] Could not find the file '/home/jared/Research/vivado_workspace/ip/jmb_axi_filter_3x3_0/jmb_axi_filter_3x3_0.upgrade_log'.
+WARNING: [filemgmt 56-3] IP Repository Path: Could not find the directory '/home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_counter_1.0'.
+WARNING: [filemgmt 56-3] IP Repository Path: Could not find the directory '/home/jared/Research/vivado_workspace/ip/ip_repo/sample_generator_1.0'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0'.
+WARNING: [IP_Flow 19-2207] Repository '/home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0'.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_counter_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/jared/Research/vivado_workspace/ip/ip_repo/sample_generator_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2014.2/data/ip'.
+ipx::edit_ip_in_project -upgrade true -name {jmb_axi_filter_3x3_v1.0_project} -directory {/home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0/jmb_axi_filter_3x3_v1.0_project} {/home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0/component.xml}
+CRITICAL WARNING: [IP_Flow 19-3667] Component file 'hdl/jmb_axi_filter_3x3_v1_0_S00_AXIS.v' does not exist. The file is ignored.
+CRITICAL WARNING: [IP_Flow 19-3667] Component file 'hdl/jmb_axi_filter_3x3_v1_0_M00_AXIS.v' does not exist. The file is ignored.
+CRITICAL WARNING: [IP_Flow 19-3667] Component file 'hdl/jmb_axi_filter_3x3_v1_0_S00_AXIS.v' does not exist. The file is ignored.
+CRITICAL WARNING: [IP_Flow 19-3667] Component file 'hdl/jmb_axi_filter_3x3_v1_0_M00_AXIS.v' does not exist. The file is ignored.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0'.
+WARNING: [IP_Flow 19-2207] Repository '/home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0'.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_counter_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/jared/Research/vivado_workspace/ip/ip_repo/sample_generator_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2014.2/data/ip'.
+update_compile_order -fileset sim_1
+ipx::remove_file {hdl/jmb_axi_filter_3x3_v1_0_S00_AXIS.v} [ipx::get_file_group xilinx_verilogsynthesis [ipx::current_core]]
+current_project managed_ip_project
+current_project jmb_axi_filter_3x3_v1.0_project
+ipx::remove_file {hdl/jmb_axi_filter_3x3_v1_0_M00_AXIS.v} [ipx::get_file_group xilinx_verilogsynthesis [ipx::current_core]]
+current_project managed_ip_project
+current_project jmb_axi_filter_3x3_v1.0_project
+add_files -norecurse -copy_to /home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0/src {/home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0/hdl/jmb_fifo.v /home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0/hdl/jmb_3x3_filter.v /home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0/hdl/jmb_3x3_window.v}
+ERROR: [Vivado 12-3630] The destination file '/home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0/src/jmb_fifo.v' already exists, please use -force if you want to overwrite!
+ipx::remove_file {hdl/jmb_axi_filter_3x3_v1_0_S00_AXIS.v} [ipx::get_file_group xilinx_verilogbehavioralsimulation [ipx::current_core]]
+current_project managed_ip_project
+current_project jmb_axi_filter_3x3_v1.0_project
+ipx::remove_file {hdl/jmb_axi_filter_3x3_v1_0_M00_AXIS.v} [ipx::get_file_group xilinx_verilogbehavioralsimulation [ipx::current_core]]
+current_project managed_ip_project
+current_project jmb_axi_filter_3x3_v1.0_project
+ipx::add_file {../../../jmb_ip/jmb_3x3_filter.v} [ipx::get_file_group xilinx_verilogsynthesis [ipx::current_core]]
+set_property type {{verilogSource}} [ipx::get_file ../../../jmb_ip/jmb_3x3_filter.v [ipx::get_file_group xilinx_verilogsynthesis [ipx::current_core]]]
+set_property library_name {xil_defaultlib} [ipx::get_file ../../../jmb_ip/jmb_3x3_filter.v [ipx::get_file_group xilinx_verilogsynthesis [ipx::current_core]]]
+ipx::remove_file {../../../jmb_ip/jmb_3x3_filter.v} [ipx::get_file_group xilinx_verilogsynthesis [ipx::current_core]]
+current_project managed_ip_project
+current_project jmb_axi_filter_3x3_v1.0_project
+add_files -norecurse -scan_for_includes /home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0/hdl/jmb_3x3_filter.v
+update_compile_order -fileset sources_1
+ipx::merge_project_changes files [ipx::current_core]
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+INFO: [IP_Flow 19-2418] Expression "((C_S00_AXIS_TDATA_WIDTH / 8) - 1)": Will not convert operator '/' to XPATH 'div' to allow integer division if applicable.
+INFO: [IP_Flow 19-2418] Expression "((C_M00_AXIS_TDATA_WIDTH / 8) - 1)": Will not convert operator '/' to XPATH 'div' to allow integer division if applicable.
+ipx::create_xgui_files [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_ip_instances -delete_project true
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0'.
+WARNING: [IP_Flow 19-2207] Repository '/home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0' already exists; ignoring attempt to add it again.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0'.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_counter_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository '/home/jared/Research/vivado_workspace/ip/ip_repo/sample_generator_1.0'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Oct  8 02:57:58 2014...

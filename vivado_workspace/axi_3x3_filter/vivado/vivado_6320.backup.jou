@@ -1,0 +1,39 @@
+#-----------------------------------------------------------
+# Vivado v2014.2 (64-bit)
+# SW Build 932637 on Wed Jun 11 13:08:52 MDT 2014
+# IP Build 924643 on Fri May 30 09:20:16 MDT 2014
+# Start of session at: Mon Oct 20 10:33:21 2014
+# Process ID: 3129
+# Log file: /home/jared/Research/vivado_workspace/axi_3x3_filter/vivado/vivado.log
+# Journal file: /home/jared/Research/vivado_workspace/axi_3x3_filter/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project project_1.xpr
+file copy -force /home/jared/Research/vivado_workspace/axi_3x3_filter/vivado/project_1.runs/impl_1/design_1_wrapper.bit /home/jared/Research/zynq_workspace/filter_sym_3x3/output/bitstream.bit
+open_bd_design {/home/jared/Research/vivado_workspace/axi_3x3_filter/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0
+endgroup
+set_property location {2 396 1025} [get_bd_cells axi_gpio_0]
+set_property location {2 411 832} [get_bd_cells axi_gpio_0]
+startgroup
+set_property -dict [list CONFIG.C_IS_DUAL {0} CONFIG.C_ALL_INPUTS {0} CONFIG.C_INTERRUPT_PRESENT {0}] [get_bd_cells axi_gpio_0]
+endgroup
+set_property location {3.5 675 848} [get_bd_cells axi_gpio_0]
+delete_bd_objs [get_bd_cells axi_gpio_0]
+startgroup
+set_property -dict [list CONFIG.C_IMAGE_WIDTH {1024}] [get_bd_cells jmb_axi_filter_3x3_0]
+endgroup
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+file copy -force /home/jared/Research/vivado_workspace/axi_3x3_filter/vivado/project_1.runs/impl_1/design_1_wrapper.bit /home/jared/Research/zynq_workspace/filter_sym_3x3/output/filter_1024.bit
+startgroup
+set_property -dict [list CONFIG.C_IMAGE_WIDTH {2048}] [get_bd_cells jmb_axi_filter_3x3_0]
+endgroup
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+file copy -force /home/jared/Research/vivado_workspace/axi_3x3_filter/vivado/project_1.runs/impl_1/design_1_wrapper.bit /home/jared/Research/zynq_workspace/filter_sym_3x3/output/filter_2048.bit

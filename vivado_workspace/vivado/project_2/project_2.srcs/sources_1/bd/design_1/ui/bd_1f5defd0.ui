@@ -1,0 +1,14 @@
+{
+   guistr: "# # String gsaved with Nlview version 6.4-r1  2014-02-28 bk=1.3047 VDI=34 GEI=35 GUI=JA:1.7
+#  -string -flagsOSRD
+preplace port m00_axis_aresetn -pg 1 -y 70 -defaultsOSRD
+preplace port M00_AXIS -pg 1 -y 60 -defaultsOSRD
+preplace port m00_axis_aclk -pg 1 -y 50 -defaultsOSRD
+preplace inst jmb_axi_counter_0 -pg 1 -lvl 1 -y 60 -defaultsOSRD
+preplace netloc m00_axis_aclk_1 1 0 1 N
+preplace netloc jmb_axi_counter_0_M00_AXIS 1 1 1 N
+preplace netloc m00_axis_aresetn_1 1 0 1 N
+levelinfo -pg 1 160 320 480
+",
+}
+0

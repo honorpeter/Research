@@ -1,0 +1,21 @@
+!SESSION 2014-09-17 02:00:17.962 -----------------------------------------------
+eclipse.buildId=2014.2
+java.version=1.7.0_40
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -data /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.sdk
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-09-17 02:01:23.336
+!MESSAGE Indexed 'fsbl' (12 sources, 57 headers) in 2.49 sec: 1,594 declarations; 7,219 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-09-17 02:01:26.587
+!MESSAGE Indexed 'fsbl_bsp' (132 sources, 159 headers) in 3.21 sec: 7,234 declarations; 35,227 references; 69 unresolved inclusions; 9 syntax errors; 38 unresolved names (0.09%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-09-17 02:02:58.680
+!MESSAGE Indexed 'device-tree_bsp_0' (0 sources, 0 headers) in 0.00 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-09-17 17:45:35.950
+!MESSAGE Indexed 'fsbl_vanilla' (144 sources, 214 headers) in 3.00 sec: 9,766 declarations; 42,283 references; 17 unresolved inclusions; 4 syntax errors; 11 unresolved names (0.02%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2014-09-17 17:45:37.653
+!MESSAGE Indexed 'fsbl_vanilla_bsp' (132 sources, 152 headers) in 1.67 sec: 6,876 declarations; 33,336 references; 65 unresolved inclusions; 9 syntax errors; 38 unresolved names (0.09%)

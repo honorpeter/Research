@@ -1,0 +1,84 @@
+20:47:49 INFO  : Processing command line option -hwspec /home/jared/Research/vivado_workspace/axi_counter_ps_pl/sdk/design_1_wrapper.hdf.
+21:37:00 INFO  : Saving repository preferences.
+21:37:00 INFO  : Reading in cores from global repositories: 
+		 /home/jared/Research/os/xilinx-device-tree
+21:37:00 INFO  : Cleaning BSP projects in the workspace.
+21:37:49 INFO  : 'device-tree' is a board support package for an OS for which applications cannot be developed within SDK.
+21:37:49 INFO  : You can configure and build project 'device-tree_bsp_0' within SDK at will, but have to export it into the appropriate third party environment to develop applications.
+21:38:10 ERROR :  [Hsm 55-1545] Problem running tcl command ::sw_device-tree_v1_01_b::generate : can't read "ranges_list": no such variable
+    while executing
+"lindex $ranges_list 0 0"
+    ("default" arm line 35)
+    invoked from within
+"switch -exact $type {
+		"axi_intc" {
+			# Interrupt controllers
+			lappend node [gen_intc $slave $intc "interrupt-controller" "C_NUM_INTR_INPUTS C_KIN..."
+    (procedure "gener_slave" line 41)
+    invoked from within
+"gener_slave $bus_node $ip $intc_handle "" $busif_handle"
+    ("foreach" body line 17)
+    invoked from within
+"foreach ip $sorted_ip {
+        # make sure the sorted_ip list does not content force ip list
+		# otherwise, same duplication of dts node will appeare..."
+    (procedure "bus_bridge" line 153)
+    invoked from within
+"bus_bridge $hwproc_handle $intc 0 "M_AXI_DP" "" $ips "ps7_pl310 ps7_xadc ps7_globaltimer""
+    (procedure "generate_device_tree" line 118)
+    invoked from within
+"generate_device_tree "xilinx.dts" $bootargs $consoleip"
+    (procedure "::sw_device-tree_v1_01_b::generate" line 53)
+    invoked from within
+"::sw_device-tree_v1_01_b::generate device-tree"
+ [Hsm 55-1442] Error(s) while running TCL procedure generate()
+21:38:10 ERROR : Error generating bsp sources: Failed to generate BSP.
+21:38:10 ERROR : Failed to generate sources for BSP project device-tree_bsp_0
+org.eclipse.core.runtime.CoreException: Internal error occurred while generating bsp sources. Please check the SDK Log view for further details.
+	at com.xilinx.sdk.sw.ui.handlers.RegenBspSourcesHandler.internalGenerateBsp(RegenBspSourcesHandler.java:178)
+	at com.xilinx.sdk.sw.ui.handlers.RegenBspSourcesHandler.access$2(RegenBspSourcesHandler.java:163)
+	at com.xilinx.sdk.sw.ui.handlers.RegenBspSourcesHandler$1$1.run(RegenBspSourcesHandler.java:131)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at com.xilinx.sdk.sw.ui.handlers.RegenBspSourcesHandler$1.run(RegenBspSourcesHandler.java:135)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+21:40:25 INFO  : Saving repository preferences.
+21:40:45 INFO  : 'device-tree' is a board support package for an OS for which applications cannot be developed within SDK.
+21:40:45 INFO  : You can configure and build project 'device-tree_bsp_0' within SDK at will, but have to export it into the appropriate third party environment to develop applications.
+21:42:01 ERROR :  [Hsm 55-1545] Problem running tcl command ::sw_device-tree_v1_01_b::generate : can't read "ranges_list": no such variable
+    while executing
+"lindex $ranges_list 0 0"
+    ("default" arm line 35)
+    invoked from within
+"switch -exact $type {
+		"axi_intc" {
+			# Interrupt controllers
+			lappend node [gen_intc $slave $intc "interrupt-controller" "C_NUM_INTR_INPUTS C_KIN..."
+    (procedure "gener_slave" line 41)
+    invoked from within
+"gener_slave $bus_node $ip $intc_handle "" $busif_handle"
+    ("foreach" body line 17)
+    invoked from within
+"foreach ip $sorted_ip {
+        # make sure the sorted_ip list does not content force ip list
+		# otherwise, same duplication of dts node will appeare..."
+    (procedure "bus_bridge" line 153)
+    invoked from within
+"bus_bridge $hwproc_handle $intc 0 "M_AXI_DP" "" $ips "ps7_pl310 ps7_xadc ps7_globaltimer""
+    (procedure "generate_device_tree" line 118)
+    invoked from within
+"generate_device_tree "xilinx.dts" $bootargs $consoleip"
+    (procedure "::sw_device-tree_v1_01_b::generate" line 53)
+    invoked from within
+"::sw_device-tree_v1_01_b::generate device-tree"
+ [Hsm 55-1442] Error(s) while running TCL procedure generate()
+21:42:01 ERROR : Error generating bsp sources: Failed to generate BSP.
+21:42:01 ERROR : Failed to generate sources for BSP project device-tree_bsp_0
+org.eclipse.core.runtime.CoreException: Internal error occurred while generating bsp sources. Please check the SDK Log view for further details.
+	at com.xilinx.sdk.sw.ui.handlers.RegenBspSourcesHandler.internalGenerateBsp(RegenBspSourcesHandler.java:178)
+	at com.xilinx.sdk.sw.ui.handlers.RegenBspSourcesHandler.access$2(RegenBspSourcesHandler.java:163)
+	at com.xilinx.sdk.sw.ui.handlers.RegenBspSourcesHandler$1$1.run(RegenBspSourcesHandler.java:131)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at com.xilinx.sdk.sw.ui.handlers.RegenBspSourcesHandler$1.run(RegenBspSourcesHandler.java:135)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+21:46:01 INFO  : 'device-tree' is a board support package for an OS for which applications cannot be developed within SDK.
+21:46:01 INFO  : You can configure and build project 'device-tree_bsp_0' within SDK at will, but have to export it into the appropriate third party environment to develop applications.

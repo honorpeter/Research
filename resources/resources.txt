@@ -18,3 +18,18 @@ Documentation:
 	  Outlines the github repos to pull and walks through compiling all portions of the code
 
 
+Larger RAMDisk
+  http://forums.xilinx.com/t5/Embedded-Linux/Need-bigger-ramdisk-32MB-on-ZC702/td-p/303445
+  See the second and second to last posts
+
+  https://lists.yoctoproject.org/pipermail/meta-xilinx/2014-January/000359.html
+  For ramdisk load locations
+
+  http://www.zedboard.org/content/xilinxlinux-20134-kernel-panic
+  For kernel RAM size parameters (these are in KB)
+
+Device Tree Creator in SDK
+http://forums.xilinx.com/t5/Embedded-Linux/device-tree-generate-error/td-p/482308
+
+Mounting root partition as the rootfs
+http://fpgacpu.wordpress.com/2013/05/24/yet-another-guide-to-running-linaro-ubuntu-desktop-on-xilinx-zynq-on-the-zedboard/

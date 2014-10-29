@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Vivado v2014.2 (64-bit)
+# SW Build 932637 on Wed Jun 11 13:08:52 MDT 2014
+# IP Build 924643 on Fri May 30 09:20:16 MDT 2014
+# Start of session at: Sun Sep 21 14:20:01 2014
+# Process ID: 19201
+# Log file: /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.runs/synth_1/scanline_buffer_v1_0.vds
+# Journal file: /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source scanline_buffer_v1_0.tcl

@@ -32,12 +32,11 @@ $MAKE $MAKE_OPTS
 
 # Move the u-boot to output directory
 mkdir -p $OUTPUT_DIR
-mv -f u-boot $OUTPUT_DIR/u-boot.elf
+cp u-boot $OUTPUT_DIR/u-boot.elf
 
 # Symbolically link the mkImage to the output directory
 cd tools
 cp mkimage $OUTPUT_DIR/mkimage
-
 
 # return to where we started
 cd $CUR_DIR

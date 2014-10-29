@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Sep 10 18:29:11 2014" VIVADOVERSION="2014.2">
+
+  <SYSTEMINFO ARCH="zynq" BOARD="xilinx.com:zc702:part0:1.0" DEVICE="7z020" NAME="design_1_imp" PACKAGE="clg484" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="O" NAME="M00_AXIS_tdata" SIGIS="undef"/>
+    <PORT DIR="O" NAME="M00_AXIS_tstrb" SIGIS="undef"/>
+    <PORT DIR="O" NAME="M00_AXIS_tlast" SIGIS="undef"/>
+    <PORT DIR="O" NAME="M00_AXIS_tvalid" SIGIS="undef"/>
+    <PORT DIR="I" NAME="M00_AXIS_tready" SIGIS="undef"/>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="m00_axis_aclk" SIGIS="clk" SIGNAME="External_Ports_m00_axis_aclk">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="jmb_axi_counter_0" PORT="m00_axis_aclk"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="m00_axis_aresetn" SIGIS="rst" SIGNAME="External_Ports_m00_axis_aresetn">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="jmb_axi_counter_0" PORT="m00_axis_aresetn"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <MODULES>
+    <MODULE FULLNAME="/jmb_axi_counter_0" HWVERSION="1.0" INSTANCE="jmb_axi_counter_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="jmb_axi_counter" VLNV="RIT:user:jmb_axi_counter:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="C_M00_AXIS_TDATA_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="C_M00_AXIS_START_COUNT" VALUE="32"/>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_jmb_axi_counter_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" NAME="m00_axis_tdata" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m00_axis_tstrb" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m00_axis_tlast" SIGIS="undef"/>
+        <PORT DIR="O" NAME="m00_axis_tvalid" SIGIS="undef"/>
+        <PORT DIR="I" NAME="m00_axis_tready" SIGIS="undef"/>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="m00_axis_aclk" SIGIS="clk" SIGNAME="External_Ports_m00_axis_aclk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="m00_axis_aclk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="m00_axis_aresetn" SIGIS="rst" SIGNAME="External_Ports_m00_axis_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="m00_axis_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE NAME="M00_AXIS">
+          <PORTMAPS>
+            <PORTMAP PHYSICAL="m00_axis_tdata"/>
+            <PORTMAP PHYSICAL="m00_axis_tstrb"/>
+            <PORTMAP PHYSICAL="m00_axis_tlast"/>
+            <PORTMAP PHYSICAL="m00_axis_tvalid"/>
+            <PORTMAP PHYSICAL="m00_axis_tready"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+  </MODULES>
+
+  <REPOSITORIES/>
+
+</EDKSYSTEM>

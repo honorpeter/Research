@@ -1,7 +1,5 @@
 image : {
         [bootloader]fsbl.elf
+	bitstream.bit
         u-boot.elf
-        [load=0x2a0000]devicetree.dtb
-        [load=0x2000000]uramdisk.image.gz
-        [load=0x3000000]uImage.bin
 }

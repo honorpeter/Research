@@ -1,0 +1,41 @@
+#-----------------------------------------------------------
+# Vivado v2014.2 (64-bit)
+# SW Build 932637 on Wed Jun 11 13:08:52 MDT 2014
+# IP Build 924643 on Fri May 30 09:20:16 MDT 2014
+# Start of session at: Wed Oct  8 02:54:21 2014
+# Process ID: 10281
+# Log file: /home/jared/Research/vivado_workspace/ip/ip_repo/vivado.log
+# Journal file: /home/jared/Research/vivado_workspace/ip/ip_repo/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/jared/Research/vivado_workspace/ip/managed_ip_project/managed_ip_project.xpr
+ipx::edit_ip_in_project -upgrade true -name {jmb_axi_filter_3x3_v1.0_project} -directory {/home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0/jmb_axi_filter_3x3_v1.0_project} {/home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0/component.xml}
+update_compile_order -fileset sim_1
+ipx::remove_file {hdl/jmb_axi_filter_3x3_v1_0_S00_AXIS.v} [ipx::get_file_group xilinx_verilogsynthesis [ipx::current_core]]
+current_project managed_ip_project
+current_project jmb_axi_filter_3x3_v1.0_project
+ipx::remove_file {hdl/jmb_axi_filter_3x3_v1_0_M00_AXIS.v} [ipx::get_file_group xilinx_verilogsynthesis [ipx::current_core]]
+current_project managed_ip_project
+current_project jmb_axi_filter_3x3_v1.0_project
+add_files -norecurse -copy_to /home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0/src {/home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0/hdl/jmb_fifo.v /home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0/hdl/jmb_3x3_filter.v /home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0/hdl/jmb_3x3_window.v}
+ipx::remove_file {hdl/jmb_axi_filter_3x3_v1_0_S00_AXIS.v} [ipx::get_file_group xilinx_verilogbehavioralsimulation [ipx::current_core]]
+current_project managed_ip_project
+current_project jmb_axi_filter_3x3_v1.0_project
+ipx::remove_file {hdl/jmb_axi_filter_3x3_v1_0_M00_AXIS.v} [ipx::get_file_group xilinx_verilogbehavioralsimulation [ipx::current_core]]
+current_project managed_ip_project
+current_project jmb_axi_filter_3x3_v1.0_project
+ipx::add_file {../../../jmb_ip/jmb_3x3_filter.v} [ipx::get_file_group xilinx_verilogsynthesis [ipx::current_core]]
+set_property type {{verilogSource}} [ipx::get_file ../../../jmb_ip/jmb_3x3_filter.v [ipx::get_file_group xilinx_verilogsynthesis [ipx::current_core]]]
+set_property library_name {xil_defaultlib} [ipx::get_file ../../../jmb_ip/jmb_3x3_filter.v [ipx::get_file_group xilinx_verilogsynthesis [ipx::current_core]]]
+ipx::remove_file {../../../jmb_ip/jmb_3x3_filter.v} [ipx::get_file_group xilinx_verilogsynthesis [ipx::current_core]]
+current_project managed_ip_project
+current_project jmb_axi_filter_3x3_v1.0_project
+add_files -norecurse -scan_for_includes /home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0/hdl/jmb_3x3_filter.v
+update_compile_order -fileset sources_1
+ipx::merge_project_changes files [ipx::current_core]
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_ip_instances -delete_project true

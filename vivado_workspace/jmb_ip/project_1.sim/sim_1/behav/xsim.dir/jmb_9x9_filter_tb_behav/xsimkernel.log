@@ -1,0 +1,7 @@
+Running: xsim.dir/jmb_9x9_filter_tb_behav/xsimk -simmode gui -wdb jmb_9x9_filter_tb_behav.wdb -simrunnum 0 -socket 34913
+Design successfully loaded
+Design Loading Memory Usage: 95408 KB (Peak: 95588 KB)
+Design Loading CPU Usage: 60 ms
+Simulation completed
+Simulation Memory Usage: 170172 KB (Peak: 234676 KB)
+Simulation CPU Usage: 110 ms

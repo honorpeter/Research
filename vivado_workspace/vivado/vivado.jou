@@ -1,0 +1,42 @@
+#-----------------------------------------------------------
+# Vivado v2014.2 (64-bit)
+# SW Build 932637 on Wed Jun 11 13:08:52 MDT 2014
+# IP Build 924643 on Fri May 30 09:20:16 MDT 2014
+# Start of session at: Wed Sep 10 19:18:45 2014
+# Process ID: 5788
+# Log file: /home/jared/Research/vivado_workspace/vivado/vivado.log
+# Journal file: /home/jared/Research/vivado_workspace/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project axi_counter /home/jared/Research/vivado_workspace/vivado/axi_counter -part xc7z020clg484-1
+set_property board_part xilinx.com:zc702:part0:1.0 [current_project]
+set_property ip_repo_paths  /home/jared/Research/vivado_workspace/ip [current_fileset]
+update_ip_catalog
+create_bd_design "design_1"
+startgroup
+create_bd_cell -type ip -vlnv RIT:user:jmb_axi_counter:1.0 jmb_axi_counter_0
+endgroup
+set_property location {0.5 -109 69} [get_bd_cells jmb_axi_counter_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_dma:7.1 axi_dma_0
+endgroup
+set_property location {0.5 -284 100} [get_bd_cells jmb_axi_counter_0]
+set_property location {1 189 99} [get_bd_cells jmb_axi_counter_0]
+connect_bd_intf_net [get_bd_intf_pins jmb_axi_counter_0/M00_AXIS] [get_bd_intf_pins axi_dma_0/S_AXIS_S2MM]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.4 processing_system7_0
+endgroup
+set_property location {3.5 1342 267} [get_bd_cells processing_system7_0]
+apply_bd_automation -rule xilinx.com:bd_rule:processing_system7 -config {make_external "FIXED_IO, DDR" apply_board_preset "1" Master "Disable" Slave "Disable" }  [get_bd_cells processing_system7_0]
+startgroup
+set_property -dict [list CONFIG.PCW_USE_S_AXI_HP0 {1} CONFIG.PCW_TTC0_PERIPHERAL_ENABLE {0}] [get_bd_cells processing_system7_0]
+endgroup
+set_property location {3 950 163} [get_bd_cells processing_system7_0]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "/processing_system7_0/FCLK_CLK0 (50 MHz)" }  [get_bd_intf_pins axi_dma_0/S_AXI_LITE]
+regenerate_bd_layout
+regenerate_bd_layout
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/axi_dma_0/M_AXI_S2MM" Clk "Auto" }  [get_bd_intf_pins processing_system7_0/S_AXI_HP0]
+regenerate_bd_layout
+startgroup
+set_property -dict [list CONFIG.c_include_sg {0}] [get_bd_cells axi_dma_0]
+endgroup

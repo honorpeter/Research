@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1411323600">
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="RDI-RDI" Name="scanline_buffer_v1_0.vdi"/>
+  <File Type="BG-DRC" Name="scanline_buffer_v1_0.drc"/>
+  <File Type="BG-BGN" Name="scanline_buffer_v1_0.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="scanline_buffer_v1_0.sysdef"/>
+  <File Type="BITSTR-MMI" Name="scanline_buffer_v1_0.mmi"/>
+  <File Type="BITSTR-BMM" Name="scanline_buffer_v1_0_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="scanline_buffer_v1_0.nky"/>
+  <File Type="BITSTR-RBT" Name="scanline_buffer_v1_0.rbt"/>
+  <File Type="BITSTR-MSK" Name="scanline_buffer_v1_0.msk"/>
+  <File Type="BG-BIN" Name="scanline_buffer_v1_0.bin"/>
+  <File Type="BG-BIT" Name="scanline_buffer_v1_0.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="scanline_buffer_v1_0_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="scanline_buffer_v1_0_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="scanline_buffer_v1_0_postroute_physopt.dcp"/>
+  <File Type="ROUTE-SIMILARITY" Name="scanline_buffer_v1_0_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="scanline_buffer_v1_0_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="scanline_buffer_v1_0_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="scanline_buffer_v1_0_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="scanline_buffer_v1_0_route_status.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="scanline_buffer_v1_0_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="scanline_buffer_v1_0_power_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="scanline_buffer_v1_0_drc_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="scanline_buffer_v1_0_drc_routed.rpt"/>
+  <File Type="ROUTE-DCP" Name="scanline_buffer_v1_0_routed.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="scanline_buffer_v1_0_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="scanline_buffer_v1_0_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="scanline_buffer_v1_0_postplace_pwropt.dcp"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="scanline_buffer_v1_0_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="scanline_buffer_v1_0_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="scanline_buffer_v1_0_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="scanline_buffer_v1_0_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="scanline_buffer_v1_0_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="scanline_buffer_v1_0_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="scanline_buffer_v1_0_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="scanline_buffer_v1_0_placed.dcp"/>
+  <File Type="PWROPT-DRC" Name="scanline_buffer_v1_0_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="scanline_buffer_v1_0_pwropt.dcp"/>
+  <File Type="OPT-DRC" Name="scanline_buffer_v1_0_drc_opted.rpt"/>
+  <File Type="OPT-DCP" Name="scanline_buffer_v1_0_opt.dcp"/>
+  <File Type="PA-TCL" Name="scanline_buffer_v1_0.tcl"/>
+  <File Type="RUN-STRAT" Name="$PDATADIR/runs/impl_1/impl_1.psg"/>
+  <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/impl_1/constrs_in.xml"/>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014">
+      <Desc>Vivado Implementation Defaults</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

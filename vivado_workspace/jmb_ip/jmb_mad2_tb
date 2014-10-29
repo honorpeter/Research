@@ -1,0 +1,95 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0xd1c2a0 .scope module, "jmb_mad2_tb" "jmb_mad2_tb" 2 11;
+ .timescale 0 0;
+v0xd54820_0 .net *"_s13", 7 0, C4<00000000>; 1 drivers
+v0xd548a0_0 .net *"_s3", 7 0, C4<00000000>; 1 drivers
+v0xd54920_0 .net *"_s8", 7 0, C4<00000000>; 1 drivers
+v0xd549a0_0 .var "add_1", 7 0;
+v0xd54a50_0 .var "add_2", 7 0;
+v0xd54af0_0 .var "clock", 0 0;
+v0xd54bd0_0 .var "mult", 7 0;
+v0xd54c70_0 .net "out", 31 0, L_0xd54f20; 1 drivers
+L_0xd55010 .concat [ 8 8 0 0], v0xd549a0_0, C4<00000000>;
+L_0xd55170 .concat [ 8 8 0 0], v0xd54a50_0, C4<00000000>;
+L_0xd55310 .concat [ 8 8 0 0], v0xd54bd0_0, C4<00000000>;
+S_0xd1b7d0 .scope module, "dut" "jmb_mad2" 2 21, 3 17, S_0xd1c2a0;
+ .timescale 0 0;
+v0xd54480_0 .net "add_1", 15 0, L_0xd55010; 1 drivers
+v0xd54540_0 .net "add_2", 15 0, L_0xd55170; 1 drivers
+v0xd545e0_0 .net "mult", 15 0, L_0xd55310; 1 drivers
+v0xd54690_0 .alias "out", 31 0, v0xd54c70_0;
+v0xd54770_0 .net "sum", 15 0, L_0xd54d90; 1 drivers
+L_0xd54d90 .arith/sum 16, L_0xd55010, L_0xd55170;
+S_0xd1bd10 .scope module, "u1" "jmb_mul2" 3 39, 4 15, S_0xd1b7d0;
+ .timescale 0 0;
+v0xd1c8a0_0 .alias "mult_1", 15 0, v0xd54770_0;
+v0xd54340_0 .alias "mult_2", 15 0, v0xd545e0_0;
+v0xd543e0_0 .alias "prod", 31 0, v0xd54c70_0;
+L_0xd54f20 .arith/mult 32, L_0xd54d90, L_0xd55310;
+    .scope S_0xd1c2a0;
+T_0 ;
+    %delay 5, 0;
+    %load/v 8, v0xd54af0_0, 1;
+    %inv 8, 1;
+    %set/v v0xd54af0_0, 8, 1;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0xd1c2a0;
+T_1 ;
+    %set/v v0xd54af0_0, 0, 1;
+    %set/v v0xd549a0_0, 0, 8;
+    %set/v v0xd54a50_0, 0, 8;
+    %set/v v0xd54bd0_0, 0, 8;
+    %load/v 8, v0xd54c70_0, 32;
+    %cmpi/u 8, 0, 32;
+    %inv 4, 1;
+    %jmp/0xz  T_1.0, 4;
+    %vpi_call 2 32 "$display", "Test 1 Failed!";
+    %vpi_call 2 33 "$finish";
+T_1.0 ;
+    %delay 5, 0;
+    %movi 8, 2, 8;
+    %set/v v0xd549a0_0, 8, 8;
+    %load/v 8, v0xd54c70_0, 32;
+    %cmpi/u 8, 0, 32;
+    %inv 4, 1;
+    %jmp/0xz  T_1.2, 4;
+    %vpi_call 2 37 "$display", "Test 2 Failed!";
+    %vpi_call 2 38 "$finish";
+T_1.2 ;
+    %delay 10, 0;
+    %movi 8, 3, 8;
+    %set/v v0xd54a50_0, 8, 8;
+    %load/v 8, v0xd54c70_0, 32;
+    %cmpi/u 8, 0, 32;
+    %inv 4, 1;
+    %jmp/0xz  T_1.4, 4;
+    %vpi_call 2 42 "$display", "Test 3 Failed!";
+    %vpi_call 2 43 "$finish";
+T_1.4 ;
+    %delay 10, 0;
+    %movi 8, 2, 8;
+    %set/v v0xd54bd0_0, 8, 8;
+    %load/v 8, v0xd54c70_0, 32;
+    %cmpi/u 8, 10, 32;
+    %inv 4, 1;
+    %jmp/0xz  T_1.6, 4;
+    %vpi_call 2 47 "$display", "Test 4 Failed!";
+    %vpi_call 2 48 "$finish";
+T_1.6 ;
+    %vpi_call 2 50 "$display", "Test passed";
+    %vpi_call 2 51 "$finish";
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "jmb_mad2_tb.v";
+    "./jmb_mad2.v";
+    "./jmb_mul2.v";

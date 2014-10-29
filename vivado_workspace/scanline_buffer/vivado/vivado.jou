@@ -1,0 +1,120 @@
+#-----------------------------------------------------------
+# Vivado v2014.2 (64-bit)
+# SW Build 932637 on Wed Jun 11 13:08:52 MDT 2014
+# IP Build 924643 on Fri May 30 09:20:16 MDT 2014
+# Start of session at: Sun Sep 21 12:17:07 2014
+# Process ID: 13791
+# Log file: /home/jared/Research/vivado_workspace/scanline_buffer/vivado/vivado.log
+# Journal file: /home/jared/Research/vivado_workspace/scanline_buffer/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project project_1 . -part xc7z020clg484-1
+set_property board_part xilinx.com:zc702:part0:1.0 [current_project]
+add_files -norecurse /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v
+import_files -force -norecurse
+update_compile_order -fileset sources_1
+remove_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v
+import_files -force -norecurse /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top scanline_buffer_v1_0 [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+launch_runs synth_1
+wait_on_run synth_1
+close [ open /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_tb.v w ]
+add_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_tb.v
+update_compile_order -fileset sources_1
+remove_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_tb.v
+import_files -norecurse /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_tb.v
+update_compile_order -fileset sources_1
+remove_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v
+import_files -force -norecurse /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_tb.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+launch_xsim -simset sim_1 -mode behavioral
+launch_xsim -simset sim_1 -mode behavioral
+remove_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+import_files -force -norecurse /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_tb.v
+launch_xsim -simset sim_1 -mode behavioral
+import_files -force -norecurse /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v
+update_compile_order -fileset sources_1
+launch_xsim -simset sim_1 -mode behavioral
+run 100 us
+run 1 us
+restart
+run 1 us
+close_sim
+update_files -from_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_tb.v -to_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v -filesets [get_filesets *]
+launch_xsim -simset sim_1 -mode behavioral
+restart
+run 500 ps
+restart
+run 500 ns
+restart
+run 500 ns
+add_wave {{/scanline_buffer_tb/dut}} 
+restart
+run 500 ns
+close_sim
+update_files -from_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v -to_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v -filesets [get_filesets *]
+launch_xsim -simset sim_1 -mode behavioral
+close_sim
+update_files -from_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_tb.v -to_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v -filesets [get_filesets *]
+launch_xsim -simset sim_1 -mode behavioral
+restart
+run 500 ns
+add_wave {{/scanline_buffer_tb/dut}} 
+restart
+run 500 ns
+close_sim
+update_files -from_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_tb.v -to_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v -filesets [get_filesets *]
+update_files -from_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v -to_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v -filesets [get_filesets *]
+launch_xsim -simset sim_1 -mode behavioral
+add_wave {{/scanline_buffer_tb/dut}} 
+restart
+run 500 ns
+close_sim
+update_files -from_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v -to_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v -filesets [get_filesets *]
+launch_xsim -simset sim_1 -mode behavioral
+add_wave {{/scanline_buffer_tb/dut}} 
+restart
+run 500 ns
+close_sim
+update_files -from_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v -to_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v -filesets [get_filesets *]
+launch_xsim -simset sim_1 -mode behavioral
+add_wave {{/scanline_buffer_tb/dut}} 
+restart
+run 500 ns
+close_sim
+update_files -from_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v -to_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_v1_0.v -filesets [get_filesets *]
+launch_xsim -simset sim_1 -mode behavioral
+add_wave {{/scanline_buffer_tb/dut}} 
+restart
+run 500 ns
+close_sim
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+import_files -force -norecurse /home/jared/Research/vivado_workspace/scanline_buffer/vivado/scanline_buffer_v1_0.v
+update_compile_order -fileset sources_1
+remove_files /home/jared/Research/vivado_workspace/scanline_buffer/vivado/project_1.srcs/sources_1/imports/vivado/scanline_buffer_tb.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top scanline_buffer_v1_0 [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+reset_run synth_1
+launch_runs impl_1
+wait_on_run impl_1

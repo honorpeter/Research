@@ -19,6 +19,7 @@ OS_DIR="$HOME/Research/os"
 KERNEL_DIR="$OS_DIR/xilinx-linux"
 OUTPUT_DIR="$OS_DIR/output"
 
+CONF=".config"
 MKIMAGE=$OUTPUT_DIR/mkimage
 
 # Configure the cross-compile environment
@@ -34,8 +35,10 @@ fi
 
 cd $KERNEL_DIR
 
-# Configure for zynq device
-$MAKE ARCH=$ARCH $CONFIG
+if [ ! -e $CONF ]; then
+  # Configure for zynq device only if .config doesn't exist
+  $MAKE ARCH=$ARCH $CONFIG
+fi
 
 # Configure using the menuconfig
 $MAKE ARCH=$ARCH $MENUCONFIG

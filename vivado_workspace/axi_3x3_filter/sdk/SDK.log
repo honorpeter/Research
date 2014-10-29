@@ -1,0 +1,3 @@
+10:40:20 INFO  : Restoring global repository preferences: 
+		 /home/jared/Research/os/xilinx-device-tree
+10:40:22 INFO  : Processing command line option -hwspec /home/jared/Research/vivado_workspace/axi_3x3_filter/sdk/design_1_wrapper.hdf.

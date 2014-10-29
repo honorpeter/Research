@@ -1,0 +1,281 @@
+#-----------------------------------------------------------
+# Vivado v2014.2 (64-bit)
+# SW Build 932637 on Wed Jun 11 13:08:52 MDT 2014
+# IP Build 924643 on Fri May 30 09:20:16 MDT 2014
+# Start of session at: Sun Oct  5 15:10:48 2014
+# Process ID: 3477
+# Log file: /home/jared/Research/vivado_workspace/jmb_ip/vivado.log
+# Journal file: /home/jared/Research/vivado_workspace/jmb_ip/vivado.jou
+#-----------------------------------------------------------
+start_gui
+CRITICAL WARNING: [Board 49-4] Problem parsing board_part file - /opt/Xilinx/Vivado/2014.2/data/boards/board_parts/zynq/zc706/1.0/board_part.xml, The board part 'xc7z045ffg900-2' is either not supported or invalid.
+CRITICAL WARNING: [Board 49-4] Problem parsing board_part file - /opt/Xilinx/Vivado/2014.2/data/boards/board_parts/zynq/zc706/0.9/board_part.xml, The board part 'xc7z045ffg900-2' is either not supported or invalid.
+CRITICAL WARNING: [Board 49-4] Problem parsing board_part file - /opt/Xilinx/Vivado/2014.2/data/boards/board_parts/kintex7/kc705/1.0/board_part.xml, The board part 'xc7k325tffg900-2' is either not supported or invalid.
+CRITICAL WARNING: [Board 49-4] Problem parsing board_part file - /opt/Xilinx/Vivado/2014.2/data/boards/board_parts/kintex7/kc705/0.9/board_part.xml, The board part 'xc7k325tffg900-2' is either not supported or invalid.
+create_project project_1 . -part xc7z020clg484-1
+set_property board_part xilinx.com:zc702:part0:1.0 [current_project]
+add_files -norecurse {/home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control_tb.v /home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+set_property top jmb_scanline_filter_control_tb [current_fileset]
+launch_xsim -simset sim_1 -mode behavioral
+INFO: [Runs 36-130] *** Running xelab
+    with args "-m64 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot jmb_scanline_filter_control_tb_behav --prj /home/jared/Research/vivado_workspace/jmb_ip/project_1.sim/sim_1/behav/jmb_scanline_filter_control_tb.prj   xil_defaultlib.jmb_scanline_filter_control_tb   xil_defaultlib.glbl"
+Vivado Simulator 2014.2
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2014.2/bin/unwrapped/lnx64.o/xelab --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot jmb_scanline_filter_control_tb_behav --prj /home/jared/Research/vivado_workspace/jmb_ip/project_1.sim/sim_1/behav/jmb_scanline_filter_control_tb.prj xil_defaultlib.jmb_scanline_filter_control_tb xil_defaultlib.glbl 
+Multi-threading is on. Using 2 slave threads.
+Determining compilation order of HDL files.
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module jmb_scanline_filter_control
+ERROR: [VRFC 10-91] y_in_counter is not declared [/home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control.v:120]
+ERROR: [VRFC 10-1040] module jmb_scanline_filter_control ignored due to previous errors [/home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control.v:20]
+ERROR: [Runs 36-25] xelab application returned error(s). Please see '/home/jared/Research/vivado_workspace/jmb_ip/project_1.sim/sim_1/behav/xelab.log' file for more details.
+ERROR: [Common 17-69] Command failed: Failed to compile the design!
+launch_xsim -simset sim_1 -mode behavioral
+INFO: [Runs 36-130] *** Running xelab
+    with args "-m64 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot jmb_scanline_filter_control_tb_behav --prj /home/jared/Research/vivado_workspace/jmb_ip/project_1.sim/sim_1/behav/jmb_scanline_filter_control_tb.prj   xil_defaultlib.jmb_scanline_filter_control_tb   xil_defaultlib.glbl"
+Vivado Simulator 2014.2
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2014.2/bin/unwrapped/lnx64.o/xelab --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot jmb_scanline_filter_control_tb_behav --prj /home/jared/Research/vivado_workspace/jmb_ip/project_1.sim/sim_1/behav/jmb_scanline_filter_control_tb.prj xil_defaultlib.jmb_scanline_filter_control_tb xil_defaultlib.glbl 
+Multi-threading is on. Using 2 slave threads.
+Determining compilation order of HDL files.
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module jmb_scanline_filter_control
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module jmb_scanline_filter_control
+WARNING: [VRFC 10-1195] overwriting previous definition of module jmb_scanline_filter_control [/home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control.v:20]
+INFO: [VRFC 10-311] analyzing module jmb_scanline_filter_control_tb
+INFO: [VRFC 10-165] Analyzing Verilog file "/opt/Xilinx/Vivado/2014.2/data/verilog/src/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/opt/Xilinx/Vivado/2014.2/data/verilog/src/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/opt/Xilinx/Vivado/2014.2/data/verilog/src/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.jmb_scanline_filter_control
+Compiling module xil_defaultlib.jmb_scanline_filter_control_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot jmb_scanline_filter_control_tb_behav
+INFO: [Runs 36-26] xelab completed.
+INFO: [Vivado 12-1390] *** Running xsim
+    with args "jmb_scanline_filter_control_tb_behav -key {Behavioral:sim_1:Functional:jmb_scanline_filter_control_tb} -tclbatch {jmb_scanline_filter_control_tb.tcl} -log {jmb_scanline_filter_control_tb_behav.log}"
+Vivado Simulator 2014.2
+Time resolution is 1 ps
+x_in_cnt	y_in_cnt
+$finish called at time : 0 fs : File "/home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control_tb.v" Line 55
+INFO: [Vivado 12-1395] XSim completed. Design snapshot 'jmb_scanline_filter_control_tb_behav' loaded.
+INFO: [Vivado 12-3703] XSim simulation ran for 1000ns
+launch_xsim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 4655.785 ; gain = 38.145
+add_bp /home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control_tb.v 45
+remove_bps -file /home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control_tb.v -line 45
+INFO: [Simtcl 6-16] Simulation closed
+launch_xsim -simset sim_1 -mode behavioral
+INFO: [Runs 36-130] *** Running xelab
+    with args "-m64 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot jmb_scanline_filter_control_tb_behav --prj /home/jared/Research/vivado_workspace/jmb_ip/project_1.sim/sim_1/behav/jmb_scanline_filter_control_tb.prj   xil_defaultlib.jmb_scanline_filter_control_tb   xil_defaultlib.glbl"
+Vivado Simulator 2014.2
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2014.2/bin/unwrapped/lnx64.o/xelab --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot jmb_scanline_filter_control_tb_behav --prj /home/jared/Research/vivado_workspace/jmb_ip/project_1.sim/sim_1/behav/jmb_scanline_filter_control_tb.prj xil_defaultlib.jmb_scanline_filter_control_tb xil_defaultlib.glbl 
+Multi-threading is on. Using 2 slave threads.
+Determining compilation order of HDL files.
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module jmb_scanline_filter_control
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module jmb_scanline_filter_control
+WARNING: [VRFC 10-1195] overwriting previous definition of module jmb_scanline_filter_control [/home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control.v:20]
+INFO: [VRFC 10-311] analyzing module jmb_scanline_filter_control_tb
+INFO: [VRFC 10-165] Analyzing Verilog file "/opt/Xilinx/Vivado/2014.2/data/verilog/src/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/opt/Xilinx/Vivado/2014.2/data/verilog/src/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/opt/Xilinx/Vivado/2014.2/data/verilog/src/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.jmb_scanline_filter_control
+Compiling module xil_defaultlib.jmb_scanline_filter_control_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot jmb_scanline_filter_control_tb_behav
+INFO: [Runs 36-26] xelab completed.
+INFO: [Vivado 12-1390] *** Running xsim
+    with args "jmb_scanline_filter_control_tb_behav -key {Behavioral:sim_1:Functional:jmb_scanline_filter_control_tb} -tclbatch {jmb_scanline_filter_control_tb.tcl} -log {jmb_scanline_filter_control_tb_behav.log}"
+Vivado Simulator 2014.2
+Time resolution is 1 ps
+x_in_cnt	y_in_cnt
+         x	         x	
+         0	         0	
+$finish called at time : 105 ns : File "/home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control_tb.v" Line 61
+INFO: [Vivado 12-1395] XSim completed. Design snapshot 'jmb_scanline_filter_control_tb_behav' loaded.
+INFO: [Vivado 12-3703] XSim simulation ran for 1000ns
+add_wave {{/jmb_scanline_filter_control_tb/dut/x_in_counter_r}} {{/jmb_scanline_filter_control_tb/dut/y_in_counter_r}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run all
+x_in_cnt	y_in_cnt
+         x	         x	
+         0	         0	
+$finish called at time : 105 ns : File "/home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control_tb.v" Line 61
+INFO: [Simtcl 6-16] Simulation closed
+launch_xsim -simset sim_1 -mode behavioral
+INFO: [Runs 36-130] *** Running xelab
+    with args "-m64 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot jmb_scanline_filter_control_tb_behav --prj /home/jared/Research/vivado_workspace/jmb_ip/project_1.sim/sim_1/behav/jmb_scanline_filter_control_tb.prj   xil_defaultlib.jmb_scanline_filter_control_tb   xil_defaultlib.glbl"
+Vivado Simulator 2014.2
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2014.2/bin/unwrapped/lnx64.o/xelab --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot jmb_scanline_filter_control_tb_behav --prj /home/jared/Research/vivado_workspace/jmb_ip/project_1.sim/sim_1/behav/jmb_scanline_filter_control_tb.prj xil_defaultlib.jmb_scanline_filter_control_tb xil_defaultlib.glbl 
+Multi-threading is on. Using 2 slave threads.
+Determining compilation order of HDL files.
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module jmb_scanline_filter_control
+INFO: [VRFC 10-165] Analyzing Verilog file "/home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module jmb_scanline_filter_control
+WARNING: [VRFC 10-1195] overwriting previous definition of module jmb_scanline_filter_control [/home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control.v:20]
+INFO: [VRFC 10-311] analyzing module jmb_scanline_filter_control_tb
+INFO: [VRFC 10-165] Analyzing Verilog file "/opt/Xilinx/Vivado/2014.2/data/verilog/src/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "/opt/Xilinx/Vivado/2014.2/data/verilog/src/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "/opt/Xilinx/Vivado/2014.2/data/verilog/src/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.jmb_scanline_filter_control
+Compiling module xil_defaultlib.jmb_scanline_filter_control_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot jmb_scanline_filter_control_tb_behav
+INFO: [Runs 36-26] xelab completed.
+INFO: [Vivado 12-1390] *** Running xsim
+    with args "jmb_scanline_filter_control_tb_behav -key {Behavioral:sim_1:Functional:jmb_scanline_filter_control_tb} -tclbatch {jmb_scanline_filter_control_tb.tcl} -log {jmb_scanline_filter_control_tb_behav.log}"
+Vivado Simulator 2014.2
+Time resolution is 1 ps
+x_in_cnt	y_in_cnt
+         x	         x	
+         0	         0	
+         1	         0	
+         2	         0	
+         3	         0	
+         4	         0	
+         5	         0	
+         6	         0	
+         7	         0	
+         8	         0	
+         9	         0	
+        10	         0	
+        11	         0	
+        12	         0	
+        13	         0	
+        14	         0	
+         0	         1	
+         1	         1	
+         2	         1	
+         3	         1	
+         4	         1	
+         5	         1	
+         6	         1	
+         7	         1	
+         8	         1	
+         9	         1	
+        10	         1	
+        11	         1	
+        12	         1	
+        13	         1	
+        14	         1	
+         0	         2	
+         1	         2	
+         2	         2	
+         3	         2	
+         4	         2	
+         5	         2	
+         6	         2	
+         7	         2	
+         8	         2	
+         9	         2	
+        10	         2	
+        11	         2	
+        12	         2	
+        13	         2	
+        14	         2	
+         0	         3	
+         1	         3	
+         2	         3	
+         3	         3	
+         4	         3	
+         5	         3	
+$finish called at time : 105 ns : File "/home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control_tb.v" Line 62
+INFO: [Vivado 12-1395] XSim completed. Design snapshot 'jmb_scanline_filter_control_tb_behav' loaded.
+INFO: [Vivado 12-3703] XSim simulation ran for 1000ns
+add_wave {{/jmb_scanline_filter_control_tb/dut/x_in_counter_r}} {{/jmb_scanline_filter_control_tb/dut/y_in_counter_r}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run all
+x_in_cnt	y_in_cnt
+         x	         x	
+         0	         0	
+         1	         0	
+         2	         0	
+         3	         0	
+         4	         0	
+         5	         0	
+         6	         0	
+         7	         0	
+         8	         0	
+         9	         0	
+        10	         0	
+        11	         0	
+        12	         0	
+        13	         0	
+        14	         0	
+         0	         1	
+         1	         1	
+         2	         1	
+         3	         1	
+         4	         1	
+         5	         1	
+         6	         1	
+         7	         1	
+         8	         1	
+         9	         1	
+        10	         1	
+        11	         1	
+        12	         1	
+        13	         1	
+        14	         1	
+         0	         2	
+         1	         2	
+         2	         2	
+         3	         2	
+         4	         2	
+         5	         2	
+         6	         2	
+         7	         2	
+         8	         2	
+         9	         2	
+        10	         2	
+        11	         2	
+        12	         2	
+        13	         2	
+        14	         2	
+         0	         3	
+         1	         3	
+         2	         3	
+         3	         3	
+         4	         3	
+         5	         3	
+$finish called at time : 105 ns : File "/home/jared/Research/vivado_workspace/jmb_ip/jmb_scanline_filter_control_tb.v" Line 62
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Oct  5 15:35:35 2014...

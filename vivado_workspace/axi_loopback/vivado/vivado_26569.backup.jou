@@ -1,0 +1,208 @@
+#-----------------------------------------------------------
+# Vivado v2014.2 (64-bit)
+# SW Build 932637 on Wed Jun 11 13:08:52 MDT 2014
+# IP Build 924643 on Fri May 30 09:20:16 MDT 2014
+# Start of session at: Tue Sep 16 19:05:58 2014
+# Process ID: 8485
+# Log file: /home/jared/Research/vivado_workspace/axi_loopback/vivado/vivado.log
+# Journal file: /home/jared/Research/vivado_workspace/axi_loopback/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project project_1 . -part xc7z020clg484-1
+set_property board_part xilinx.com:zc702:part0:1.0 [current_project]
+create_bd_design "design_1"
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_dma:7.1 axi_dma_0
+endgroup
+set_property location {1 66 158} [get_bd_cells axi_dma_0]
+set_property location {0.5 -167 134} [get_bd_cells axi_dma_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.4 processing_system7_0
+endgroup
+regenerate_bd_layout
+apply_bd_automation -rule xilinx.com:bd_rule:processing_system7 -config {make_external "FIXED_IO, DDR" apply_board_preset "1" Master "Disable" Slave "Disable" }  [get_bd_cells processing_system7_0]
+startgroup
+set_property -dict [list CONFIG.PCW_USE_S_AXI_HP0 {1} CONFIG.PCW_TTC0_PERIPHERAL_ENABLE {0}] [get_bd_cells processing_system7_0]
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/axi_dma_0/M_AXI_MM2S" Clk "Auto" }  [get_bd_intf_pins processing_system7_0/S_AXI_HP0]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Slave "/processing_system7_0/S_AXI_HP0" Clk "Auto" }  [get_bd_intf_pins axi_dma_0/M_AXI_S2MM]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config {Master "/processing_system7_0/M_AXI_GP0" Clk "Auto" }  [get_bd_intf_pins axi_dma_0/S_AXI_LITE]
+startgroup
+set_property -dict [list CONFIG.c_include_sg {0} CONFIG.c_sg_length_width {23}] [get_bd_cells axi_dma_0]
+endgroup
+connect_bd_intf_net [get_bd_intf_pins axi_dma_0/S_AXIS_S2MM] [get_bd_intf_pins axi_dma_0/M_AXIS_MM2S]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:c_counter_binary:12.0 c_counter_binary_0
+endgroup
+connect_bd_net -net [get_bd_nets processing_system7_0_FCLK_CLK0] [get_bd_pins c_counter_binary_0/CLK] [get_bd_pins processing_system7_0/FCLK_CLK0]
+startgroup
+create_bd_port -dir O -from 15 -to 0 -type data Q
+connect_bd_net [get_bd_pins /c_counter_binary_0/Q] [get_bd_ports Q]
+endgroup
+regenerate_bd_layout
+make_wrapper -files [get_files /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd] -top
+add_files -norecurse /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+save_bd_design
+launch_runs synth_1
+wait_on_run synth_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0
+apply_board_connection -board_interface "leds_4bits" -ip_intf "axi_gpio_0/GPIO" -diagram "design_1" 
+endgroup
+undo
+redo
+reset_run synth_1
+delete_bd_objs [get_bd_nets c_counter_binary_0_Q] [get_bd_ports Q]
+delete_bd_objs [get_bd_intf_nets axi_gpio_0_GPIO] [get_bd_cells axi_gpio_0]
+delete_bd_objs [get_bd_intf_ports leds_4bits]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:iomodule:2.2 iomodule_0
+apply_board_connection -board_interface "leds_4bits" -ip_intf "iomodule_0/GPIO1" -diagram "design_1" 
+endgroup
+undo
+undo
+startgroup
+create_bd_port -dir O -from 15 -to 0 -type data Q
+connect_bd_net [get_bd_pins /c_counter_binary_0/Q] [get_bd_ports Q]
+endgroup
+open_hw
+close_hw
+open_bd_design {/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd}
+validate_bd_design
+save_bd_design
+launch_runs synth_1
+wait_on_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+open_run impl_1
+startgroup
+route_design -unroute -nets [get_nets Q[15]]
+select_objects [get_nets Q[15]]
+endgroup
+startgroup
+set_property is_route_fixed 1 [get_nets {design_1_i/c_counter_binary_0/Q[15] }]
+set_property is_bel_fixed 1 [get_cells {Q_OBUF[15]_inst design_1_i/c_counter_binary_0/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_simple_model.i_gt_1.carrychaingen[12].carrymux_CARRY4 design_1_i/c_counter_binary_0/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[16] }]
+set_property is_loc_fixed 1 [get_cells {Q_OBUF[15]_inst design_1_i/c_counter_binary_0/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_simple_model.i_gt_1.carrychaingen[12].carrymux_CARRY4 design_1_i/c_counter_binary_0/U0/i_synth/i_baseblox.i_baseblox_counter/the_addsub/no_pipelining.the_addsub/i_lut6.i_lut6_addsub/i_q.i_simple.qreg/i_no_async_controls.output_reg[16] }]
+endgroup
+close_design
+synth_design -rtl -name rtl_1
+open_run impl_1
+set_property iostandard LVCMOS18 [get_ports [list {Q[15]} {Q[14]} {Q[13]} {Q[12]} {Q[11]} {Q[10]} {Q[9]} {Q[8]} {Q[7]} {Q[6]} {Q[5]} {Q[4]} {Q[3]} {Q[2]} {Q[1]} {Q[0]}]]
+startgroup
+set_property package_pin Y4 [get_ports {Q[14]}]
+endgroup
+startgroup
+set_property package_pin AB6 [get_ports {Q[15]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {Q[15]}]]
+set_property is_loc_fixed false [get_ports [list  {Q[14]}]]
+startgroup
+set_property package_pin P17 [get_ports {Q[15]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {Q[15]}]]
+set_property is_loc_fixed true [get_ports [list  {Q[15]}]]
+startgroup
+set_property package_pin P18 [get_ports {Q[14]}]
+endgroup
+startgroup
+set_property package_pin W10 [get_ports {Q[13]}]
+endgroup
+startgroup
+set_property package_pin A21 [get_ports {Q[4]}]
+endgroup
+set_property is_loc_fixed true [get_ports [list  {Q[12]}]]
+set_property is_loc_fixed false [get_ports [list  {Q[4]}]]
+startgroup
+set_property package_pin V7 [get_ports {Q[12]}]
+endgroup
+startgroup
+set_property package_pin A18 [get_ports {Q[1]}]
+endgroup
+startgroup
+set_property package_pin W5 [get_ports {Q[11]}]
+endgroup
+startgroup
+set_property package_pin W17 [get_ports {Q[10]}]
+endgroup
+startgroup
+set_property package_pin D15 [get_ports {Q[9]}]
+endgroup
+startgroup
+set_property package_pin E15 [get_ports {Q[8]}]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {Q[1]}]]
+file mkdir /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/constrs_1/new
+close [ open /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/constrs_1/new/const.xdc w ]
+add_files -fileset constrs_1 /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/constrs_1/new/const.xdc
+set_property target_constrs_file /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/constrs_1/new/const.xdc [current_fileset -constrset]
+save_constraints -force
+close_design
+open_bd_design {/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd}
+validate_bd_design
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+open_run impl_1
+close_design
+open_bd_design {/home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.srcs/sources_1/bd/design_1/design_1.bd}
+delete_bd_objs [get_bd_nets c_counter_binary_0_Q] [get_bd_ports Q]
+startgroup
+set_property -dict [list CONFIG.Output_Width {8}] [get_bd_cells c_counter_binary_0]
+endgroup
+startgroup
+create_bd_port -dir O -from 7 -to 0 -type data Q
+connect_bd_net [get_bd_pins /c_counter_binary_0/Q] [get_bd_ports Q]
+endgroup
+save_bd_design
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+reset_run synth_1
+startgroup
+set_property -dict [list CONFIG.Output_Width {16}] [get_bd_cells c_counter_binary_0]
+endgroup
+delete_bd_objs [get_bd_nets c_counter_binary_0_Q] [get_bd_ports Q]
+create_bd_port -dir O -from 15 -to 8 -type data Q
+connect_bd_net [get_bd_ports Q] [get_bd_pins c_counter_binary_0/Q]
+validate_bd_design
+delete_bd_objs [get_bd_nets c_counter_binary_0_Q]
+delete_bd_objs [get_bd_ports Q]
+create_bd_port -dir O -from 15 -to 8 -type data Q
+delete_bd_objs [get_bd_ports Q]
+delete_bd_objs [get_bd_intf_ports leds_4bits]
+startgroup
+create_bd_port -dir O -from 15 -to 0 -type data Q
+connect_bd_net [get_bd_pins /c_counter_binary_0/Q] [get_bd_ports Q]
+endgroup
+startgroup
+set_property -dict [list CONFIG.Output_Width {8} CONFIG.Latency {32}] [get_bd_cells c_counter_binary_0]
+endgroup
+delete_bd_objs [get_bd_nets c_counter_binary_0_Q] [get_bd_ports Q]
+startgroup
+create_bd_port -dir O -from 7 -to 0 -type data Q
+connect_bd_net [get_bd_pins /c_counter_binary_0/Q] [get_bd_ports Q]
+endgroup
+save_bd_design
+launch_runs synth_1
+wait_on_run synth_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:5.1 clk_wiz_0
+endgroup
+connect_bd_net -net [get_bd_nets processing_system7_0_FCLK_CLK0] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK0]
+disconnect_bd_net /processing_system7_0_FCLK_CLK0 [get_bd_pins c_counter_binary_0/CLK]
+connect_bd_net [get_bd_pins c_counter_binary_0/CLK] [get_bd_pins clk_wiz_0/clk_out1]
+delete_bd_objs [get_bd_nets clk_wiz_0_clk_out1] [get_bd_cells clk_wiz_0]
+delete_bd_objs [get_bd_nets c_counter_binary_0_Q] [get_bd_cells c_counter_binary_0]
+delete_bd_objs [get_bd_ports Q]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+file mkdir /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.sdk
+file copy -force /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.runs/impl_1/design_1_wrapper.sysdef /home/jared/Research/vivado_workspace/axi_loopback/sdk/design_1_wrapper.hdf
+
+launch_sdk -workspace /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.sdk -hwspec /home/jared/Research/vivado_workspace/axi_loopback/sdk/design_1_wrapper.hdf
+file copy -force /home/jared/Research/vivado_workspace/axi_loopback/vivado/project_1.runs/impl_1/design_1_wrapper.bit /home/jared/Research/vivado_workspace/axi_loopback/sdk/bitstream.bit

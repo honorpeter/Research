@@ -1,0 +1,2 @@
+verilog xil_defaultlib  "/home/jared/Research/vivado_workspace/jmb_ip/jmb_9x9_filter_tb.v"
+verilog xil_defaultlib "/opt/Xilinx/Vivado/2014.2/data/verilog/src/glbl.v"
