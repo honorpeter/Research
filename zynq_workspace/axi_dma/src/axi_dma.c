@@ -49,7 +49,7 @@
 #define AXI_DMA_MEMORY_START        0x39000000
 #define AXI_DMA_MEMORY_END          0x40000000
 
-#define AXI_DMA_TIMEOUT             1000000
+#define AXI_DMA_TIMEOUT             10000000
 
 /*-----------------------------------------------------------------------------
  *  Global Variables

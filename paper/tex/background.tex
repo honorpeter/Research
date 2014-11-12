@@ -5,20 +5,60 @@
 \chapter{Background}
 
 % Hardware
-\section{Hardware}
-The hardware platform used is the Xilinx ZC702 Evaluation Board, featuring a Zynq\textsuperscript{\textregistered} XC7Z020 System on a Chip (SoC).
+\section{Hardware - Xilinx ZC702}
+
+The hardware platform selected is the Xilinx ZC702 Evaluation Board, based around the Xilinx Zynq XC7Z020-1CLG484C. The board provides many standard peripherals such as 1 GB DDR3 RAM, 128 Mb QSPI flash memory, USB 2.0 transceiver, SD Card interface, USB JTAG interface, HDMI, Ethernet PHY with RJ-45 connector, and additional peripherals and user I/O as shown in Figure \ref{fig:zc702_top_levl} \cite{xilinx_zc702}.  The purpose of the evaluation board is primarily to allow for a system design to be tested prior to producing a custom board layout, and makes it an ideal development platform for this work.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.9\textwidth]{./img/zc702_top_level.PNG}
+  \caption{Top-Level Diagram of Xilinx ZC702 Evaluation Board}
+  \label{fig:zc702_top_level}
+\end{figure}
+
+The Xilinx Zynq XC7Z020-1CLG484C device combines a Processing System (PS) and Programmable Logic (PL) on the same chip, forming a System on a Chip (SoC).  The PS is comprised of two ARM Cortex-A9 MPCore application processors (APUs), each containing a NEON co-processor, a 32 KB L1 instruction cache, and a 32 KB L1 data cache.  The APUs share a common 512 KB L2 cache.  The PL is designed using the Xilinx Artix-7 fabric, their middle-grade fabric, with 85K Logic Cells (LCs), 53,200 Look-Up Tables (LUTs), 106,400 Flip-Flops (FFs), 560 KB Block RAM, and 220 DSP Blocks \cite{xilinx_zynq}. Figure \ref{fig:zynq_top_level} shows the top level view of the composition of the Zynq device.  Communication between the two portions of the chip occurs via a subset of the communcation buses specified by the Advanced Microcontroller Bus Architecture (AMBA), known as the Advanced eXtensible Interface (AXI).  The PL can be user programmed to provide access to additional peripherals or to offload processing from the APUs.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.9\textwidth]{./img/zynq_top_level.PNG}
+  \caption{Top-Level Diagram of Xiliinx Zynq device}
+  \label{fig:zynq_top_level}
+\end{figure}
+
+The reason the ZC702 was selected is two-fold.  The first being the use of the Xilinx Zynq device, which provides an ideal environment for building and testing homogeneous processing environments without limitations of using seperate CPU and FPGA chips.  Secondly, the Zynq device and the ZC702 board have a large amount of support from the open source community.  The wealth of information and example code provide an excellent starting place.
 
 % Operating System
-\section{Operating System}
-The operating system selected to run on the ZC702 is Linux.  The version used is maintained by Xilinx and is on kernel veresion 3.14.
+\section{Operating System - Linux 3.14}
+
+For purposes of this work, the Linux operating system has been selected to run on the ZC702 evaluation board.  This Linux kernel is compiled directly from source maintained by Xilinx and is based off of the mainstream Linux kernel 3.14.  The Linux kernel separates the operating system into two distinct spaces, the User Space and the Kernel Space.  User applications run in the User Space and use calls to the system call interface and the GNU C Library to communicate and interact with the Kernel Space, as shown in \ref{fig:linux_kernel}.  In the Kernel Space, system resources such as memory and peripherals are accessible and can be interacted with.  The mememory seen within the User Space is known as a virtual memory space which maps to a physical memory in the Kernel Space.  The Linux kernel provides several features including process management, memory management, a virtual file system, a network stack, and device drivers \cite{ibm_linux_kernel}.  These features allow for easier development and interaction between User Space applications and the hardware running underneath.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.9\textwidth]{./img/linux_kernel.png}
+  \caption{View of Linux kernel}
+  \label{fig:linux_kernel}
+\end{figure}
+
+Using Linux has several advantages over writing a bare-metal application.  One of the greatest benefits comes from the portability and ease of access to both development tools and open source applications.  An application that had previously been compiled for a Linux operating system can be recompiled to run in the embedded environment.  These applications can range from image processing libraries (libtiff) to communicaitons (ssh) to file transfer (ftp) to any number of other things.  The tools needed to do this, such as gcc, are readily available and open source, making them free to use.  In addition to applications, Linux provies device drivers for much of the hardare in use today, and if a driver does not exist, one can be created based on an existing driver allowing for easy access and interaction with hardware peripherals.  This is of great benefit when compared with having to write to device registers by hand in a bare-metal application.
+
+In addition to device drivers, the Linux kernel provides a method of directly mapping physical memory in the Kernel Space to virtual memory in a User Space application using the mmap system call.  This proves very useful in SoC applications where the peripherals are memory mapped and may change based on the configuration of the device.  Using this mapping, the registers of an external device can be directly written to from the User Space, bypassing the need to develop a custom device driver and allowing for faster development and testing.
+
+% AXI Standards
+\section{AXI Standards}
+
+\subsection{Stream Interface}
+
+\subsection{Memory Mapped Interface}
 
 % Algorithms
+\section{Image Filtering}
+
 \section{Bilinear Interpolation}
 Bilinear interpolation (BI) is the process by which an unknown value is interpolated based on a 2 dimensional interpolation process using 4 known values.  In its application in image processing, BI is used to scale images up and down.  Unlike nearest-neighbor interpolation, which relies on only one known value resulting in blocky images, BI has creates smoother images when scaling due to its estimation of intermediate values.
 
 \begin{figure}
   \centering
-  \includegraphics[width=10cm]{./img/bilinear_example.PNG}
+  \includegraphics[width=0.9\textwidth]{./img/bilinear_example.PNG}
   \caption{Bilinear Interpolation of Grayscale Image}
   \label{fig:bilinearExample}
 \end{figure}

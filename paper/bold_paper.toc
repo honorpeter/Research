@@ -1,11 +1,31 @@
-\contentsline {chapter}{\numberline {1}Abstract}{4}
-\contentsline {chapter}{\numberline {2}Introduction}{5}
-\contentsline {chapter}{\numberline {3}Background}{6}
-\contentsline {section}{\numberline {3.1}Hardware}{6}
-\contentsline {section}{\numberline {3.2}Operating System}{6}
-\contentsline {section}{\numberline {3.3}Bilinear Interpolation}{6}
-\contentsline {chapter}{\numberline {4}Design}{9}
-\contentsline {section}{\numberline {4.1}Common Design Components}{9}
-\contentsline {subsection}{\numberline {4.1.1}Tagged Image File Format}{9}
-\contentsline {chapter}{\numberline {5}Results}{11}
-\contentsline {chapter}{\numberline {6}Conclusion}{12}
+\contentsline {chapter}{\numberline {1}Abstract}{5}
+\contentsline {chapter}{\numberline {2}Introduction}{6}
+\contentsline {chapter}{\numberline {3}Background}{7}
+\contentsline {section}{\numberline {3.1}Hardware - Xilinx ZC702}{7}
+\contentsline {section}{\numberline {3.2}Operating System - Linux 3.14}{9}
+\contentsline {section}{\numberline {3.3}AXI Standards}{11}
+\contentsline {subsection}{\numberline {3.3.1}Stream Interface}{11}
+\contentsline {subsection}{\numberline {3.3.2}Memory Mapped Interface}{11}
+\contentsline {section}{\numberline {3.4}Image Filtering}{11}
+\contentsline {section}{\numberline {3.5}Bilinear Interpolation}{11}
+\contentsline {chapter}{\numberline {4}Design}{14}
+\contentsline {section}{\numberline {4.1}Common Design Components}{14}
+\contentsline {subsection}{\numberline {4.1.1}Tagged Image File Format}{14}
+\contentsline {subsection}{\numberline {4.1.2}Cross-Compilation}{15}
+\contentsline {subsection}{\numberline {4.1.3}User Interface}{15}
+\contentsline {section}{\numberline {4.2}Processor Based Processing}{15}
+\contentsline {section}{\numberline {4.3}Programmable Logic Based Processing}{15}
+\contentsline {section}{\numberline {4.4}Homogeneous Processing}{15}
+\contentsline {chapter}{\numberline {5}Results}{16}
+\contentsline {section}{\numberline {5.1}3x3 Gaussian Filter Results}{16}
+\contentsline {section}{\numberline {5.2}9x9 LoG Filter Results}{16}
+\contentsline {section}{\numberline {5.3}Bilinear Interpolation Results}{16}
+\contentsline {chapter}{\numberline {6}Conclusion}{17}
+\contentsline {chapter}{Appendices}{19}
+\contentsline {chapter}{\numberline {A}Useful Resources}{20}
+\contentsline {section}{\numberline {A.1}Programmable Logic}{20}
+\contentsline {section}{\numberline {A.2}Operating System}{20}
+\contentsline {section}{\numberline {A.3}Vivado}{20}
+\contentsline {chapter}{\numberline {B}Verilog Sources}{21}
+\contentsline {chapter}{\numberline {C}C Source}{22}
+\contentsline {chapter}{\numberline {D}Reproduction of Work}{23}

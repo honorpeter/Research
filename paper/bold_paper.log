@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.8.27)  7 SEP 2014 21:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.8.27)  6 NOV 2014 17:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -130,36 +130,44 @@ Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \titlewidthlast=\dimen117
 \titlewidthfirst=\dimen118
 ))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count101
+\c@@ppsavesec=\count102
+\c@@ppsaveapp=\count103
+)
 (./bold_paper.aux (./tex/title.aux) (./tex/abstract.aux)
 (./tex/introduction.aux) (./tex/background.aux) (./tex/design.aux)
-(./tex/results.aux) (./tex/conclusion.aux) (./tex/references.aux))
+(./tex/results.aux) (./tex/conclusion.aux) (./tex/references.aux)
+(./tex/appendix_a.aux) (./tex/appendix_b.aux) (./tex/appendix_c.aux)
+(./tex/appendix_d.aux))
 \openout1 = `bold_paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
 
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count101
+\scratchcounter=\count104
 \scratchdimen=\dimen119
 \scratchbox=\box29
-\nofMPsegments=\count102
-\nofMParguments=\count103
+\nofMPsegments=\count105
+\nofMParguments=\count106
 \everyMPshowfont=\toks21
-\MPscratchCnt=\count104
+\MPscratchCnt=\count107
 \MPscratchDim=\dimen120
-\MPnumerator=\count105
-\makeMPintoPDFobject=\count106
+\MPnumerator=\count108
+\makeMPintoPDFobject=\count109
 \everyMPtoPDFconversion=\toks22
 ) (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -216,32 +224,32 @@ e
 
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) (./bol
-d_paper.toc)
+d_paper.toc [1
+
+
+])
 \tf@toc=\write3
 \openout3 = `bold_paper.toc'.
 
- [1
-
-
-] (./bold_paper.lof)
+ [2] (./bold_paper.lof)
 \tf@lof=\write4
 \openout4 = `bold_paper.lof'.
 
- [2
+ [3
 
-] (./bold_paper.lot)
+]
+(./bold_paper.lot)
 \tf@lot=\write5
 \openout5 = `bold_paper.lot'.
 
-
-[3
+ [4
 
 ]
 \openout2 = `./tex/abstract.aux'.
 
  (./tex/abstract.tex
 Chapter 1.
-) [4
+) [5
 
 
 ]
@@ -249,7 +257,7 @@ Chapter 1.
 
  (./tex/introduction.tex
 Chapter 2.
-) [5
+) [6
 
 
 
@@ -258,45 +266,81 @@ Chapter 2.
 
  (./tex/background.tex
 Chapter 3.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 9.
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
 
-<./img/bilinear_example.PNG, id=24, 691.08188pt x 258.9675pt>
+LaTeX Warning: Reference `fig:zc702_top_levl' on page 7 undefined on input line
+ 10.
+
+
+LaTeX Warning: Citation `xilinx_zc702' on page 7 undefined on input line 10.
+
+<./img/zc702_top_level.PNG, id=28, 657.95813pt x 542.025pt>
+File: ./img/zc702_top_level.PNG Graphic file (type png)
+
+<use ./img/zc702_top_level.PNG>
+Package pdftex.def Info: ./img/zc702_top_level.PNG used on input line 14.
+(pdftex.def)             Requested size: 350.99762pt x 289.15758pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: Citation `xilinx_zynq' on page 7 undefined on input line 19.
+
+[7
+
+
+
+] <./img/zynq_top_level.PNG, id=33, 397.485pt x 253.69781pt>
+File: ./img/zynq_top_level.PNG Graphic file (type png)
+
+<use ./img/zynq_top_level.PNG>
+Package pdftex.def Info: ./img/zynq_top_level.PNG used on input line 23.
+(pdftex.def)             Requested size: 350.99762pt x 224.03285pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[8 <./img/zc702_top_level.PNG>]
+
+LaTeX Warning: Citation `ibm_linux_kernel' on page 9 undefined on input line 33
+.
+
+[9 <./img/zynq_top_level.PNG>]
+<./img/linux_kernel.png, id=42, 278.54062pt x 188.20313pt>
+File: ./img/linux_kernel.png Graphic file (type png)
+
+<use ./img/linux_kernel.png>
+Package pdftex.def Info: ./img/linux_kernel.png used on input line 37.
+(pdftex.def)             Requested size: 350.99762pt x 237.1659pt.
+ [10 <./img/linux_kernel.png>] [11]
+<./img/bilinear_example.PNG, id=49, 691.08188pt x 258.9675pt>
 File: ./img/bilinear_example.PNG Graphic file (type png)
 
 <use ./img/bilinear_example.PNG>
-Package pdftex.def Info: ./img/bilinear_example.PNG used on input line 21.
-(pdftex.def)             Requested size: 284.52756pt x 106.61992pt.
- [6
-
-
-
-] [7 <./img/bilinear_example.PNG>]) [8]
+Package pdftex.def Info: ./img/bilinear_example.PNG used on input line 61.
+(pdftex.def)             Requested size: 350.99762pt x 131.5303pt.
+ [12 <./img/bilinear_example.PNG>]) [13]
 \openout2 = `./tex/design.aux'.
 
 
 (./tex/design.tex
 Chapter 4.
-<./img/tiffFormat.png, id=42, 529.98pt x 364.36125pt>
+<./img/tiffFormat.png, id=61, 529.98pt x 364.36125pt>
 File: ./img/tiffFormat.png Graphic file (type png)
 
 <use ./img/tiffFormat.png>
 Package pdftex.def Info: ./img/tiffFormat.png used on input line 17.
 (pdftex.def)             Requested size: 284.52756pt x 195.6124pt.
-) [9
+ [14
 
 
 
-] [10 <./img/tiffFormat.png>]
+]) [15 <./img/tiffFormat.png>]
 \openout2 = `./tex/results.aux'.
 
  (./tex/results.tex
 Chapter 5.
-) [11
+) [16
 
 
 
@@ -305,43 +349,85 @@ Chapter 5.
 
  (./tex/conclusion.tex
 Chapter 6.
-) [12
+) [17
 
 
 
 ]
 \openout2 = `./tex/references.aux'.
 
- (./tex/references.tex (./bold_paper.bbl)) [13
+ (./tex/references.tex (./bold_paper.bbl)) [18
 
 
 
-] (./bold_paper.aux
-(./tex/title.aux) (./tex/abstract.aux) (./tex/introduction.aux)
-(./tex/background.aux) (./tex/design.aux) (./tex/results.aux)
-(./tex/conclusion.aux) (./tex/references.aux)) ) 
+] [19
+
+
+
+]
+\openout2 = `./tex/appendix_a.aux'.
+
+
+(./tex/appendix_a.tex
+Appendix A.
+) [20
+
+
+]
+\openout2 = `./tex/appendix_b.aux'.
+
+ (./tex/appendix_b.tex
+Appendix B.
+) [21
+
+
+
+]
+\openout2 = `./tex/appendix_c.aux'.
+
+ (./tex/appendix_c.tex
+Appendix C.
+) [22
+
+
+
+]
+\openout2 = `./tex/appendix_d.aux'.
+
+ (./tex/appendix_d.tex
+Appendix D.
+) [23
+
+
+
+] (./bold_paper.aux (./tex/title.aux) (./tex/abstract.aux)
+(./tex/introduction.aux) (./tex/background.aux) (./tex/design.aux)
+(./tex/results.aux) (./tex/conclusion.aux) (./tex/references.aux)
+(./tex/appendix_a.aux) (./tex/appendix_b.aux) (./tex/appendix_c.aux)
+(./tex/appendix_d.aux))
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2538 strings out of 493108
- 34632 string characters out of 6134853
- 98370 words of memory out of 5000000
- 5908 multiletter control sequences out of 15000+600000
- 10350 words of font info for 37 fonts, out of 8000000 for 9000
+ 2673 strings out of 493108
+ 36882 string characters out of 6134853
+ 101428 words of memory out of 5000000
+ 6012 multiletter control sequences out of 15000+600000
+ 10729 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,10n,33p,881b,229s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2014/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2014/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2014/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2014/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2014/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2014/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2014/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmti12.pfb>
-Output written on bold_paper.pdf (14 pages, 122696 bytes).
+ 38i,5n,33p,1153b,227s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
+></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
+usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr
+/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
+local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on bold_paper.pdf (24 pages, 262482 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
+ 119 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -20,7 +20,7 @@ INCLUDE_DIR=include
 # Set the target executable
 TARGET_FILE=bilinear_double
 # Add the src files
-SRC_FILES=main.c image.c bilinear_double.c benchmark.c hardware_bilinear_horz_double.c
+SRC_FILES=main.c image.c bilinear.c benchmark.c hardware_bilinear.c
 
 OBJ_FILES=$(SRC_FILES:.c=.o)
 DEP_FILES=$(OBJ_FILES:.o=.d)

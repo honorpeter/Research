@@ -1,0 +1,68 @@
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.2 (lin64) Build 932637 Wed Jun 11 13:08:52 MDT 2014
+| Date         : Wed Nov  5 13:17:29 2014
+| Host         : jared-Lenovo running 64-bit Ubuntu 14.04.1 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+-----------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_jmb_axi_horz_interpolator_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_jmb_axi_horz_interpolator_0_0 (RIT:user:jmb_axi_horz_interpolator:1.0) from (Rev. 4) to (Rev. 5)
+
+
+
+
+
+
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.2 (lin64) Build 932637 Wed Jun 11 13:08:52 MDT 2014
+| Date         : Wed Nov  5 03:03:57 2014
+| Host         : jared-Lenovo running 64-bit Ubuntu 14.04.1 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+-----------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_jmb_axi_horz_interpolator_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_jmb_axi_horz_interpolator_0_0 (RIT:user:jmb_axi_horz_interpolator:1.0) from (Rev. 3) to (Rev. 4)
+
+
+
+
+
+
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------
+| Tool Version : Vivado v.2014.2 (lin64) Build 932637 Wed Jun 11 13:08:52 MDT 2014
+| Date         : Wed Nov  5 01:43:30 2014
+| Host         : jared-Lenovo running 64-bit Ubuntu 14.04.1 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+-----------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_jmb_axi_horz_interpolator_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_jmb_axi_horz_interpolator_0_0 (RIT:user:jmb_axi_horz_interpolator:1.0) from (Rev. 2) to (Rev. 3)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading IP 'design_1_jmb_axi_horz_interpolator_0_0'. These changes may impact your design.
+
+
+-upgraded port 'm00_axis_tdata' width 16 differs from original width 8
+

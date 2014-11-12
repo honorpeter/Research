@@ -1,0 +1,59 @@
+#-----------------------------------------------------------
+# Vivado v2014.2 (64-bit)
+# SW Build 932637 on Wed Jun 11 13:08:52 MDT 2014
+# IP Build 924643 on Fri May 30 09:20:16 MDT 2014
+# Start of session at: Wed Nov  5 01:22:40 2014
+# Process ID: 14850
+# Log file: /home/jared/Research/vivado_workspace/vivado.log
+# Journal file: /home/jared/Research/vivado_workspace/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/jared/Research/vivado_workspace/ip/managed_ip_project/managed_ip_project.xpr
+create_peripheral {RIT} {user} {jmb_axi_horz_interpolator} {1.0} -dir {/home/jared/Research/vivado_workspace/ip/ip_repo}
+add_peripheral_interface {S00_AXIS} -interface_mode {slave} -axi_type {stream} [ipx::find_open_core RIT:user:jmb_axi_horz_interpolator:1.0]
+add_peripheral_interface {M00_AXIS} -interface_mode {master} -axi_type {stream} [ipx::find_open_core RIT:user:jmb_axi_horz_interpolator:1.0]
+generate_peripheral [ipx::find_open_core RIT:user:jmb_axi_horz_interpolator:1.0]
+write_peripheral [ipx::find_open_core RIT:user:jmb_axi_horz_interpolator:1.0]
+set_property ip_repo_paths  {/home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_horz_interpolator_1.0 /home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_9x9_1.0 /home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0 /home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_filter_3x3_1.0 /home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_counter_1.0 /home/jared/Research/vivado_workspace/ip/ip_repo/sample_generator_1.0} [current_fileset]
+update_ip_catalog -rebuild
+ipx::edit_ip_in_project -upgrade true -name {jmb_axi_horz_interpolator_v1.0_project} -directory {/home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_horz_interpolator_1.0/jmb_axi_horz_interpolator_v1.0_project} {/home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_horz_interpolator_1.0/component.xml}
+update_compile_order -fileset sim_1
+add_files -norecurse -scan_for_includes /home/jared/Research/vivado_workspace/ip/ip_repo/jmb_axi_horz_interpolator_1.0/hdl/jmb_horz_interp_by_2.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+ipx::merge_project_changes files [ipx::current_core]
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+ipx::merge_project_changes hdl_parameters [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+set_property group_name {UnGrouped} [ipx::get_user_parameter C_S00_AXIS_TDATA_WIDTH [ipx::current_core]]
+set_property order {0} [ipx::get_user_parameter C_S00_AXIS_TDATA_WIDTH [ipx::current_core]]
+set_property group_name {UnGrouped} [ipx::get_user_parameter C_M00_AXIS_TDATA_WIDTH [ipx::current_core]]
+set_property order {0} [ipx::get_user_parameter C_M00_AXIS_TDATA_WIDTH [ipx::current_core]]
+set_property group_name {UnGrouped} [ipx::get_user_parameter C_M00_AXIS_START_COUNT [ipx::current_core]]
+set_property order {0} [ipx::get_user_parameter C_M00_AXIS_START_COUNT [ipx::current_core]]
+set_property page_name {} [ipx::get_user_parameter C_S00_AXIS_TDATA_WIDTH [ipx::current_core]]
+set_property order {0} [ipx::get_user_parameter C_S00_AXIS_TDATA_WIDTH [ipx::current_core]]
+set_property page_name {} [ipx::get_user_parameter C_M00_AXIS_TDATA_WIDTH [ipx::current_core]]
+set_property order {0} [ipx::get_user_parameter C_M00_AXIS_TDATA_WIDTH [ipx::current_core]]
+set_property page_name {} [ipx::get_user_parameter C_M00_AXIS_START_COUNT [ipx::current_core]]
+set_property order {0} [ipx::get_user_parameter C_M00_AXIS_START_COUNT [ipx::current_core]]
+set_property page_name {} [ipx::get_user_parameter C_S00_AXIS_TDATA_WIDTH [ipx::current_core]]
+set_property order {0} [ipx::get_user_parameter C_S00_AXIS_TDATA_WIDTH [ipx::current_core]]
+set_property page_name {} [ipx::get_user_parameter C_M00_AXIS_TDATA_WIDTH [ipx::current_core]]
+set_property order {0} [ipx::get_user_parameter C_M00_AXIS_TDATA_WIDTH [ipx::current_core]]
+set_property page_name {} [ipx::get_user_parameter C_M00_AXIS_START_COUNT [ipx::current_core]]
+set_property order {0} [ipx::get_user_parameter C_M00_AXIS_START_COUNT [ipx::current_core]]
+set_property page_name {Page 1} [ipx::get_user_parameter C_S00_AXIS_TDATA_WIDTH [ipx::current_core]]
+set_property page_name {Page 1} [ipx::get_user_parameter C_M00_AXIS_TDATA_WIDTH [ipx::current_core]]
+set_property page_name {Page 1} [ipx::get_user_parameter C_M00_AXIS_START_COUNT [ipx::current_core]]
+set_property order {10000} [ipx::get_user_parameter C_S00_AXIS_TDATA_WIDTH [ipx::current_core]]
+set_property order {10100} [ipx::get_user_parameter C_M00_AXIS_TDATA_WIDTH [ipx::current_core]]
+set_property order {10200} [ipx::get_user_parameter C_M00_AXIS_START_COUNT [ipx::current_core]]
+ipx::update_ip_instances -delete_project true
