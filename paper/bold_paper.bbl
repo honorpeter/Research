@@ -1,5 +1,15 @@
 \begin{thebibliography}{1}
 
+\bibitem{jain1995machine}
+Ramesh Jain, Rangachar Kasturi, and Brian~G Schunck.
+\newblock {\em Machine vision}, volume~5.
+\newblock McGraw-Hill New York, 1995.
+
+\bibitem{ibm_linux_kernel}
+M.~Tim Jones.
+\newblock Anatomy of the linux kernel: History and architectural decomposition.
+\newblock {\em IBM developerWorks}, 2007.
+
 \bibitem{Murray1996}
 James~D. Murray and William~Van Ryper.
 \newblock {\em Encyclopedia of Graphics File Formats, 2nd Edition}.
@@ -10,5 +20,15 @@ Richard~H. Wiggins, H.~Christian Davidson, H.~Ric Harnsberger, Jason~R Lauman,
   and Patricia~A. Goede.
 \newblock Image file formats: Past, present, and future.
 \newblock {\em RadioGraphics}, 21:789--798, 2000.
+
+\bibitem{xilinx_zc702}
+Xilinx.
+\newblock {\em ZC702 Evaluation Board for the Zynq-7000 XC7Z020 All
+  Programmable SoC}, 6 2014.
+\newblock v1.3.
+
+\bibitem{xilinx_zynq}
+Xilinx.
+\newblock {\em Zynq-7000 All Programmable SoCs}, 2014.
 
 \end{thebibliography}

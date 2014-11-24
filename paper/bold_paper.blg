@@ -10,45 +10,49 @@ A level-1 auxiliary file: ./tex/results.aux
 A level-1 auxiliary file: ./tex/conclusion.aux
 A level-1 auxiliary file: ./tex/references.aux
 The style file: plain.bst
+A level-1 auxiliary file: ./tex/appendix_a.aux
+A level-1 auxiliary file: ./tex/appendix_b.aux
+A level-1 auxiliary file: ./tex/appendix_c.aux
+A level-1 auxiliary file: ./tex/appendix_d.aux
 Database file #1: ./bib/bold_references.bib
-You've used 2 entries,
+You've used 6 entries,
             2118 wiz_defined-function locations,
-            519 strings with 4489 characters,
-and the built_in function-call counts, 692 in all, are:
-= -- 63
-> -- 41
-< -- 0
-+ -- 16
-- -- 14
-* -- 50
-:= -- 126
-add.period$ -- 6
-call.type$ -- 2
-change.case$ -- 12
+            543 strings with 4940 characters,
+and the built_in function-call counts, 1496 in all, are:
+= -- 142
+> -- 68
+< -- 1
++ -- 28
+- -- 22
+* -- 94
+:= -- 260
+add.period$ -- 17
+call.type$ -- 6
+change.case$ -- 27
 chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 23
-empty$ -- 49
-format.name$ -- 14
-if$ -- 136
+cite$ -- 6
+duplicate$ -- 61
+empty$ -- 122
+format.name$ -- 22
+if$ -- 307
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 3
-newline$ -- 13
-num.names$ -- 4
-pop$ -- 15
+int.to.str$ -- 6
+missing$ -- 6
+newline$ -- 32
+num.names$ -- 8
+pop$ -- 33
 preamble$ -- 1
-purify$ -- 11
+purify$ -- 25
 quote$ -- 0
-skip$ -- 14
+skip$ -- 38
 stack$ -- 0
-substring$ -- 35
-swap$ -- 2
-text.length$ -- 0
+substring$ -- 57
+swap$ -- 7
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 6
+type$ -- 20
 warning$ -- 0
-while$ -- 6
-width$ -- 3
-write$ -- 23
+while$ -- 10
+width$ -- 7
+write$ -- 62

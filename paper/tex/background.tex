@@ -7,7 +7,7 @@
 % Hardware
 \section{Hardware - Xilinx ZC702}
 
-The hardware platform selected is the Xilinx ZC702 Evaluation Board, based around the Xilinx Zynq XC7Z020-1CLG484C. The board provides many standard peripherals such as 1 GB DDR3 RAM, 128 Mb QSPI flash memory, USB 2.0 transceiver, SD Card interface, USB JTAG interface, HDMI, Ethernet PHY with RJ-45 connector, and additional peripherals and user I/O as shown in Figure \ref{fig:zc702_top_levl} \cite{xilinx_zc702}.  The purpose of the evaluation board is primarily to allow for a system design to be tested prior to producing a custom board layout, and makes it an ideal development platform for this work.
+The hardware platform selected is the Xilinx ZC702 Evaluation Board, based around the Xilinx Zynq XC7Z020-1CLG484C. The board provides many standard peripherals such as 1 GB DDR3 RAM, 128 Mb QSPI flash memory, USB 2.0 transceiver, SD Card interface, USB JTAG interface, HDMI, Ethernet PHY with RJ-45 connector, and additional peripherals and user I/O as shown in Figure \ref{fig:zc702_top_level} \cite{xilinx_zc702}.  The purpose of the evaluation board is primarily to allow for a system design to be tested prior to producing a custom board layout, and makes it an ideal development platform for this work.
 
 \begin{figure}[!h]
   \centering
@@ -44,19 +44,68 @@ Using Linux has several advantages over writing a bare-metal application.  One o
 In addition to device drivers, the Linux kernel provides a method of directly mapping physical memory in the Kernel Space to virtual memory in a User Space application using the mmap system call.  This proves very useful in SoC applications where the peripherals are memory mapped and may change based on the configuration of the device.  Using this mapping, the registers of an external device can be directly written to from the User Space, bypassing the need to develop a custom device driver and allowing for faster development and testing.
 
 % AXI Standards
-\section{AXI Standards}
+\section{Advanced Microcontroller Bus Architecture}
+Central to the design of heterogeneous systems is the necessity to move data between the different processing units of the SoC.  In order to facilitate this, ARM has deeloped a set of specfications known as the Advanced Microcontroller Bus Architecture (AMBA) which consists of a number of protocols and interfaces to allow for the efficient movement of such data based on a Master/Slave relationship uing a Ready/Valid handshake.  The Zynq device supports a number of memory-mapped interfaces for communication between the PS and PL including two 32-bit Advanced eXtensible Interface (AXI) master interfaces, two 32-bit AXI slave interfaces, four 32/64-bit hit performance AXI ports for direct access to DDR, and one 64-bit AXI slave interface known as the Accelerator Coherency Port (ACP).  While the memory-mapped interfaces allow for data to be easily transferred into and out of the PL, a method of easily streaming data through the PL for processing is also provided by the AXI streaming interface.  Using IP developed around tha AXI stream protocol, different processing blocks are easily linked together to form a processing pipeline.  Figure \ref{fig:axi_pipeline} shows an example processing pipeline utilizing both the memory-mapped and streaming AXI interfaces.  Xilinx provides a number of IP cores to be used in hardware development to interface with both memory-mapped and streaming AXI interfaces.
 
-\subsection{Stream Interface}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.9\textwidth]{./img/axi_pipeline.png}
+  \caption{Example AXI processing pipeline}
+  \label{fig:axi_pipeline}
+\end{figure}
 
-\subsection{Memory Mapped Interface}
-
-% Algorithms
 \section{Image Filtering}
+Image filtering is a core operation in the field of image processing.  It is the process of subjecting an input image to a linear, sapce invariant (LSI) system resulting in an output image that is the convolution of the input and the LSI system, in this case the filter kernel \cite{jain1995machine}.  The filter kenrl is a matrix of coefficients that when convolved with the input image results in a weighted sum of the current pixel and neighboring pixels, which is then stored in the output image.  Figure \ref{fig:filter_example} shows an example of how a filter kernel would be applied.  Due to the nature of convolution, the kernel must be flipped about the horizontal and vertical axis prior to being applied to the input image and calculating the output.
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width = 0.5\textwidth]{./img/filter_example.jpg}
+  \caption{Image filtering example}
+  \label{fig:filter_example}
+\end{figure}
+
+The process of filtering an image can become incresasingly resource intensive as the size of the kernel increases.  For the example shown in \ref{fig:filter_example}, a single output pixel would be calculated using equation \eqref{eq:filter_eq1}.
+\begin{equation}
+  \begin{split}
+  O(1,1) =& I\times I(0,0)+H\times I(1,0)+G\times I(2,0)+ \\
+          &F\times I(0,1)+E\times I(1,1)+D\times I(2,1)+ \\
+          &C\times I(0,2)+B\times I(1,2)+A\times I(2,2)
+  \label{eq:filter_eq1}
+  \end{split}
+\end{equation}
+In order to reduce the computational load, symmetric filters are typically used of the format shown in \ref{fig:filter_symmetric}. A filter of this form has an output pixel equation given by \eqref{eq:filter_symmetric}.
+\begin{equation}
+  \begin{split}
+    O(1,1) =& A\times I(1,1)+ \\
+            &B\times \left(I(0,1)+I(1,0)+I(2,1)+I(1,2)\right) +  \\
+            &C\times \left(I(0,0)+I(2,0)+I(0,2)+I(2,2)\right)
+  \label{eq:filter_symmetric}
+  \end{split}
+\end{equation}
+A comparison of the number of computations between the different sized filters and their symmetric counterparts, shown in table \ref{tbl:filter_ops}, shows the benefit of using symmetric filters.
+\begin{figure}[h]
+  \centering
+  \includegraphics{./img/filter_3x3_template.PNG}
+  \caption{Symmetric Filter}
+  \label{fig:filter_symmetric}
+\end{figure} 
+
+\begin{table}[h]
+  \begin{tabular}{|c||c|c|c|}
+    \hline 
+    Filter Type & Additions & Multiplications & Computational Load \\ \hline \hline
+    3x3 Filter &  8 & 9 & 100\%\\ \hline
+    9x9 Filter & 80 & 81 & 100\% \\ \hline
+    3x3 Symmetric Filter & 8 & 3 & 64.7\% \\ \hline
+    9x9 Symmetric Filter & 80 & 15 & 59.0\% \\ \hline
+  \end{tabular}
+  \caption{Operations required for different filter kernels}
+  \label{tbl:filter_ops}
+\end{table}
 
 \section{Bilinear Interpolation}
 Bilinear interpolation (BI) is the process by which an unknown value is interpolated based on a 2 dimensional interpolation process using 4 known values.  In its application in image processing, BI is used to scale images up and down.  Unlike nearest-neighbor interpolation, which relies on only one known value resulting in blocky images, BI has creates smoother images when scaling due to its estimation of intermediate values.
 
-\begin{figure}
+\begin{figure}[ht]
   \centering
   \includegraphics[width=0.9\textwidth]{./img/bilinear_example.PNG}
   \caption{Bilinear Interpolation of Grayscale Image}
