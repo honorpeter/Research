@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.8.27)  24 NOV 2014 17:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.8.27)  30 NOV 2014 16:09
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -237,19 +237,19 @@ d_paper.toc [1
 
  [3
 
-]
+] [4]
 (./bold_paper.lot)
 \tf@lot=\write5
 \openout5 = `bold_paper.lot'.
 
- [4
+ [5
 
 ]
 \openout2 = `./tex/abstract.aux'.
 
  (./tex/abstract.tex
 Chapter 1.
-) [5
+) [1
 
 
 ]
@@ -257,7 +257,7 @@ Chapter 1.
 
  (./tex/introduction.tex
 Chapter 2.
-) [6
+) [2
 
 
 
@@ -266,7 +266,7 @@ Chapter 2.
 
  (./tex/background.tex
 Chapter 3.
-<./img/zc702_top_level.PNG, id=28, 657.95813pt x 542.025pt>
+<./img/zc702_top_level.PNG, id=31, 657.95813pt x 542.025pt>
 File: ./img/zc702_top_level.PNG Graphic file (type png)
 
 <use ./img/zc702_top_level.PNG>
@@ -276,11 +276,11 @@ Package pdftex.def Info: ./img/zc702_top_level.PNG used on input line 14.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[7
+[3
 
 
 
-] <./img/zynq_top_level.PNG, id=33, 397.485pt x 253.69781pt>
+] <./img/zynq_top_level.PNG, id=36, 397.485pt x 253.69781pt>
 File: ./img/zynq_top_level.PNG Graphic file (type png)
 
 <use ./img/zynq_top_level.PNG>
@@ -290,29 +290,29 @@ Package pdftex.def Info: ./img/zynq_top_level.PNG used on input line 23.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[8 <./img/zc702_top_level.PNG>] [9 <./img/zynq_top_level.PNG>]
-<./img/linux_kernel.png, id=42, 278.54062pt x 188.20313pt>
+[4 <./img/zc702_top_level.PNG>] [5 <./img/zynq_top_level.PNG>]
+<./img/linux_kernel.png, id=45, 278.54062pt x 188.20313pt>
 File: ./img/linux_kernel.png Graphic file (type png)
 
 <use ./img/linux_kernel.png>
 Package pdftex.def Info: ./img/linux_kernel.png used on input line 37.
 (pdftex.def)             Requested size: 350.99762pt x 237.1659pt.
- [10 <./img/linux_kernel.png>] [11]
-<./img/axi_pipeline.png, id=49, 659.1024pt x 359.9046pt>
+ [6 <./img/linux_kernel.png>] [7]
+<./img/axi_pipeline.png, id=53, 659.1024pt x 359.9046pt>
 File: ./img/axi_pipeline.png Graphic file (type png)
 
 <use ./img/axi_pipeline.png>
 Package pdftex.def Info: ./img/axi_pipeline.png used on input line 52.
 (pdftex.def)             Requested size: 350.99762pt x 191.66014pt.
 
-<./img/filter_example.jpg, id=50, 332.24126pt x 274.02374pt>
+<./img/filter_example.jpg, id=54, 332.24126pt x 274.02374pt>
 File: ./img/filter_example.jpg Graphic file (type jpg)
 
 <use ./img/filter_example.jpg>
 Package pdftex.def Info: ./img/filter_example.jpg used on input line 61.
 (pdftex.def)             Requested size: 195.0pt x 160.83217pt.
- [12 <./img/axi_pipeline.png>] [13 <./img/filter_example.jpg>] <./img/filter_3x
-3_template.PNG, id=59, 107.65219pt x 63.98906pt>
+ [8 <./img/axi_pipeline.png>] [9 <./img/filter_example.jpg>] <./img/filter_3x3_
+template.PNG, id=62, 107.65219pt x 63.98906pt>
 File: ./img/filter_3x3_template.PNG Graphic file (type png)
 
 <use ./img/filter_3x3_template.PNG>
@@ -326,59 +326,131 @@ Overfull \hbox (3.47562pt too wide) in paragraph at lines 93--101
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[14 <./img/filter_3x3_template.PNG>]
-<./img/bilinear_example.PNG, id=66, 691.08188pt x 258.9675pt>
+[10 <./img/filter_3x3_template.PNG>]
+<./img/bilinear_example.PNG, id=69, 691.08188pt x 258.9675pt>
 File: ./img/bilinear_example.PNG Graphic file (type png)
 
 <use ./img/bilinear_example.PNG>
 Package pdftex.def Info: ./img/bilinear_example.PNG used on input line 110.
 (pdftex.def)             Requested size: 350.99762pt x 131.5303pt.
- [15 <./img/bilinear_example.PNG>]) [16]
+ [11 <./img/bilinear_example.PNG>]) [12]
 \openout2 = `./tex/design.aux'.
 
 
 (./tex/design.tex
 Chapter 4.
-<./img/tiffFormat.png, id=75, 529.98pt x 364.36125pt>
+<./img/tiffFormat.png, id=78, 529.98pt x 364.36125pt>
 File: ./img/tiffFormat.png Graphic file (type png)
 
 <use ./img/tiffFormat.png>
 Package pdftex.def Info: ./img/tiffFormat.png used on input line 17.
 (pdftex.def)             Requested size: 284.52756pt x 195.6124pt.
- [17
+ [13
 
 
 
-] [18 <./img/tiffFormat.png>]
-<./img/research_ui.png, id=84, 724.7075pt x 463.7325pt>
+] [14 <./img/tiffFormat.png>]
+<./img/research_ui.png, id=87, 724.7075pt x 463.7325pt>
 File: ./img/research_ui.png Graphic file (type png)
 
 <use ./img/research_ui.png>
 Package pdftex.def Info: ./img/research_ui.png used on input line 29.
 (pdftex.def)             Requested size: 350.99762pt x 224.59863pt.
- [19 <./img/research_ui.png>]
-<./img/filter_3x3_values.PNG, id=89, 143.03438pt x 60.97781pt>
-File: ./img/filter_3x3_values.PNG Graphic file (type png)
+ [15 <./img/research_ui.png>] [16]
 
-<use ./img/filter_3x3_values.PNG>
-Package pdftex.def Info: ./img/filter_3x3_values.PNG used on input line 58.
-(pdftex.def)             Requested size: 143.03401pt x 60.97765pt.
+LaTeX Warning: File `./img/generic_hard_soft_framework.png' not found on input 
+line 41.
+
+
+! Package pdftex.def Error: File `./img/generic_hard_soft_framework.png' not fo
+und.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.41 ...th]{./img/generic_hard_soft_framework.png}
+                                                  
+? 
+[17] <./img/filter_software_framework.png, id=99, 515.526pt x 385.44pt>
+File: ./img/filter_software_framework.png Graphic file (type png)
+
+<use ./img/filter_software_framework.png>
+Package pdftex.def Info: ./img/filter_software_framework.png used on input line
+ 53.
+(pdftex.def)             Requested size: 350.99762pt x 262.43684pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[20] <./img/filter_9x9_values.PNG, id=93, 273.27094pt x 134.00063pt>
+[18] <./img/filter_3x3_values.PNG, id=103, 143.03438pt x 60.97781pt>
+File: ./img/filter_3x3_values.PNG Graphic file (type png)
+
+<use ./img/filter_3x3_values.PNG>
+Package pdftex.def Info: ./img/filter_3x3_values.PNG used on input line 72.
+(pdftex.def)             Requested size: 143.03401pt x 60.97765pt.
+ [19 <./img/filter_software_framework.png> <./img/filter_3x3_values.PNG>]
+<./img/filter_9x9_values.PNG, id=110, 273.27094pt x 134.00063pt>
 File: ./img/filter_9x9_values.PNG Graphic file (type png)
 
 <use ./img/filter_9x9_values.PNG>
-Package pdftex.def Info: ./img/filter_9x9_values.PNG used on input line 68.
+Package pdftex.def Info: ./img/filter_9x9_values.PNG used on input line 82.
 (pdftex.def)             Requested size: 273.27025pt x 134.00027pt.
- [21 <./img/filter_3x3_values.PNG> <./img/filter_9x9_values.PNG>]) [22]
+
+
+LaTeX Warning: File `./img/bilinear_software_framework.png' not found on input 
+line 92.
+
+
+! Package pdftex.def Error: File `./img/bilinear_software_framework.png' not fo
+und.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.92 ...th]{./img/bilinear_software_framework.png}
+                                                  
+? 
+[20 <./img/filter_9x9_values.PNG>] [21]
+<./img/filter_hardware_software_framework.png, id=118, 516.0078pt x 292.4526pt>
+File: ./img/filter_hardware_software_framework.png Graphic file (type png)
+<use ./img/filter_hardware_software_framework.png>
+Package pdftex.def Info: ./img/filter_hardware_software_framework.png used on i
+nput line 118.
+(pdftex.def)             Requested size: 350.99762pt x 198.93207pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./img/filter_hardware_framework.png, id=119, 516.0078pt x 352.1958pt>
+File: ./img/filter_hardware_framework.png Graphic file (type png)
+
+<use ./img/filter_hardware_framework.png>
+Package pdftex.def Info: ./img/filter_hardware_framework.png used on input line
+ 125.
+(pdftex.def)             Requested size: 350.99762pt x 239.57059pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./img/hardware_filter_3x3.png, id=120, 881.2122pt x 393.1488pt>
+File: ./img/hardware_filter_3x3.png Graphic file (type png)
+
+<use ./img/hardware_filter_3x3.png>
+Package pdftex.def Info: ./img/hardware_filter_3x3.png used on input line 133.
+(pdftex.def)             Requested size: 350.99762pt x 156.59685pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [22] [23 <./img/filter_hardware_software_framework.png>] [24 <./img/filter_ha
+rdware_framework.png> <./img/hardware_filter_3x3.png>]
 \openout2 = `./tex/results.aux'.
 
  (./tex/results.tex
 Chapter 5.
-) [23
+) [25
 
 
 
@@ -387,18 +459,18 @@ Chapter 5.
 
  (./tex/conclusion.tex
 Chapter 6.
-) [24
+) [26
 
 
 
 ]
 \openout2 = `./tex/references.aux'.
 
- (./tex/references.tex (./bold_paper.bbl)) [25
+ (./tex/references.tex (./bold_paper.bbl)) [27
 
 
 
-] [26
+] [28
 
 
 
@@ -408,7 +480,7 @@ Chapter 6.
 
 (./tex/appendix_a.tex
 Appendix A.
-) [27
+) [29
 
 
 ]
@@ -416,7 +488,7 @@ Appendix A.
 
  (./tex/appendix_b.tex
 Appendix B.
-) [28
+) [30
 
 
 
@@ -425,7 +497,7 @@ Appendix B.
 
  (./tex/appendix_c.tex
 Appendix C.
-) [29
+) [31
 
 
 
@@ -434,7 +506,7 @@ Appendix C.
 
  (./tex/appendix_d.tex
 Appendix D.
-) [30
+) [32
 
 
 
@@ -444,13 +516,13 @@ Appendix D.
 (./tex/appendix_a.aux) (./tex/appendix_b.aux) (./tex/appendix_c.aux)
 (./tex/appendix_d.aux)) ) 
 Here is how much of TeX's memory you used:
- 2719 strings out of 493108
- 37988 string characters out of 6134853
- 104550 words of memory out of 5000000
- 6051 multiletter control sequences out of 15000+600000
- 10729 words of font info for 38 fonts, out of 8000000 for 9000
+ 2748 strings out of 493108
+ 38961 string characters out of 6134853
+ 104604 words of memory out of 5000000
+ 6073 multiletter control sequences out of 15000+600000
+ 10898 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,15n,33p,1557b,227s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,15n,33p,1559b,230s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/
@@ -458,11 +530,12 @@ amsfonts/cm/cmmi12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmr12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmr8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmti12.pfb>
-Output written on bold_paper.pdf (31 pages, 426236 bytes).
+s/cm/cmti12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmtt12.pfb>
+Output written on bold_paper.pdf (38 pages, 578277 bytes).
 PDF statistics:
- 153 PDF objects out of 1000 (max. 8388607)
- 92 compressed objects within 1 object stream
+ 190 PDF objects out of 1000 (max. 8388607)
+ 112 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 

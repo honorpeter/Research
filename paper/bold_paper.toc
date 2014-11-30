@@ -1,36 +1,36 @@
-\contentsline {chapter}{\numberline {1}Abstract}{5}
-\contentsline {chapter}{\numberline {2}Introduction}{6}
-\contentsline {chapter}{\numberline {3}Background}{7}
-\contentsline {section}{\numberline {3.1}Hardware - Xilinx ZC702}{7}
-\contentsline {section}{\numberline {3.2}Operating System - Linux 3.14}{9}
-\contentsline {section}{\numberline {3.3}Advanced Microcontroller Bus Architecture}{11}
-\contentsline {section}{\numberline {3.4}Image Filtering}{13}
-\contentsline {section}{\numberline {3.5}Bilinear Interpolation}{15}
-\contentsline {chapter}{\numberline {4}Design}{17}
-\contentsline {section}{\numberline {4.1}Common Design Components}{17}
-\contentsline {subsection}{\numberline {4.1.1}Tagged Image File Format}{17}
-\contentsline {subsection}{\numberline {4.1.2}User Interface}{18}
-\contentsline {section}{\numberline {4.2}Processor Based Design}{20}
-\contentsline {subsection}{\numberline {4.2.1}Image Filter}{20}
-\contentsline {subsubsection}{3x3 Gaussian Blur Filter}{20}
-\contentsline {subsubsection}{9x9 Laplacian of Gaussian Filter}{21}
-\contentsline {subsection}{\numberline {4.2.2}Bilinear Interpolation}{22}
-\contentsline {section}{\numberline {4.3}Programmable Logic Based Design}{22}
-\contentsline {subsection}{\numberline {4.3.1}Image Filter}{22}
-\contentsline {subsubsection}{3x3 Gaussian Blur Filter}{22}
-\contentsline {subsubsection}{9x9 Laplacian of Gaussian Filter}{22}
-\contentsline {section}{\numberline {4.4}Homogeneous Design}{22}
-\contentsline {subsection}{\numberline {4.4.1}Bilinear Interpolation}{22}
-\contentsline {chapter}{\numberline {5}Results}{23}
-\contentsline {section}{\numberline {5.1}3x3 Gaussian Filter Results}{23}
-\contentsline {section}{\numberline {5.2}9x9 LoG Filter Results}{23}
-\contentsline {section}{\numberline {5.3}Bilinear Interpolation Results}{23}
-\contentsline {chapter}{\numberline {6}Conclusion}{24}
-\contentsline {chapter}{Appendices}{26}
-\contentsline {chapter}{\numberline {A}Useful Resources}{27}
-\contentsline {section}{\numberline {A.1}Programmable Logic}{27}
-\contentsline {section}{\numberline {A.2}Operating System}{27}
-\contentsline {section}{\numberline {A.3}Vivado}{27}
-\contentsline {chapter}{\numberline {B}Verilog Sources}{28}
-\contentsline {chapter}{\numberline {C}C Source}{29}
-\contentsline {chapter}{\numberline {D}Reproduction of Work}{30}
+\contentsline {chapter}{\numberline {1}Abstract}{1}
+\contentsline {chapter}{\numberline {2}Introduction}{2}
+\contentsline {chapter}{\numberline {3}Background}{3}
+\contentsline {section}{\numberline {3.1}Hardware - Xilinx ZC702}{3}
+\contentsline {section}{\numberline {3.2}Operating System - Linux 3.14}{5}
+\contentsline {section}{\numberline {3.3}Advanced Microcontroller Bus Architecture}{7}
+\contentsline {section}{\numberline {3.4}Image Filtering}{9}
+\contentsline {section}{\numberline {3.5}Bilinear Interpolation}{11}
+\contentsline {chapter}{\numberline {4}Design}{13}
+\contentsline {section}{\numberline {4.1}Common Design Components}{13}
+\contentsline {subsection}{\numberline {4.1.1}Tagged Image File Format}{13}
+\contentsline {subsection}{\numberline {4.1.2}User Interface}{14}
+\contentsline {subsection}{\numberline {4.1.3}PS/PL Transfer and Communication}{16}
+\contentsline {section}{\numberline {4.2}Processor Based Design}{18}
+\contentsline {subsection}{\numberline {4.2.1}Image Filter}{18}
+\contentsline {subsubsection}{3x3 Gaussian Blur Filter}{19}
+\contentsline {subsubsection}{9x9 Laplacian of Gaussian Filter}{20}
+\contentsline {subsection}{\numberline {4.2.2}Bilinear Interpolation}{21}
+\contentsline {section}{\numberline {4.3}Programmable Logic Based Design - Image Filter}{22}
+\contentsline {subsection}{\numberline {4.3.1}3x3 Gaussian Blur Filter}{23}
+\contentsline {subsection}{\numberline {4.3.2}9x9 Laplacian of Gaussian Filter}{23}
+\contentsline {section}{\numberline {4.4}Homogeneous Design}{23}
+\contentsline {subsection}{\numberline {4.4.1}Bilinear Interpolation}{23}
+\contentsline {chapter}{\numberline {5}Results}{25}
+\contentsline {section}{\numberline {5.1}3x3 Gaussian Filter Results}{25}
+\contentsline {section}{\numberline {5.2}9x9 LoG Filter Results}{25}
+\contentsline {section}{\numberline {5.3}Bilinear Interpolation Results}{25}
+\contentsline {chapter}{\numberline {6}Conclusion}{26}
+\contentsline {chapter}{Appendices}{28}
+\contentsline {chapter}{\numberline {A}Useful Resources}{29}
+\contentsline {section}{\numberline {A.1}Programmable Logic}{29}
+\contentsline {section}{\numberline {A.2}Operating System}{29}
+\contentsline {section}{\numberline {A.3}Vivado}{29}
+\contentsline {chapter}{\numberline {B}Verilog Sources}{30}
+\contentsline {chapter}{\numberline {C}C Source}{31}
+\contentsline {chapter}{\numberline {D}Reproduction of Work}{32}

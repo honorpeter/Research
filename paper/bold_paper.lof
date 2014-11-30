@@ -1,19 +1,24 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Top-Level Diagram of Xilinx ZC702 Evaluation Board}}{8}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Top-Level Diagram of Xiliinx Zynq device}}{9}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces View of Linux kernel}}{10}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Example AXI processing pipeline}}{12}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Image filtering example}}{13}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Symmetric Filter}}{14}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Bilinear Interpolation of Grayscale Image}}{15}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Top-Level Diagram of Xilinx ZC702 Evaluation Board}}{4}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Top-Level Diagram of Xilinx Zynq device}}{5}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces View of Linux kernel}}{6}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Example AXI processing pipeline}}{8}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Image filtering example}}{9}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Symmetric Filter}}{10}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Bilinear Interpolation of Grayscale Image}}{11}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces TIFF File Structure\cite {Murray1996}}}{18}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces User Interface}}{19}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Processor based filter framework}}{20}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces 3x3 Gaussian blur filter kernel}}{21}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces 9x9 LoG filter kernel}}{21}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces TIFF File Structure\cite {Murray1996}}}{14}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces User Interface}}{15}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Software framework for offloading using AXI DMA and developed library}}{17}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Processor based filter framework}}{19}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces 3x3 Gaussian blur filter kernel}}{19}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces 9x9 LoG filter kernel}}{20}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Bilinear interpolation algorithm software framework}}{21}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Software framework for hardware filter}}{23}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Hardware framework for filter}}{24}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Hardware implementation of 3x3 filter}}{24}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

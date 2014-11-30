@@ -5,17 +5,22 @@
 \usepackage[toc,page]{appendix}
 
 \begin{document}
-
+\pagenumbering{gobble}
 % Title
 \include{./tex/title}
+\pagenumbering{Roman}
 % Table of Contents
 \tableofcontents
+\newpage
 % List of Figures
 \listoffigures
+\newpage
 % List of Tables
 \listoftables
+\newpage
 
 % Body
+\pagenumbering{arabic}
 \include{./tex/abstract}
 \include{./tex/introduction}
 \include{./tex/background}

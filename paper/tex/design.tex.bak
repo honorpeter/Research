@@ -32,9 +32,9 @@ A common user interface (UI) was developed for each algorithm in order to mainta
 \end{figure}
 
 \subsection{PS/PL Transfer and Communication}
-In order to facilitate the offloading of processing form the PS to the PL, the Xilinx AXI Direct Memory Access (DMA) IP was used.  This IP allowed for the PS to configure transactions between the DDR memory and the PL in both the read and write directions.  The AXI DMA, when instantiated in the PL, becomes a memory mapped peripheral that can be accessed from with the kernel space of the PS.  In order to access this memory, two approaches can be used.  The first is to write a device driver to configure and execute the memory transactions form the kernel space.  This approach has the benefit of being able to utilize many kernel space functions and features that are not available in the user space to more easily interface with the DMA.  However, the downside of this approach is that the time and understanding required to develop such a driver is quite extensive and is not within the scope of these experiments.  Instead, a user space driver was developed that enables user space applications to directly access the memory mapped address space of the DMA.  This access is accomplished using the mmap Linux function that maps a kernel space address to a user space address directly.  Using this method, the control and status registers of the AXI DMA can be directly read and modified with limited development time required.
+In order to facilitate the offloading of processing form the PS to the PL, the Xilinx AXI Direct Memory Access (DMA) IP was used.  This IP allowed for the PS to configure transactions between the DDR memory and the PL in both the read and write directions.  The AXI DMA, when instantiated in the PL, becomes a memory mapped peripheral that can be accessed from with the kernel space of the PS.  In order to access this memory, two approaches can be used.  The first is to write a device driver to configure and execute the memory transactions form the kernel space.  This approach has the benefit of being able to utilize many kernel space functionalities and features that are not available in the user space to more easily interace with the DMA.  However, the downside of this approach is that the time and understanding required to develop such a driver is quite extensive and is not within the scope of these experiments.  Instead, a user space driver was developed that enables user space applications to directly access the memory mapped address space of the DMA.  This access is accomplished using the mmap Linux function that maps a kernel space address to a user space address directly.  Using this method, the control and status registers of the AXI DMA can be directly read and modified with limited development time required.
 
-The AXI DMA relies on physically contiguous memory for transactions.  When using a device driver, this memory can be allocated within the kernel space and guaranteed to be contiguous.  However, since a user space driver was used, this memory must be set aside when the Linux operating system boots.  To do so, the Linux device tree file is modified to limit the address space available to the operating system from 0x0 to 0x39000000, or 912 MB.  This leaves the address range of 0x39000001 to 0x40000000 to be used as a contiguous memory space for storing the data to be transferred into and out of the PL.
+The AXI DMA relies on physically contiguous memory for transactions.  When using a device driver, this memory can be allocated within the kernel space and guarenteed to be contiguous.  However, since a user space driver was used, this memory must be set aside when the Linux operating system boots.  To do so, the Linux device tree file is modified to limit the address space available to the operating system from 0x0 to 0x39000000, or 912 MB.  This leaves the address range of 0x39000001 to 0x40000000 to be used as a contiguous memory space for storing the data to be transferred into and out of the PL.
 
 \begin{figure}[t]
   \centering
@@ -43,7 +43,7 @@ The AXI DMA relies on physically contiguous memory for transactions.  When using
   \label{fig:generic_hard_soft_framework}
 \end{figure}
 
-To ease the development of applications that require the use of the AXI DMA and the pre-allocated contiguous address space, a C based library was developed.  This library provides the ability to initialize and reset the AXI DMA IP, allocate contiguous memory with the pre-allocated space for the storage of input and output data, as well as to initiate both synchronous and asynchronous DMA transactions.  Using these library functions, a generic method of transferring data between the PS and PL was accomplished and adaptable to a number of different offloading operations.  Figure \ref{fig:generic_hard_soft_framework} shows the generic framework in which these library functions would be used.  This process was used in the development of the image filtering PL based designs as well as the bilinear interpolation homogeneous design.
+To ease the development of applications that require the use of the AXI DMA and the pre-allocated contiguous address space, a C based libary was developed.  This library provides the ability to initialize and reset the AXI DMA IP, allocate contiguous memory with the pre-allocated space for the storage of input and output data, as well as to iniate both synchronus and asynchronous DMA transactions.  Using these library functions, a generic method of transferring data between the PS and PL was accomplished and adaptable to a number of different offloading operations.  Figure \ref{fig:generic_hard_soft_framework} shows the generic framework in which these library functions would be used.  This process was used in the development of the image filtering PL based designs as well as the bilinear interoplation homogeneous design.
 
 \section{Processor Based Design}
 
@@ -108,10 +108,6 @@ The implementation of the processor based bilinear interpolation algorithm used 
 
 
 \section{Programmable Logic Based Design - Image Filter}
-asfd l;kajsfoiu 
-j;lkjaisuddf 
-a ;lkja
- ksadf  a 
 
 \begin{figure}[h]
   \centering
